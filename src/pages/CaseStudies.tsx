@@ -6,103 +6,109 @@ const caseStudies = [
   {
     id: "event-funnel-scaling",
     title: "Scaling Event Funnels for ₹9M Revenue",
-    tags: ["Martech", "Event Automation", "Conversion Optimization"],
-    description: "When registration drop-offs started affecting top-of-funnel efficiency, I redesigned the entire event journey — from landing page to CRM attribution.",
+    tags: ["Product Strategy", "Event Automation", "Funnel Optimization"],
+    description: "When fragmented journeys and drop-offs started impacting acquisition ROI, I led a full-funnel redesign — aligning marketing, tech, and CRM to simplify the user experience and improve lead-to-enrollment conversion.",
     details: [
-      "Introduced 1-click registration and email validation via n8n",
-      "Removed Google login loops, cutting friction by 30%",
-      "Built multi-touchpoint lifecycle flows via WebEngage",
-      "Personalized reminders, WABA fallback, and dynamic tagging"
+      "Introduced 1-click registration with email validation (via n8n)",
+      "Eliminated Google login loops, reducing friction by 30%",
+      "Designed lifecycle journeys in WebEngage based on user behavior",
+      "Enabled dynamic tagging, multi-channel reminders, and WABA fallback",
+      "Streamlined lead flow from events → CRM with attribution intact"
     ],
     outcomes: [
       "+90% registrations",
-      "₹9M revenue impact in 4 months",
-      "+25% conversion to leads from events"
+      "₹9M revenue uplift in 4 months",
+      "+25% conversion to qualified leads from events"
     ]
   },
   {
     id: "martech-attribution",
-    title: "Revamping Martech Stack for Attribution Accuracy",
-    tags: ["Automation", "CRM", "Analytics Infrastructure"],
-    description: "Fragmented tools → messy attribution → wasted budget. I unified our martech stack using GA4, Netcore, HubSpot, and Metabase.",
+    title: "Revamping the Martech Stack for Attribution Accuracy",
+    tags: ["Marketing Ops", "CRM Architecture", "Analytics"],
+    description: "Led a martech revamp across GA4, Netcore, HubSpot, and Metabase to fix attribution, enrich leads, and enable daily channel-wise ROI insights across campaigns.",
     details: [
-      "Built UTM-first tracking model using GTM + server-side logic",
-      "Orchestrated lead tagging flows in n8n based on campaign source",
-      "Implemented CRM deduplication, proper channel attribution",
-      "Rolled out channel-wise performance dashboards in Metabase"
+      "Defined unified UTM schema across platforms",
+      "Built lead enrichment + tagging workflows in n8n",
+      "Orchestrated CRM sync + fallback logic for clean attribution",
+      "Created Postgres-backed Metabase dashboards for performance reporting",
+      "Instituted monthly data audits and cleanup cycles"
     ],
     outcomes: [
-      "+20% lead quality",
-      "+25% reporting speed",
-      "Reduced budget misallocation"
+      "+20% improvement in lead quality",
+      "25% faster reporting cycles",
+      "40% reduction in duplicate CRM entries"
     ]
   },
   {
     id: "merekapade-ai-commerce",
-    title: "Building MereKapade – AI-Led Design Commerce",
-    tags: ["Product", "AI", "Supabase", "Canvas API"],
-    description: "I wanted to test what an AI-native product from scratch could look like.",
+    title: "MereKapade — An AI-Led Design Commerce Platform",
+    tags: ["Zero-to-One", "Generative AI", "Consumer Product"],
+    description: "Designed and built a solo MVP that lets users generate wearable designs from prompts — with real-time preview, saved sessions, and JWT-secured profiles.",
     details: [
-      "Built a full-stack MVP: Supabase (auth + storage) + Canvas API",
+      "Built frontend in React + Canvas API for custom design UX",
       "Integrated GPT for prompt-to-design generation",
-      "JWT-secured user profiles with saved designs and orders",
-      "Dynamic product rendering with React + Tailwind"
+      "Used Supabase for auth, RLS, and user storage",
+      "Added order management logic (size, SKU, pricing)",
+      "Deployed via Vercel with full token tracking and error retries"
     ],
     outcomes: [
-      "First 100 test users onboarded",
-      "Reduced design-to-order time by 90%",
-      "Preparing for soft launch with early evangelists"
+      "MVP shipped in 8 weeks",
+      "100+ testers onboarded",
+      "Avg. 3.4 designs per user in first session"
     ]
   },
   {
     id: "scheduling-microservice",
     title: "Scheduling Microservice That Cut Ops Time by 70%",
-    tags: ["Infrastructure", "UX", "CRM Sync"],
-    description: "Internal scheduling was broken. I built a modular system from scratch.",
+    tags: ["Internal Tools", "SaaS Infra", "Lead Automation"],
+    description: "Led the design of a multi-tenant scheduling system to automate 1K+ monthly meetings across sales and academic teams — reducing friction and ops dependency.",
     details: [
-      "Calendly-style microservice in NextJS with Supabase DB",
-      "Dynamic slot generation, calendar sync, role-based logic",
-      "Automated lead capture + CRM updates",
-      "Built fallback workflows via Netcore and n8n"
+      "Developed a modular scheduler using NextJS + Supabase",
+      "Integrated CRM sync, role-based access, and slot logic",
+      "Used n8n for event triggers, reminders, and lead tagging",
+      "Designed fallback logic for CRM/API failures",
+      "Enabled team-level view and audit logs for scheduling flows"
     ],
     outcomes: [
-      "80% faster booking flow",
-      "Enabled 1,000+ self-serve meetings/month",
-      "70% ops time saved"
+      "70% reduction in ops effort",
+      "1,000+ meetings/month with 80% self-serve",
+      "25% faster lead-to-meeting time"
     ]
   },
   {
     id: "third-place-community",
-    title: "Designing \"The Third Place\" – Community Infra That Scales",
-    tags: ["Community", "System Design", "Role Logic"],
-    description: "How do you build curated, creator-led communities that scale but don't devolve into spam?",
+    title: "Designing \"The Third Place\" – A Community Infra Stack",
+    tags: ["System Design", "Community Product", "Privacy UX"],
+    description: "Architected backend logic for a role-based, event-driven community platform with RBAC, badge systems, host workflows, and referral tracking.",
     details: [
-      "Defined data models for events, hosts, badges, discussions",
-      "Admin-only override controls with privacy-first design",
-      "Manual host assignment, referral tracking, and expiry control",
-      "Discussions only visible to active community members"
+      "Defined data models for events, users, badges, and hosts",
+      "Built manual host assignment + admin override logic",
+      "Designed discussion expiry and community-level visibility filters",
+      "Added participant control + Google Sign-In + preference management",
+      "Scoped activity logging for privacy-first infra"
     ],
     outcomes: [
-      "Designed for low moderation effort",
-      "RBAC and event visibility handled at infra level",
-      "Launching in closed beta"
+      "Fully decoupled role + badge logic",
+      "Privacy filters built at infra layer",
+      "Live in closed beta with growing communities"
     ]
   },
   {
     id: "content-ops-automation",
     title: "Automating Content Ops for Predictability & Scale",
-    tags: ["Education", "Agile", "Jira Automation"],
-    description: "As AlmaBetter scaled, content delivery was breaking. I restructured the entire lifecycle.",
+    tags: ["Agile Ops", "Education Delivery", "Product-Led Processes"],
+    description: "Introduced Jira-based workflows and analytics dashboards to transform content ops into a sprint-driven, measurable process — reducing delays and improving learner experience.",
     details: [
-      "Introduced JIRA-based agile workflows for content teams",
-      "Created sprint boards, WIP tracking, and error flagging",
-      "Setup Metabase dashboards to measure velocity and quality",
-      "Integrated learner feedback loops into process"
+      "Setup structured Jira workflows with sprint reviews",
+      "Integrated learner feedback from WebEngage + support tickets",
+      "Automated tracking via Zapier + Metabase",
+      "Built dashboards for velocity, error types, and module-level health",
+      "Instituted 2-week delivery cadence with ownership clarity"
     ],
     outcomes: [
-      "90% reduction in delivery errors",
-      "7-week predictable lead time",
-      "23% drop in student journey drop-offs"
+      "90% reduction in content delivery errors",
+      "7-week predictable delivery lead time",
+      "23% drop in learner journey drop-offs"
     ]
   }
 ];
