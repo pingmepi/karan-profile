@@ -142,6 +142,51 @@ const caseStudies = {
       "Canvas UX is its own world — making it intuitive without design tools takes careful constraint design",
       "A lot of \"AI-powered\" products break at ops — I designed with retry logic, usage caps, and token tracking from the start"
     ]
+  },
+  "scheduling-microservice": {
+    title: "Building a Scheduling Microservice That Cut Ops Time by 70%",
+    tags: ["Infrastructure", "UX", "CRM Sync"],
+    overview: "While working in the CTO's Office at Miles Education, I designed and shipped a Calendly-style scheduling microservice that streamlined appointment booking across marketing, sales, and academic teams. The solution not only eliminated manual coordination but became a reusable asset powering 1,000+ meetings/month.",
+    context: "Lead-to-meeting handoff was one of the weakest links in our funnel. Despite having inbound leads and outbound cadences, the actual scheduling process was: Manual (via emails, WhatsApp, or shared Google Sheets), untracked (no centralized view of booked or missed meetings), and unattributed (CRM didn't log source, time-to-meeting, or lead status). This created 30%+ drop-offs post-lead capture, no-show spikes due to poor reminders, and high operational load on support teams.",
+    challenge: "We needed a multi-tenant, modular scheduling system that could: Allow dynamic slot-based booking based on available faculty or advisors, automatically sync meetings with CRM + calendars, trigger personalized reminders via WhatsApp & email, securely handle access (role-based views for marketing vs academic teams), and work without paying for enterprise Calendly or routing through Zapier.",
+    approach: [
+      {
+        title: "Frontend Booking Widget",
+        content: "Built using React + Tailwind with dynamic slot fetching based on advisor availability. Clean, responsive UI embedded on multiple product pages."
+      },
+      {
+        title: "Role-Based Access Logic", 
+        content: "Defined access layers (internal vs public) using Supabase Auth + JWT. Academic heads could manage calendars; marketers had read-only slots."
+      },
+      {
+        title: "Automated Workflows",
+        content: "Used n8n to sync confirmed bookings with CRM (HubSpot), trigger reminders via Netcore (email) + WABA (WhatsApp), and tag leads based on booking source, funnel stage, and meeting outcome."
+      },
+      {
+        title: "Fallback + Retry Logic",
+        content: "If a CRM sync failed or a contact method was missing, fallback flows kicked in with alternate reminders or manual routing."
+      }
+    ],
+    execution: [
+      "Frontend: NextJS + Tailwind",
+      "Backend: Supabase (PostgreSQL, RLS, Auth, Storage)",
+      "Orchestration: n8n",
+      "CRM: HubSpot",
+      "Communication: Netcore (email) + WhatsApp Business API",
+      "Security: JWT-based user validation + DB-level permissions"
+    ],
+    outcomes: [
+      "70% reduction in ops effort for scheduling",
+      "1000+ self-serve meetings/month with automated sync",
+      "25% decrease in lead-to-meeting time",
+      "Improved conversion rates for leads who scheduled within 48 hrs",
+      "Reused the same microservice across 3 teams (marketing, academic advising, sales)"
+    ],
+    learnings: [
+      "Calendly works great — until you need logic specific to your workflows, lead types, or funnel stages",
+      "A microservice mindset helps decouple systems and give teams more control",
+      "Building with Supabase + n8n gave the perfect balance of speed, scalability, and observability"
+    ]
   }
 };
 
