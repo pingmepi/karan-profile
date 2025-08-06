@@ -1,69 +1,94 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, Brain, Rocket, User, TrendingUp, DollarSign, Settings, Users, Target, Camera, Car } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const impactMetrics = [
   {
-    metric: "3× blog traffic",
-    description: "via SEO CMS"
+    icon: TrendingUp,
+    metric: "3× Organic Traffic",
+    description: "via SEO-first CMS"
   },
   {
-    metric: "₹9M revenue boost",
-    description: "via event funnel optimization"
+    icon: DollarSign,
+    metric: "₹9M Revenue Impact",
+    description: "via optimized event funnels"
   },
   {
-    metric: "70% reduction",
-    description: "in ops inefficiencies"
+    icon: Settings,
+    metric: "70% Ops Efficiency",
+    description: "through automation systems"
   },
   {
-    metric: "90% increase",
-    description: "in registrations"
+    icon: Users,
+    metric: "90% Uplift in Registrations",
+    description: "with improved UX"
   },
   {
-    metric: "20% improvement",
-    description: "in lead quality"
+    icon: Target,
+    metric: "20% Lead Quality Boost",
+    description: "via segmentation + attribution"
   }
 ];
 
-const whatIDoSections = [
+const aboutCards = [
   {
-    title: "💡 Product Strategy Meets AI Execution",
-    description: "I work where ideas meet systems — shaping user journeys, driving experiments, and architecting automation for speed and scale."
+    icon: Brain,
+    title: "What I Do",
+    description: "Product strategy, automation, AI workflows, and data-driven decision-making — built for speed, clarity, and impact."
   },
   {
-    title: "📈 Growth x Martech x Data",
-    description: "UTM tracking, lifecycle journeys, CRM integrations, funnel optimization — all stitched into one unified motion to move metrics."
+    icon: Rocket,
+    title: "Currently",
+    description: "Driving growth via automation at Miles Education\nLaunching MereKapade (AI-led design commerce)\nBuilding The Third Place (community platform)"
   },
   {
-    title: "🤖 AI-Native Workflows",
-    description: "LLM-powered assistants, agentic design patterns, workflow orchestration via n8n, OpenAI, and Google AI ecosystem."
+    icon: User,
+    title: "Previously",
+    description: "UpGrad, AlmaBetter, Capgemini\nBITS Pilani alum, builder of scalable systems & scrappy experiments"
   }
 ];
 
-// Updated homepage component
+const projectPreviews = [
+  {
+    title: "MereKapade",
+    description: "AI-first T-shirt design platform",
+    status: "Live"
+  },
+  {
+    title: "The Third Place", 
+    description: "Curated community tech",
+    status: "Building"
+  },
+  {
+    title: "Saaya.ai",
+    description: "Multichannel AI Assistant",
+    status: "Stealth"
+  }
+];
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24">
+      {/* Section 1: Hero - Clear, Punchy, and Human */}
+      <section className="pt-20 pb-16 md:pt-32 md:pb-24 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* Name */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-bold italic mb-8 text-foreground">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-bold italic mb-8 text-foreground animate-scale-in">
               Karan
             </h1>
             
-            {/* Headline */}
+            {/* Headline with emoji */}
             <div className="max-w-4xl mx-auto mb-12">
-              <h2 className="text-2xl md:text-4xl font-semibold leading-tight mb-6">
-                Building at the intersection of{" "}
-                <span className="text-primary">AI, Product, and Possibility</span>
+              <h2 className="text-2xl md:text-4xl font-semibold leading-tight mb-6 flex items-center justify-center gap-3">
+                <Zap className="text-primary h-8 w-8 md:h-10 md:w-10" />
+                Building at the Intersection of AI, Product, and Possibility
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                I'm Karan — a product leader, martech architect, and builder of AI-native systems.
-                From marketing automation to generative design platforms, I turn complexity into clarity and scale.
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+                I'm a product leader blending martech, automation, and AI to design systems that scale.
+                <br className="hidden md:block" />
+                Whether it's orchestrating LLMs, driving funnel growth, or launching platforms — I move fast and think deep.
               </p>
             </div>
 
@@ -71,111 +96,133 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button asChild size="lg" className="text-lg px-8">
                 <Link to="/projects">
-                  View Projects
+                  🚀 View Projects
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link to="/case-studies">Explore Case Studies</Link>
+                <Link to="/case-studies">📚 Case Studies</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link to="/contact">Contact Me</Link>
+                <Link to="/contact">📬 Contact Me</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Bio Section */}
+      {/* Section 2: About / Snapshot */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Quick Bio</h3>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <Card className="glass-card">
-              <CardContent className="p-6">
-                <h4 className="text-xl font-semibold mb-3 text-primary">Who I Am</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  Over the last 7 years, I've shipped SaaS platforms, launched automation systems, and embedded LLMs into customer and business workflows. I've worked across EdTech, Martech, and e-commerce — leading product charters that drive scale and compound business value.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="glass-card">
-              <CardContent className="p-6">
-                <h4 className="text-xl font-semibold mb-3 text-primary">Currently</h4>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Driving AI and automation-led growth at <strong>Miles Education</strong> (CTO's Office)<br/>
-                  Building <strong>MereKapade</strong>, an AI-first design commerce platform<br/>
-                  Experimenting with community tech at <strong>The Third Place</strong>
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="glass-card">
-              <CardContent className="p-6">
-                <h4 className="text-xl font-semibold mb-3 text-primary">Past Work</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  UpGrad, AlmaBetter, Capgemini<br/>
-                  BITS Pilani alumnus<br/>
-                  Go-to guy for experimentation, automation, and new tool rollouts
-                </p>
-              </CardContent>
-            </Card>
+            {aboutCards.map((card, index) => {
+              const IconComponent = card.icon;
+              return (
+                <Card key={index} className="glass-card hover-lift">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <IconComponent className="h-6 w-6 text-primary" />
+                      <h4 className="text-xl font-semibold text-primary">{card.title}</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {card.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* What I Do Section */}
+      {/* Section 3: What I Believe / Product Philosophy */}
+      <section className="pb-16 md:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light italic text-foreground max-w-4xl mx-auto leading-relaxed">
+              💬 "I believe good products behave like good systems: they scale, adapt, and respect the user's time."
+            </blockquote>
+            <p className="text-muted-foreground mt-6 italic">
+              Most things worth building start with a messy whiteboard and a clear intention.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Work That Made a Dent (Impact Metrics) */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">What I Do</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">Work That Made a Dent</h3>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            {whatIDoSections.map((section, index) => (
-              <Card key={index} className="glass-card">
-                <CardContent className="p-6">
-                  <h4 className="text-xl font-semibold mb-3">{section.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">{section.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Impact Metrics */}
-          <div className="text-center mb-8">
-            <h4 className="text-2xl font-semibold mb-8 text-primary">Impact Metrics</h4>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
-            {impactMetrics.map((metric, index) => (
-              <Card key={index} className="glass-card text-center">
-                <CardContent className="p-6">
-                  <div className="text-2xl font-bold text-primary mb-2">{metric.metric}</div>
-                  <p className="text-sm text-muted-foreground">{metric.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {impactMetrics.map((metric, index) => {
+              const IconComponent = metric.icon;
+              return (
+                <Card key={index} className="metric-card text-center p-6 cursor-pointer">
+                  <CardContent className="p-0">
+                    <IconComponent className="h-8 w-8 text-primary mx-auto mb-3" />
+                    <div className="text-xl font-bold text-foreground mb-2">{metric.metric}</div>
+                    <p className="text-sm text-muted-foreground">{metric.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Side Persona Section */}
+      {/* Section 5: Projects Preview */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="glass-card">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-6">Outside Work</h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-                You'll usually find me behind a camera or on a motorcycle, chasing stories and sunsets. 
-                I believe good products — like good rides — need a strong engine, the right terrain, and a dash of chaos.
-              </p>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">Projects Preview</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {projectPreviews.map((project, index) => (
+              <Card key={index} className="glass-card hover-lift cursor-pointer group">
+                <CardContent className="p-6">
+                  <div className="flex justify-between items-start mb-3">
+                    <h4 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h4>
+                    <span className="text-xs px-2 py-1 rounded-full bg-primary/20 text-primary">
+                      {project.status}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground">{project.description}</p>
+                  <ArrowRight className="h-4 w-4 mt-3 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/projects" className="story-link">
+                Explore All Projects
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Outside Work */}
+      <section className="pb-16 md:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="glass-card relative overflow-hidden">
+            <CardContent className="p-12 text-center relative z-10">
+              <div className="flex justify-center gap-4 mb-6">
+                <Car className="h-8 w-8 text-primary" />
+                <Camera className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-light mb-6 leading-relaxed">
+                When I'm not building products,<br />
+                I'm riding motorcycles, capturing moments through a lens, or chasing stories across new roads.
+              </h3>
               <Button asChild variant="outline" size="lg">
                 <Link to="/photography">
-                  Photography & Riding
+                  🏍️ Photography & Riding
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -184,24 +231,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* Section 7: Let's Build Something Together */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="glass-card">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-6">Let's Build Something Together</h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Product idea? Tech challenge? Just curious about automation or AI?
+                Got a product idea, automation problem, or AI workflow to figure out?
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="text-lg px-8">
                   <Link to="/contact">
-                    Contact Me
+                    📬 Contact Me
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                  <Link to="/projects">Explore Projects</Link>
+                  <Link to="/projects">💡 Explore Projects</Link>
                 </Button>
               </div>
             </CardContent>

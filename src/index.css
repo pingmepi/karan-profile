@@ -132,11 +132,35 @@
 
   /* Glass effect for cards */
   .glass-card {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50;
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 transition-smooth;
   }
 
   /* Hover lift effect */
   .hover-lift {
-    @apply transition-smooth hover:translate-y-[-2px] hover:shadow-lg;
+    @apply transition-smooth hover:translate-y-[-2px] hover:shadow-[0_10px_30px_-10px_hsl(250_89%_67%_/_0.3)];
+  }
+
+  /* Metric cards with gradient borders */
+  .metric-card {
+    @apply relative bg-card/60 backdrop-blur-sm border border-transparent transition-smooth hover:scale-105;
+    background-clip: padding-box;
+  }
+  
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -1px;
+    border-radius: inherit;
+    background: var(--gradient-accent);
+  }
+
+  /* Story link animation */
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 }
