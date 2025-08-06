@@ -52,6 +52,49 @@ const caseStudies = {
       "CRM hygiene is a multiplier. Attribution and automation are only as good as your input schema.",
       "Martech tools (WebEngage, n8n, Zoom) become true leverage when orchestrated via clear logic, not UI checkboxes."
     ]
+  },
+  "martech-attribution": {
+    title: "Revamping the Martech Stack for Attribution Accuracy",
+    tags: ["Automation", "CRM", "Analytics Infrastructure"],
+    overview: "At Miles Education, fragmented tools were leading to duplicated leads, attribution errors, and delayed insights. I spearheaded a complete overhaul of the martech stack — aligning data flows across ad platforms, CRM, analytics, and automation layers to drive better decision-making and campaign ROI.",
+    context: "The business was scaling fast, but marketing visibility wasn't. Each team was using siloed tools: Leads were entering from multiple sources (landing pages, forms, WhatsApp, events), attribution data was either missing, overwritten, or misclassified, there was no consistent UTM structure or source tracking logic, and Metabase dashboards pulled from outdated or mismatched data. This caused inaccurate campaign reporting, poor budget allocation, and frequent conflicts between performance, automation, and sales teams.",
+    challenge: "We needed a single source of truth for all leads — and a martech system that could: attribute leads accurately from first touch to conversion, enable cohort-wise ROI tracking, eliminate duplicates across CRM entries, and surface insights daily, not post-mortem.",
+    approach: [
+      {
+        title: "UTM Schema Definition",
+        content: "Established a consistent structure across all campaigns (source, medium, campaign, content, term) to ensure uniform tracking and attribution."
+      },
+      {
+        title: "Landing Page & Form Integration", 
+        content: "Captured UTM data across the funnel via GTM and embedded JS tracking. Used hidden fields to preserve context across redirects and signups."
+      },
+      {
+        title: "Lead Flow Orchestration in n8n",
+        content: "Built flows to clean, dedupe, and enrich leads before pushing to CRM. Attached UTM values, lead source, and campaign tags dynamically. Created retry + error-catch logic for fallback handling."
+      },
+      {
+        title: "Reporting Infrastructure with Metabase",
+        content: "Connected Postgres (via Supabase) to generate channel-wise reports. Defined funnel metrics: visits → MQL → SQL → demo booked → enrolled. Synced dashboards with campaign and sales performance weekly."
+      }
+    ],
+    execution: [
+      "Tools used: n8n, Netcore, HubSpot, GA4, GTM, Metabase, PostgreSQL",
+      "Custom logic to split leads by vertical, funnel stage, and region",
+      "Monthly CRM audit to clean up misrouted, untagged, or \"unknown source\" leads",
+      "Built fallback logic for leads missing UTMs (used referrer, form path, campaign name)"
+    ],
+    outcomes: [
+      "20% improvement in lead quality",
+      "25% reduction in reporting turnaround (from 5 days to under 36 hours)",
+      "40% decrease in duplicate lead entries",
+      "Enabled channel-level ROI tracking → improved ad budget allocation",
+      "Alignment across marketing, automation, and sales teams"
+    ],
+    learnings: [
+      "Attribution isn't just about pixels or UTM tags — it's a cross-functional contract across teams and tools",
+      "A robust naming convention system saved hundreds of hours in debugging and misreporting",
+      "Building your own attribution logic in tools like n8n gives far more control than depending on out-of-box CRM defaults"
+    ]
   }
 };
 
