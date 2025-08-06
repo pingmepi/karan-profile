@@ -187,6 +187,54 @@ const caseStudies = {
       "A microservice mindset helps decouple systems and give teams more control",
       "Building with Supabase + n8n gave the perfect balance of speed, scalability, and observability"
     ]
+  },
+  "content-ops-automation": {
+    title: "Automating Content Ops for Predictability & Scale",
+    tags: ["Education", "Agile", "Jira Automation"],
+    overview: "At AlmaBetter, I was tasked with fixing a growing pain point — content creation and delivery for learner programs was inconsistent, error-prone, and hard to track. Over the course of a few weeks, I implemented a Jira-based content lifecycle system, introduced sprint-based tracking, and built analytics dashboards that turned content ops from a black box into a predictable engine.",
+    context: "The company's learner programs were scaling fast, but behind the scenes: Delivery timelines were slipping, content iterations were chaotic, feedback loops were broken, and there was no visibility on what was delayed, blocked, or live. This was affecting learner satisfaction (CSAT), instructor readiness, and internal bandwidth planning.",
+    challenge: "We needed a systematic, repeatable process to manage: Multiple content owners and stakeholders (SMEs, video editors, curriculum designers), continuous content improvements based on learner feedback, and time-boxed delivery (often tied to live batches and marketing commitments).",
+    approach: [
+      {
+        title: "Jira Workflow Setup",
+        content: "Defined clear statuses: Backlog → In Progress → Review → Approved → Published. Introduced swimlanes by module + assigned content owners."
+      },
+      {
+        title: "Sprint Cadence & Reviews", 
+        content: "Moved content ops to a 2-week sprint cycle. Weekly demo/review calls with stakeholders to unblock or reprioritize."
+      },
+      {
+        title: "Feedback Integration Loop",
+        content: "Mapped learner feedback from WebEngage and support tickets directly into Jira as backlog items. Triaged based on severity and impact."
+      },
+      {
+        title: "Analytics Layer with Metabase",
+        content: "Created dashboards to track: Weekly content velocity, % of items published on-time, error types and recurrence, and module-wise delays."
+      },
+      {
+        title: "Automation Layer",
+        content: "Used Zapier to auto-update content status based on team inputs from shared Google Sheets, Slack pings, and GitHub commits."
+      }
+    ],
+    execution: [
+      "Workflow & Tracking: Jira",
+      "Automation: Zapier",
+      "Analytics: Metabase",
+      "Feedback Sources: WebEngage, support CRM",
+      "Delivery Status: Shared Confluence & Git-integrated repos"
+    ],
+    outcomes: [
+      "90% reduction in content errors",
+      "Established a predictable 7-week lead time from ideation to publish",
+      "Weekly content velocity dashboard became a core reporting tool",
+      "Increased cross-functional alignment across content, ops, and tech",
+      "23% reduction in learner journey drop-offs (linked to improved content quality and release timing)"
+    ],
+    learnings: [
+      "Content is code. It needs structure, sprints, owners, and clear success metrics.",
+      "Feedback is valuable only if you can route it to action — automation helps scale that routing",
+      "You don't need heavy content ops tools — just well-defined processes and lightweight automation"
+    ]
   }
 };
 
