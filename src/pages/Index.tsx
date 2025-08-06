@@ -41,6 +41,8 @@ const whatIDoSections = [
   }
 ];
 
+// Updated homepage component
+
 const Index = () => {
   return (
     <div className="min-h-screen">
