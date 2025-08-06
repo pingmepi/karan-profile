@@ -51,7 +51,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* Name */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-hero bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-bold italic mb-8 text-foreground">
               Karan
             </h1>
             
