@@ -95,6 +95,53 @@ const caseStudies = {
       "A robust naming convention system saved hundreds of hours in debugging and misreporting",
       "Building your own attribution logic in tools like n8n gives far more control than depending on out-of-box CRM defaults"
     ]
+  },
+  "merekapade-ai-commerce": {
+    title: "Building MereKapade — An AI-Led Design Commerce Platform",
+    tags: ["Product", "AI", "Supabase", "Canvas API"],
+    overview: "MereKapade started as a challenge to myself: Could I build a fully functional, AI-powered design commerce platform — solo? From product vision and user workflows to infra, security, and launch prep — I built MereKapade from scratch to test what it means to ship an AI-native consumer product.",
+    context: "I noticed a growing gap in creative commerce: people wanted unique, personal designs but lacked the skills or tools to create them. AI image generation was exploding, but most tools were either generic or disconnected from actual buying experiences. The question: What if users could describe a t-shirt design in words, and wear it within minutes?",
+    challenge: "To go from concept to commerce, I needed to solve: Secure user onboarding and data storage, real-time AI-based design generation and preview, canvas interaction and customization (without needing Figma skills), order flow with saved sessions and designs, and a backend that was fast, scalable, and cost-effective.",
+    approach: [
+      {
+        title: "Prompt → Design",
+        content: "Users describe a visual (e.g., \"retro motorcycle on Mars\") → system calls an LLM/image generator → renders design."
+      },
+      {
+        title: "Design → Canvas", 
+        content: "Built a canvas-based UI where users can preview, drag, or adjust designs on t-shirt mockups."
+      },
+      {
+        title: "Auth → Save",
+        content: "Users log in via email (JWT-based Supabase auth) and can view, download, or edit saved designs."
+      },
+      {
+        title: "Design → Order (Coming Soon)",
+        content: "Users can convert a design into a purchasable order with pricing logic, size options, and UPI integration."
+      }
+    ],
+    execution: [
+      "Frontend: React 18 + TypeScript + Vite + Tailwind CSS",
+      "Canvas: Custom logic using HTML5 Canvas API",
+      "AI Integration: OpenAI + fallback image models (custom prompt tuning)",
+      "Backend: Supabase (PostgreSQL, Auth, RLS, Storage)",
+      "State Management: React Context + React Query",
+      "Validation: Zod + React Hook Form",
+      "Deployment: Vercel",
+      "Security: JWT Auth + RLS at the DB level"
+    ],
+    outcomes: [
+      "Built MVP from idea to live site in under 8 weeks",
+      "100+ users onboarded for testing",
+      "Avg. 3.4 designs/user generated in first session",
+      "Reduced time from idea → design to under 20 seconds",
+      "Secured early interest from an angel investor"
+    ],
+    learnings: [
+      "Shipping solo products at scale requires making decisive scoping calls — I prioritized stability + UX over visual polish in V1",
+      "Canvas UX is its own world — making it intuitive without design tools takes careful constraint design",
+      "A lot of \"AI-powered\" products break at ops — I designed with retry logic, usage caps, and token tracking from the start"
+    ]
   }
 };
 
