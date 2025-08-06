@@ -1,23 +1,9 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { usePhotographyImages } from "@/hooks/usePhotographyImages";
 
 const categories = ["All", "Portraits", "Street", "Landscape", "Motorcycling"];
-
-const photos = [
-  { id: 1, category: "Portraits", aspect: "portrait" },
-  { id: 2, category: "Landscape", aspect: "landscape" },
-  { id: 3, category: "Landscape", aspect: "landscape" },
-  { id: 4, category: "Portraits", aspect: "portrait" },
-  { id: 5, category: "Street", aspect: "square" },
-  { id: 6, category: "Landscape", aspect: "landscape" },
-  { id: 7, category: "Portraits", aspect: "portrait" },
-  { id: 8, category: "Street", aspect: "square" },
-  { id: 9, category: "Motorcycling", aspect: "landscape" },
-  { id: 10, category: "Portraits", aspect: "portrait" },
-  { id: 11, category: "Motorcycling", aspect: "landscape" },
-  { id: 12, category: "Landscape", aspect: "landscape" },
-];
 
 const rides = [
   {
@@ -48,10 +34,13 @@ const rides = [
 
 export default function Photography() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const { photos, loading, error } = usePhotographyImages();
 
-  const filteredPhotos = selectedCategory === "All" 
-    ? photos 
-    : photos.filter(photo => photo.category === selectedCategory);
+  const filteredPhotos = useMemo(() => {
+    return selectedCategory === "All" 
+      ? photos 
+      : photos.filter(photo => photo.category === selectedCategory);
+  }, [photos, selectedCategory]);
 
   const getAspectClass = (aspect: string) => {
     switch (aspect) {
@@ -89,16 +78,41 @@ export default function Photography() {
 
         {/* Photo Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-16">
-          {filteredPhotos.map((photo) => (
-            <div
-              key={photo.id}
-              className={`${getAspectClass(photo.aspect)} bg-muted rounded-lg overflow-hidden hover-lift cursor-pointer group`}
-            >
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:from-primary/30 group-hover:to-accent/30 transition-smooth">
-                <div className="w-12 h-12 bg-primary/40 rounded-lg"></div>
-              </div>
+          {loading ? (
+            // Loading skeletons
+            Array.from({ length: 12 }).map((_, index) => (
+              <div
+                key={index}
+                className="aspect-[4/3] bg-muted rounded-lg animate-pulse"
+              />
+            ))
+          ) : error ? (
+            <div className="col-span-full text-center py-12">
+              <p className="text-muted-foreground">
+                {error}. Upload images to the 'photography' bucket in Supabase Storage.
+              </p>
             </div>
-          ))}
+          ) : filteredPhotos.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <p className="text-muted-foreground">
+                No photos found. Upload images to the 'photography' bucket in Supabase Storage.
+              </p>
+            </div>
+          ) : (
+            filteredPhotos.map((photo) => (
+              <div
+                key={photo.id}
+                className={`${getAspectClass(photo.aspect)} bg-muted rounded-lg overflow-hidden hover-lift cursor-pointer group`}
+              >
+                <img
+                  src={photo.url}
+                  alt={photo.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+            ))
+          )}
         </div>
 
         {/* Riding Adventures Section */}
