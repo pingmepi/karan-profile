@@ -7,8 +7,8 @@ import { Navigation } from "./components/Navigation";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import Photography from "./pages/Photography";
-import Motorcycling from "./pages/Motorcycling";
 import Writings from "./pages/Writings";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -27,8 +27,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/photography" element={<Photography />} />
-            <Route path="/motorcycling" element={<Motorcycling />} />
             <Route path="/writings" element={<Writings />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

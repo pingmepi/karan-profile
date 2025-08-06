@@ -30,7 +30,7 @@ const Index = () => {
           <div className="text-center">
             {/* Name */}
             <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-hero bg-clip-text text-transparent">
-              Alex
+              Karan
             </h1>
             
             {/* Tagline */}

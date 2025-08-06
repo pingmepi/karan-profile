@@ -8,7 +8,6 @@ const navigationItems = [
   { name: "Projects", path: "/projects" },
   { name: "Case Studies", path: "/case-studies" },
   { name: "Photography", path: "/photography" },
-  { name: "Motorcycling", path: "/motorcycling" },
   { name: "Writings", path: "/writings" },
   { name: "Contact", path: "/contact" },
 ];
@@ -22,7 +21,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <NavLink to="/" className="text-xl font-semibold text-foreground hover:text-primary transition-smooth">
-            Alex
+            Karan
           </NavLink>
 
           {/* Desktop Navigation */}
