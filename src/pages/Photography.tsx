@@ -1,9 +1,9 @@
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { usePhotographyImages } from "@/hooks/usePhotographyImages";
 
-const categories = ["All", "Portraits", "Street", "Landscape", "Motorcycling"];
+
 
 const rides = [
   {
@@ -33,14 +33,7 @@ const rides = [
 ];
 
 export default function Photography() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const { photos, loading, error } = usePhotographyImages();
-
-  const filteredPhotos = useMemo(() => {
-    return selectedCategory === "All" 
-      ? photos 
-      : photos.filter(photo => photo.category === selectedCategory);
-  }, [photos, selectedCategory]);
 
   const getAspectClass = (aspect: string) => {
     switch (aspect) {
@@ -57,23 +50,9 @@ export default function Photography() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Photography & Motorcycling</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Capturing moments and journeys through the lens
           </p>
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category)}
-                className="mb-2"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
         </div>
 
         {/* Photo Grid */}
@@ -92,14 +71,14 @@ export default function Photography() {
                 {error}. Upload images to the 'photography' bucket in Supabase Storage.
               </p>
             </div>
-          ) : filteredPhotos.length === 0 ? (
+          ) : photos.length === 0 ? (
             <div className="col-span-full text-center py-12">
               <p className="text-muted-foreground">
                 No photos found. Upload images to the 'photography' bucket in Supabase Storage.
               </p>
             </div>
           ) : (
-            filteredPhotos.map((photo) => (
+            photos.map((photo) => (
               <div
                 key={photo.id}
                 className={`${getAspectClass(photo.aspect)} bg-muted rounded-lg overflow-hidden hover-lift cursor-pointer group`}
