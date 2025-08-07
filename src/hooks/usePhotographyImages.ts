@@ -13,6 +13,7 @@ export const usePhotographyImages = () => {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [brokenImages, setBrokenImages] = useState<Set<string>>(new Set());
 
   const fetchPhotos = async () => {
     setLoading(true);
@@ -60,5 +61,11 @@ export const usePhotographyImages = () => {
     fetchPhotos();
   }, []);
 
-  return { photos, loading, error, refetch: fetchPhotos };
+  const markImageAsBroken = (imageUrl: string) => {
+    setBrokenImages(prev => new Set([...prev, imageUrl]));
+  };
+
+  const filteredPhotos = photos.filter(photo => !brokenImages.has(photo.url));
+
+  return { photos: filteredPhotos, loading, error, refetch: fetchPhotos, markImageAsBroken };
 };

@@ -33,7 +33,7 @@ const rides = [
 ];
 
 export default function Photography() {
-  const { photos, loading, error, refetch } = usePhotographyImages();
+  const { photos, loading, error, refetch, markImageAsBroken } = usePhotographyImages();
 
   const getAspectClass = (aspect: string) => {
     switch (aspect) {
@@ -88,8 +88,8 @@ export default function Photography() {
                   alt={photo.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.src = '/placeholder.svg';
+                  onError={() => {
+                    markImageAsBroken(photo.url);
                   }}
                 />
               </div>
