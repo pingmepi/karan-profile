@@ -33,7 +33,7 @@ const rides = [
 ];
 
 export default function Photography() {
-  const { photos, loading, error } = usePhotographyImages();
+  const { photos, loading, error, refetch } = usePhotographyImages();
 
   const getAspectClass = (aspect: string) => {
     switch (aspect) {
@@ -88,6 +88,11 @@ export default function Photography() {
                   alt={photo.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  onError={(e) => {
+                    // Hide broken images and refetch
+                    e.currentTarget.style.display = 'none';
+                    setTimeout(() => refetch(), 1000);
+                  }}
                 />
               </div>
             ))
