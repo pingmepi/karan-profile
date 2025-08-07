@@ -89,9 +89,7 @@ export default function Photography() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                   onError={(e) => {
-                    // Hide broken images and refetch
-                    e.currentTarget.style.display = 'none';
-                    setTimeout(() => refetch(), 1000);
+                    e.currentTarget.src = '/placeholder.svg';
                   }}
                 />
               </div>
