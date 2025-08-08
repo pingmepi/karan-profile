@@ -31,41 +31,7 @@ const impactMetrics = [
   }
 ];
 
-const aboutCards = [
-  {
-    icon: Brain,
-    title: "What I Do",
-    description: "Product strategy, automation, AI workflows, and data-driven decision-making — built for speed, clarity, and impact."
-  },
-  {
-    icon: Rocket,
-    title: "Currently",
-    description: "Driving growth via automation at Miles Education\nLaunching MereKapade (AI-led design commerce)\nBuilding The Third Place (community platform)"
-  },
-  {
-    icon: User,
-    title: "Previously",
-    description: "UpGrad, AlmaBetter, Capgemini\nBITS Pilani alum, builder of scalable systems & scrappy experiments"
-  }
-];
-
-const projectPreviews = [
-  {
-    title: "MereKapade",
-    description: "AI-first T-shirt design platform",
-    status: "Live"
-  },
-  {
-    title: "The Third Place", 
-    description: "Curated community tech",
-    status: "Building"
-  },
-  {
-    title: "Saaya.ai",
-    description: "Multichannel AI Assistant",
-    status: "Stealth"
-  }
-];
+// Removed aboutCards and projectPreviews arrays
 
 const Index = () => {
   return (
@@ -97,44 +63,21 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button asChild size="lg" className="text-lg px-8">
                 <Link to="/projects">
-                  🚀 View Projects
+                  View Projects
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link to="/case-studies">📚 Case Studies</Link>
+                <Link to="/case-studies">Case Studies</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link to="/contact">📬 Contact Me</Link>
+                <Link to="/contact">Contact Me</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: About / Snapshot */}
-      <section className="pb-16 md:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {aboutCards.map((card, index) => {
-              const IconComponent = card.icon;
-              return (
-                <Card key={index} className="glass-card hover-lift">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <IconComponent className="h-6 w-6 text-primary" />
-                      <h4 className="text-xl font-semibold text-primary">{card.title}</h4>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                      {card.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Section 3: What I Believe / Product Philosophy */}
       <section className="pb-16 md:pb-24">
@@ -162,7 +105,9 @@ const Index = () => {
               return (
                 <Card key={index} className="metric-card text-center p-6 cursor-pointer">
                   <CardContent className="p-0">
-                    <IconComponent className="h-8 w-8 text-primary mx-auto mb-3" />
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <IconComponent className="h-6 w-6 text-primary" />
+                    </div>
                     <div className="text-xl font-bold text-foreground mb-2">{metric.metric}</div>
                     <p className="text-sm text-muted-foreground">{metric.description}</p>
                   </CardContent>
@@ -173,40 +118,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Section 5: Projects Preview */}
-      <section className="pb-16 md:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Projects Preview</h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {projectPreviews.map((project, index) => (
-              <Card key={index} className="glass-card hover-lift cursor-pointer group">
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h4 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h4>
-                    <span className="text-xs px-2 py-1 rounded-full bg-primary/20 text-primary">
-                      {project.status}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground">{project.description}</p>
-                  <ArrowRight className="h-4 w-4 mt-3 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link to="/projects" className="story-link">
-                Explore All Projects
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Section 6: Outside Work */}
       <section className="pb-16 md:pb-24">
@@ -222,8 +133,8 @@ const Index = () => {
                 I'm riding motorcycles, capturing moments through a lens, or chasing stories across new roads.
               </h3>
               <Button asChild variant="outline" size="lg">
-                <Link to="/photography">
-                  🏍️ Photography & Riding
+                <Link to="/not-work">
+                  Photography & Riding
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -244,12 +155,12 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="text-lg px-8">
                   <Link to="/contact">
-                    📬 Contact Me
+                    Contact Me
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                  <Link to="/projects">💡 Explore Projects</Link>
+                  <Link to="/projects">Explore Projects</Link>
                 </Button>
               </div>
             </CardContent>

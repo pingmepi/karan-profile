@@ -7,7 +7,7 @@ const navigationItems = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Case Studies", path: "/case-studies" },
-  { name: "Photography", path: "/photography" },
+  { name: "Not Work", path: "/not-work" },
   { name: "Writings", path: "/writings" },
   { name: "Contact", path: "/contact" },
 ];

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -83,6 +84,11 @@ const experiments = [
 ];
 
 export default function Projects() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen pt-20 pb-16">
       <Seo title="Projects – Karan" description="Selected projects across AI, martech, automation and product." canonicalPath="/projects" />
@@ -145,29 +151,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* What I'm Playing With Now */}
-        <div className="border-t border-border pt-16">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">What I'm Playing With Now</h2>
-            <p className="text-muted-foreground">Current experiments and explorations</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {experiments.map((experiment, index) => (
-              <Card key={index} className="glass-card hover-lift cursor-pointer group">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl mb-3">{experiment.icon}</div>
-                  <h4 className="font-semibold mb-2 group-hover:text-primary transition-smooth">
-                    {experiment.title}
-                  </h4>
-                  <p className="text-muted-foreground text-sm">
-                    {experiment.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -115,6 +116,11 @@ const caseStudies = [
 ];
 
 export default function CaseStudies() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen pt-20 pb-16">
       <Seo title="Case Studies – Karan" description="Deep dives into product, automation, attribution and AI outcomes." canonicalPath="/case-studies" />

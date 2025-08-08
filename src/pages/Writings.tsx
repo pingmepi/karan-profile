@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Seo } from "@/components/Seo";
 const posts = [
@@ -32,6 +33,11 @@ const posts = [
 ];
 
 export default function Writings() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen pt-20 pb-16">
       <Seo title="Writings – Karan" description="Essays on product, technology, and creative pursuits." canonicalPath="/writings" />
