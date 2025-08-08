@@ -105,8 +105,8 @@ const Index = () => {
               return (
                 <Card key={index} className="metric-card text-center p-6 cursor-pointer">
                   <CardContent className="p-0">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                      <IconComponent className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center mx-auto mb-3">
+                      <IconComponent className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div className="text-xl font-bold text-foreground mb-2">{metric.metric}</div>
                     <p className="text-sm text-muted-foreground">{metric.description}</p>
