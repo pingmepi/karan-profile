@@ -39,6 +39,7 @@ export default function Contact() {
       setSubmitting(false);
     }
   };
+  return (
     <div className="min-h-screen pt-20 pb-16">
       <Seo title="Contact – Karan" description="Get in touch to collaborate on product, automation, and AI projects." canonicalPath="/contact" />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
