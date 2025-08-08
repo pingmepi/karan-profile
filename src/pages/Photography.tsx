@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { usePhotographyImages } from "@/hooks/usePhotographyImages";
-
+import { Seo } from "@/components/Seo";
 
 
 const rides = [
@@ -46,8 +46,8 @@ export default function Photography() {
 
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Seo title="Photography & Motorcycling – Karan" description="A curated gallery of photos and riding adventures." canonicalPath="/photography" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Photography & Motorcycling</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Seo } from "@/components/Seo";
 
 const caseStudies = {
   "event-funnel-scaling": {
@@ -244,7 +245,9 @@ export default function CaseStudyDetail() {
   const navigate = useNavigate();
 
   const caseStudy = caseStudies[id as keyof typeof caseStudies];
-
+  const seoTitle = `${caseStudy ? caseStudy.title : 'Case Study'} – Karan`;
+  const seoDesc = caseStudy?.overview?.slice(0, 150) ?? 'Case study details';
+  const canonical = `/case-studies/${id}`;
   if (!caseStudy) {
     return (
       <div className="min-h-screen pt-20 pb-16 flex items-center justify-center">
@@ -264,8 +267,8 @@ export default function CaseStudyDetail() {
 
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Seo title={seoTitle} description={seoDesc} canonicalPath={canonical} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="mb-12">
           <Button 
             variant="ghost" 

@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-
+import { Seo } from "@/components/Seo";
 const posts = [
   {
     title: "The Future of AI in Marketing Automation",
@@ -34,8 +34,8 @@ const posts = [
 export default function Writings() {
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Seo title="Writings – Karan" description="Essays on product, technology, and creative pursuits." canonicalPath="/writings" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Writings</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

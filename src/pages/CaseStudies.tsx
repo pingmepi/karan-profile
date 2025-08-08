@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { Seo } from "@/components/Seo";
 
 const caseStudies = [
   {
@@ -116,8 +117,8 @@ const caseStudies = [
 export default function CaseStudies() {
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Seo title="Case Studies – Karan" description="Deep dives into product, automation, attribution and AI outcomes." canonicalPath="/case-studies" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Case Studies</h1>
           <p className="text-xl text-muted-foreground mb-4 italic">

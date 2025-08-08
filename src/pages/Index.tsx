@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Brain, Rocket, User, TrendingUp, DollarSign, Settings, Users, Target, Camera, Car } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { Seo } from "@/components/Seo";
 const impactMetrics = [
   {
     icon: TrendingUp,
@@ -70,6 +70,7 @@ const projectPreviews = [
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Seo title="Karan – AI, Product, Automation" description="Product leader blending AI, martech and automation. Projects, case studies, photography, contact." canonicalPath="/" />
       {/* Section 1: Hero - Clear, Punchy, and Human */}
       <section className="pt-20 pb-16 md:pt-32 md:pb-24 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

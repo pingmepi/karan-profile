@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ArrowRight } from "lucide-react";
+import { Seo } from "@/components/Seo";
 
 const projects = [
   {
@@ -84,8 +85,8 @@ const experiments = [
 export default function Projects() {
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Seo title="Projects – Karan" description="Selected projects across AI, martech, automation and product." canonicalPath="/projects" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Selected Work</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-2">
