@@ -6,43 +6,48 @@
 
 @layer base {
   :root {
-    /* Dark theme as primary - based on reference images */
-    --background: 220 15% 9%;
-    --foreground: 210 20% 95%;
+    /* Design Language Color Palette - Dark Elegance */
+    --background: 0 0% 7%; /* Deep Charcoal #121212 */
+    --foreground: 0 0% 96%; /* Off-White #F5F5F5 */
 
-    --card: 220 15% 12%;
-    --card-foreground: 210 20% 95%;
+    --card: 0 0% 12%; /* Dark Gray #1E1E1E */
+    --card-foreground: 0 0% 96%;
 
-    --popover: 220 15% 12%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 45 100% 65%;
-    --primary-foreground: 220 15% 9%;
+    --primary: 250 89% 67%; /* Electric Blue #3D3DAA */
+    --primary-foreground: 0 0% 96%;
 
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 210 20% 95%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 220 15% 16%;
-    --muted-foreground: 210 10% 65%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%; /* Muted Gray #B3B3B3 */
 
-    --accent: 220 15% 18%;
-    --accent-foreground: 210 20% 95%;
+    --accent: 250 89% 67%;
+    --accent-foreground: 0 0% 96%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 20% 95%;
+    --destructive-foreground: 0 0% 96%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 16%;
-    --ring: 45 100% 65%;
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 250 89% 67%;
 
-    --radius: 0.75rem;
+    --radius: 2rem; /* Pill-shaped buttons */
 
-    /* Hero gradient */
-    --gradient-hero: linear-gradient(135deg, hsl(45 100% 65%) 0%, hsl(200 60% 55%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 15% 13%) 0%, hsl(220 15% 11%) 100%);
+    /* Design Language Gradients */
+    --gradient-hero: linear-gradient(90deg, hsl(266 100% 68%), hsl(250 89% 67%)); /* Purple to Indigo */
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%) 0%, hsl(0 0% 9%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(266 100% 68%), hsl(250 89% 67%));
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(250 89% 67% / 0.3);
+    --shadow-glow: 0 0 40px hsl(266 100% 68% / 0.4);
 
     --sidebar-background: 0 0% 98%;
 
@@ -127,11 +132,35 @@
 
   /* Glass effect for cards */
   .glass-card {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50;
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 transition-smooth;
   }
 
   /* Hover lift effect */
   .hover-lift {
-    @apply transition-smooth hover:translate-y-[-2px] hover:shadow-lg;
+    @apply transition-smooth hover:translate-y-[-2px] hover:shadow-[0_10px_30px_-10px_hsl(250_89%_67%_/_0.3)];
+  }
+
+  /* Metric cards with gradient borders */
+  .metric-card {
+    @apply relative bg-card/60 backdrop-blur-sm border border-transparent transition-smooth hover:scale-105;
+    background-clip: padding-box;
+  }
+  
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -1px;
+    border-radius: inherit;
+    background: var(--gradient-accent);
+  }
+
+  /* Story link animation */
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 }

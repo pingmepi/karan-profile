@@ -1,12 +1,53 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Twitter, Github, Mail } from "lucide-react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { Seo } from "@/components/Seo";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!name || !email || !message) {
+      toast.error("Please fill out all fields.");
+      return;
+    }
+    try {
+      setSubmitting(true);
+      const { error } = await supabase.from('contact_messages').insert({
+        name,
+        email,
+        message,
+        page_path: window.location.pathname,
+        user_agent: navigator.userAgent,
+      });
+      if (error) throw error;
+      toast.success("Message sent! I'll get back to you soon.");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen pt-20 pb-16">
+      <Seo title="Contact – Karan" description="Get in touch to collaborate on product, automation, and AI projects." canonicalPath="/contact" />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Let's build something cool.</h1>
           <p className="text-xl text-muted-foreground">
@@ -18,11 +59,14 @@ export default function Contact() {
         {/* Contact Form */}
         <Card className="glass-card mb-12">
           <CardContent className="p-8">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <input
                   type="text"
                   placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
                   className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-smooth"
                 />
               </div>
@@ -30,6 +74,9 @@ export default function Contact() {
                 <input
                   type="email"
                   placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-smooth"
                 />
               </div>
@@ -37,11 +84,14 @@ export default function Contact() {
                 <textarea
                   placeholder="Tell me about your project or idea..."
                   rows={6}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
                   className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-smooth resize-none"
                 />
               </div>
-              <Button className="w-full py-3 text-lg font-medium">
-                Send
+              <Button className="w-full py-3 text-lg font-medium" type="submit" disabled={submitting}>
+                {submitting ? 'Sending…' : 'Send'}
               </Button>
             </form>
           </CardContent>
