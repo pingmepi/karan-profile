@@ -7,7 +7,7 @@ import { Seo } from "@/components/Seo";
 
 const caseStudies = {
   "event-funnel-scaling": {
-    title: "Scaling Event Funnels for ₹9M Revenue Impact",
+    title: "Scaling Event Funnels for Revenue Impact",
     tags: ["Martech", "Event Automation", "Conversion Optimization"],
     overview: "As part of my role in the COO's Office at AlmaBetter, I led a critical program to overhaul our event-based lead acquisition funnels. This initiative not only unlocked significant revenue upside but also became the foundation for a sustainable event marketing engine.",
     context: "Events were a key part of our marketing strategy to drive top-of-funnel leads. However, the conversion from registration to lead and from lead to enrollment was inconsistent and often inefficient due to fragmented user journeys across multiple platforms, redundant steps causing drop-offs, and lack of targeted post-registration communication.",
@@ -43,7 +43,6 @@ const caseStudies = {
     ],
     outcomes: [
       "+90% increase in event registrations",
-      "₹9M revenue impact in 4 months",
       "Reduced registration time by 60%",
       "Created templates now reused across 30+ campaigns",
       "Improved event-to-enrollment ratio by 2.5×"

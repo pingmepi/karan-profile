@@ -11,7 +11,7 @@ const impactMetrics = [
   },
   {
     icon: DollarSign,
-    metric: "₹9M Revenue Impact",
+    metric: "Revenue Impact",
     description: "via optimized event funnels"
   },
   {

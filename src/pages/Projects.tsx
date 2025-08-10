@@ -1,9 +1,11 @@
 import { useEffect } from "react";
+import type React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { Seo } from "@/components/Seo";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
@@ -12,7 +14,8 @@ const projects = [
     impact: "Reduced drop-offs by 30% and boosted lifecycle engagement by 2.5×",
     tags: ["Martech", "AI", "CRM"],
     cta: "View Case Study",
-    status: "completed"
+    status: "completed",
+    link: "/case-studies/event-funnel-scaling"
   },
   {
     title: "Martech Stack Optimization",
@@ -20,7 +23,8 @@ const projects = [
     impact: "20% improvement in lead quality, 25% faster reporting cycles",
     tags: ["Product Strategy", "Automation", "Attribution"],
     cta: "View More",
-    status: "completed"
+    status: "completed",
+    link: "/case-studies/martech-attribution"
   },
   {
     title: "MereKapade",
@@ -29,7 +33,8 @@ const projects = [
     tags: ["Product Build", "GenAI", "Commerce"],
     cta: "Live Site",
     ctaSecondary: "Product Doc",
-    status: "featured"
+    status: "featured",
+    link: "/case-studies/merekapade-ai-commerce"
   },
   {
     title: "Event CMS Platform",
@@ -37,7 +42,8 @@ const projects = [
     impact: "Enabled teams to independently run 40+ events/month",
     tags: ["Infra", "Workflow", "Scale"],
     cta: "Read More",
-    status: "completed"
+    status: "completed",
+    link: "/case-studies"
   },
   {
     title: "The Third Place",
@@ -45,7 +51,8 @@ const projects = [
     impact: "Designed modular APIs with privacy-first participant visibility",
     tags: ["Community", "Systems", "Identity"],
     cta: "Coming Soon",
-    status: "wip"
+    status: "wip",
+    link: "/case-studies"
   },
   {
     title: "Scheduling Microservice",
@@ -53,7 +60,8 @@ const projects = [
     impact: "Cut meeting ops time by 80%, supported 1000+ monthly meetings",
     tags: ["Infra", "SaaS Design", "UX Simplification"],
     cta: "Case Study",
-    status: "completed"
+    status: "completed",
+    link: "/case-studies/scheduling-microservice"
   },
   {
     title: "Content Ops Automation",
@@ -61,7 +69,8 @@ const projects = [
     impact: "90% error reduction + 7-week predictable delivery cycles",
     tags: ["Process Design", "Jira", "Education"],
     cta: "Learn More",
-    status: "completed"
+    status: "completed",
+    link: "/case-studies/content-ops-automation"
   }
 ];
 
@@ -88,6 +97,34 @@ export default function Projects() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const navigate = useNavigate();
+
+  const goTo = (link?: string, external?: boolean) => {
+    if (!link) {
+      navigate('/case-studies');
+      return;
+    }
+    if (external) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(link);
+    }
+  };
+
+  const handleCardClick = (project: { link?: string; external?: boolean; title: string }) => {
+    goTo(project.link, project.external);
+  };
+
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLDivElement>,
+    project: { link?: string; external?: boolean; title: string }
+  ) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleCardClick(project);
+    }
+  };
+
 
   return (
     <div className="min-h-screen pt-20 pb-16">
@@ -106,7 +143,14 @@ export default function Projects() {
         {/* Featured Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {projects.map((project, index) => (
-            <Card key={index} className="glass-card hover-lift cursor-pointer group">
+            <Card
+              key={index}
+              className="glass-card hover-lift cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              onClick={() => handleCardClick(project)}
+              tabIndex={0}
+              onKeyDown={(e) => handleKeyDown(e, project)}
+              aria-label={`Open ${project.title}`}
+            >
               <CardContent className="p-6">
                 {/* Status indicator */}
                 <div className="flex items-center justify-between mb-4">
@@ -125,22 +169,26 @@ export default function Projects() {
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-smooth">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
                   {project.problem}
                 </p>
-                
+
                 <p className="text-foreground text-sm font-medium mb-4">
                   {project.impact}
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  <Button size="sm" variant={project.status === "wip" ? "secondary" : "default"}>
+                  <Button
+                    size="sm"
+                    variant={project.status === "wip" ? "secondary" : "default"}
+                    onClick={(e) => { e.stopPropagation(); goTo(project.link, project.external); }}
+                  >
                     {project.cta}
                     {project.status !== "wip" && <ArrowRight className="ml-1 h-3 w-3" />}
                   </Button>
                   {project.ctaSecondary && (
-                    <Button size="sm" variant="outline">
+                    <Button size="sm" variant="outline" onClick={(e) => e.stopPropagation()}>
                       {project.ctaSecondary}
                       <ExternalLink className="ml-1 h-3 w-3" />
                     </Button>

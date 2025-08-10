@@ -7,7 +7,7 @@ import { Seo } from "@/components/Seo";
 const caseStudies = [
   {
     id: "event-funnel-scaling",
-    title: "Scaling Event Funnels for ₹9M Revenue",
+    title: "Scaling Event Funnels",
     tags: ["Product Strategy", "Event Automation", "Funnel Optimization"],
     description: "When fragmented journeys and drop-offs started impacting acquisition ROI, I led a full-funnel redesign — aligning marketing, tech, and CRM to simplify the user experience and improve lead-to-enrollment conversion.",
     details: [
@@ -19,7 +19,7 @@ const caseStudies = [
     ],
     outcomes: [
       "+90% registrations",
-      "₹9M revenue uplift in 4 months",
+      "Revenue uplift",
       "+25% conversion to qualified leads from events"
     ]
   },
