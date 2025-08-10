@@ -6,9 +6,10 @@ interface SeoProps {
   canonicalPath?: string; // e.g., "/projects"
   noIndex?: boolean;
   structuredData?: Record<string, any> | Record<string, any>[];
+  imageUrl?: string; // optional override for OG/Twitter image
 }
 
-export function Seo({ title, description, canonicalPath, noIndex, structuredData }: SeoProps) {
+export function Seo({ title, description, canonicalPath, noIndex, structuredData, imageUrl }: SeoProps) {
   useEffect(() => {
     // Title
     if (title) document.title = title.slice(0, 60);
@@ -45,11 +46,10 @@ export function Seo({ title, description, canonicalPath, noIndex, structuredData
       }
       robots.setAttribute('content', 'noindex, nofollow');
     } else if (robots) {
-      // Reset to index if previously set
       robots.setAttribute('content', 'index, follow');
     }
 
-    // Basic OG tags
+    // Basic OG/Twitter tags
     const ensureMeta = (property: string, content: string) => {
       let el = document.querySelector(`meta[property="${property}"]`);
       if (!el) {
@@ -59,9 +59,30 @@ export function Seo({ title, description, canonicalPath, noIndex, structuredData
       }
       el.setAttribute('content', content);
     };
+    const ensureNameMeta = (name: string, content: string) => {
+      let el = document.querySelector(`meta[name="${name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('name', name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    const ogImage = imageUrl || "/assets/og-image.png"; // default asset path in /public/assets
+
     ensureMeta('og:title', title);
     if (description) ensureMeta('og:description', description.slice(0, 160));
     ensureMeta('og:url', canonicalUrl);
+    ensureMeta('og:type', 'website');
+    ensureMeta('og:site_name', 'Karan Mandalam');
+    ensureMeta('og:image', ogImage);
+
+    ensureNameMeta('twitter:card', 'summary_large_image');
+    ensureNameMeta('twitter:site', '@pingmepi');
+    ensureNameMeta('twitter:image', ogImage);
+    ensureNameMeta('twitter:title', title);
+    if (description) ensureNameMeta('twitter:description', description.slice(0, 160));
 
     // JSON-LD structured data
     const existingJsonLd = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
@@ -76,7 +97,7 @@ export function Seo({ title, description, canonicalPath, noIndex, structuredData
         document.head.appendChild(script);
       });
     }
-  }, [title, description, canonicalPath, noIndex, structuredData]);
+  }, [title, description, canonicalPath, noIndex, structuredData, imageUrl]);
 
   return null;
 }

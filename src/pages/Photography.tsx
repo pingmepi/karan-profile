@@ -10,25 +10,25 @@ const rides = [
     title: "Pacific Coast Highway",
     location: "California, USA",
     description: "Epic coastal ride through Big Sur with breathtaking ocean views.",
-    image: "/placeholder.svg"
+    image: "/assets/placeholder.svg"
   },
   {
     title: "Blue Ridge Parkway",
     location: "Virginia & North Carolina",
     description: "Scenic mountain roads through the Appalachian Highlands.",
-    image: "/placeholder.svg"
+    image: "/assets/placeholder.svg"
   },
   {
     title: "Going-to-the-Sun Road",
-    location: "Montana, USA", 
+    location: "Montana, USA",
     description: "Challenging mountain pass through Glacier National Park.",
-    image: "/placeholder.svg"
+    image: "/assets/placeholder.svg"
   },
   {
     title: "Tail of the Dragon",
     location: "Tennessee & North Carolina",
     description: "318 curves in 11 miles of pure riding excitement.",
-    image: "/placeholder.svg"
+    image: "/assets/placeholder.svg"
   }
 ];
 
@@ -46,7 +46,7 @@ export default function Photography() {
 
   return (
     <div className="min-h-screen pt-20 pb-16">
-      <Seo title="Photography & Motorcycling – Karan" description="A curated gallery of photos and riding adventures." canonicalPath="/photography" />
+      <Seo title="Photography & Motorcycling – Karan Mandalam" description="A curated gallery of photos and riding adventures." canonicalPath="/photography" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Photography & Motorcycling</h1>

@@ -66,10 +66,10 @@ export default function NotWork() {
 
   return (
     <div className="min-h-screen pt-20 pb-16">
-      <Seo 
-        title="Not Work – Karan" 
-        description="Photography, motorcycling adventures, and volunteer work that keeps me grounded." 
-        canonicalPath="/not-work" 
+      <Seo
+        title="Not Work – Karan Mandalam"
+        description="Photography, motorcycling adventures, and volunteer work that keeps me grounded."
+        canonicalPath="/not-work"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
