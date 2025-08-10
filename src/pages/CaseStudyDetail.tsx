@@ -244,7 +244,7 @@ export default function CaseStudyDetail() {
   const navigate = useNavigate();
 
   const caseStudy = caseStudies[id as keyof typeof caseStudies];
-  const seoTitle = `${caseStudy ? caseStudy.title : 'Case Study'} – Karan`;
+  const seoTitle = `${caseStudy ? caseStudy.title : 'Case Study'} – Karan Mandalam`;
   const seoDesc = caseStudy?.overview?.slice(0, 150) ?? 'Case study details';
   const canonical = `/case-studies/${id}`;
   if (!caseStudy) {

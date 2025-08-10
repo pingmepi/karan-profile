@@ -128,7 +128,7 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen pt-20 pb-16">
-      <Seo title="Projects – Karan" description="Selected projects across AI, martech, automation and product." canonicalPath="/projects" />
+      <Seo title="Projects – Karan Mandalam" description="Selected projects across AI, martech, automation, and product." canonicalPath="/projects" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Selected Work</h1>

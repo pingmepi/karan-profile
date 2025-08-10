@@ -1,73 +1,57 @@
-# Welcome to your Lovable project
+# Karan's Portfolio (Vite + React + TypeScript)
 
-## Project info
+## Overview
 
-**URL**: https://lovable.dev/projects/46dcd837-d3d1-4a68-b343-674b2550b09e
+This is a personal portfolio built with Vite, React, TypeScript, Tailwind CSS, and shadcn-ui.
 
-## How can I edit this code?
+## About Me
 
-There are several ways of editing your application.
+I'm Karan Mandalam — a product leader working at the intersection of AI, martech, and automation. I design systems that scale, with a focus on attribution accuracy, lifecycle automation, and shipping pragmatic zero-to-one products.
 
-**Use Lovable**
+- Twitter/X: https://x.com/pingmepi
+- LinkedIn: https://www.linkedin.com/in/mandalam-karan/
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/46dcd837-d3d1-4a68-b343-674b2550b09e) and start prompting.
+## Local Development
 
-Changes made via Lovable will be committed automatically to this repo.
+Requirements: Node.js and npm (we recommend installing Node via nvm)
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Steps:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# 1) Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 2) Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3) Start the dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Social/SEO Assets
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Place your OG image at `public/assets/og-image.png` (recommended 1200x630). The site references `/assets/og-image.png` in index.html and the Seo component.
+- Favicon set referenced in index.html and manifest:
+  - `public/assets/favicon-32x32.png`
+  - `public/assets/favicon-16x16.png`
+  - `public/assets/apple-touch-icon.png`
+  - `public/assets/android-chrome-192x192.png`
+  - `public/assets/android-chrome-512x512.png`
+  - `public/assets/manifest.webmanifest`
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
+## Tech Stack
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deploy
+Deploy with any static hosting provider that supports Vite builds (e.g., Vercel, Netlify, GitHub Pages). Run:
 
-Simply open [Lovable](https://lovable.dev/projects/46dcd837-d3d1-4a68-b343-674b2550b09e) and click on Share -> Publish.
+```sh
+npm run build
+```
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+The output will be in the `dist` folder.
