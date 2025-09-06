@@ -15,7 +15,8 @@ const projects = [
     tags: ["Martech", "AI", "CRM"],
     cta: "View Case Study",
     status: "completed",
-    link: "/case-studies/event-funnel-scaling"
+    link: "/case-studies/event-funnel-scaling",
+    external: false
   },
   {
     title: "Martech Stack Optimization",
@@ -24,7 +25,8 @@ const projects = [
     tags: ["Product Strategy", "Automation", "Attribution"],
     cta: "View More",
     status: "completed",
-    link: "/case-studies/martech-attribution"
+    link: "/case-studies/martech-attribution",
+    external: false
   },
   {
     title: "MereKapade",
@@ -34,7 +36,8 @@ const projects = [
     cta: "Live Site",
     ctaSecondary: "Product Doc",
     status: "featured",
-    link: "/case-studies/merekapade-ai-commerce"
+    link: "/case-studies/merekapade-ai-commerce",
+    external: false
   },
   {
     title: "Event CMS Platform",
@@ -43,7 +46,8 @@ const projects = [
     tags: ["Infra", "Workflow", "Scale"],
     cta: "Read More",
     status: "completed",
-    link: "/case-studies"
+    link: "/case-studies",
+    external: false
   },
   {
     title: "The Third Place",
@@ -52,7 +56,8 @@ const projects = [
     tags: ["Community", "Systems", "Identity"],
     cta: "Coming Soon",
     status: "wip",
-    link: "/case-studies"
+    link: "/case-studies",
+    external: false
   },
   {
     title: "Scheduling Microservice",
@@ -61,7 +66,8 @@ const projects = [
     tags: ["Infra", "SaaS Design", "UX Simplification"],
     cta: "Case Study",
     status: "completed",
-    link: "/case-studies/scheduling-microservice"
+    link: "/case-studies/scheduling-microservice",
+    external: false
   },
   {
     title: "Content Ops Automation",
@@ -70,7 +76,8 @@ const projects = [
     tags: ["Process Design", "Jira", "Education"],
     cta: "Learn More",
     status: "completed",
-    link: "/case-studies/content-ops-automation"
+    link: "/case-studies/content-ops-automation",
+    external: false
   }
 ];
 
