@@ -1,65 +1,125 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Brain, Rocket, User, TrendingUp, DollarSign, Settings, Users, Target, Camera, Car } from "lucide-react";
+import { ArrowRight, TrendingUp, DollarSign, Settings, Users, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Seo } from "@/components/Seo";
+const heroMetrics = [
+  "5× SEO traffic",
+  "Significant revenue impact",
+  "70% ops savings",
+  "+20% lead quality",
+];
+
+const whatIDoItems = [
+  {
+    title: "Product Strategy & Roadmaps",
+    description:
+      "Own discovery→definition→delivery; align goals, score trade-offs, and drive iteration.",
+  },
+  {
+    title: "Systems & Architecture",
+    description:
+      "Design API-first martech/CRM stacks with reliable attribution, privacy, and auditability.",
+  },
+  {
+    title: "Automation & Agents",
+    description:
+      "n8n + LLM/HITL flows with retries, fallbacks, and cost controls, integrated into product surfaces.",
+  },
+  {
+    title: "Measurement & Governance",
+    description:
+      "KPIs instrumented end-to-end (marketing → CRM → revenue) with dashboards leaders trust.",
+  },
+];
+
 const impactMetrics = [
   {
     icon: TrendingUp,
-    metric: "3× Organic Traffic",
-    description: "via SEO-first CMS"
+    metric: "5× increase",
+    description: "in organic traffic via an SEO-first CMS.",
+    link: "/case-studies/event-funnels-cms",
   },
   {
     icon: DollarSign,
-    metric: "Revenue Impact",
-    description: "via optimized event funnels"
+    metric: "Significant revenue impact",
+    description: "from event-funnel optimisation (4-month window).",
+    link: "/case-studies/event-funnels-cms",
   },
   {
     icon: Settings,
-    metric: "70% Ops Efficiency",
-    description: "through automation systems"
+    metric: "70% reduction",
+    description: "in operational effort via automations (scheduler + comms).",
+    link: "/case-studies/scheduling-at-scale",
   },
   {
     icon: Users,
-    metric: "90% Uplift in Registrations",
-    description: "with improved UX"
+    metric: "+90% registrations",
+    description: "after funnel & UX fixes.",
+    link: "/case-studies/event-funnels-cms",
   },
   {
     icon: Target,
-    metric: "20% Lead Quality Boost",
-    description: "via segmentation + attribution"
-  }
+    metric: "+20% lead quality",
+    description: "from attribution & segmentation.",
+    link: "/case-studies/martech-revamp-attribution",
+  },
+  {
+    icon: TrendingUp,
+    metric: "25% faster reporting",
+    description: "via consolidated analytics.",
+    link: "/case-studies/martech-revamp-attribution",
+  },
 ];
 
-// Removed aboutCards and projectPreviews arrays
+const featuredWork = [
+  {
+    title: "Event CMS + SEO System",
+    blurb: "Strapi + Next.js; CRM/Zoom integrations; enabled 40+ events/month.",
+    link: "/case-studies/event-funnels-cms",
+    cta: "View case study",
+  },
+  {
+    title: "Scheduling Microservice",
+    blurb:
+      "Multi-tenant, dynamic slot logic, CRM sync; 70% ops reduction; 1,000+ meetings/month.",
+    link: "/case-studies/scheduling-at-scale",
+    cta: "View case study",
+  },
+  {
+    title: "MereKapade",
+    blurb: "AI-led design commerce MVP; React + Canvas + Supabase + GPT.",
+    link: "/case-studies/merekapade",
+    cta: "Read write-up",
+  },
+];
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Seo title="Karan Mandalam – AI, Product, Automation" description="Product leader blending AI, martech, and automation. Projects, case studies, photography, contact." canonicalPath="/" />
+      <Seo title="Karan Mandalam — AI Product Leader (Strategy, Martech, Automation)" description="I lead AI-native product initiatives in martech and CRM orchestration—shipping outcomes like 5× SEO traffic, significant revenue impact, 70% ops savings, +90% registrations." canonicalPath="/" />
       {/* Section 1: Hero - Clear, Punchy, and Human */}
       <section className="pt-20 pb-16 md:pt-32 md:pb-24 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            {/* Name */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-bold italic mb-8 text-foreground animate-scale-in">
-              Karan
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">
+              AI Product Leader
             </h1>
-            
-            {/* Headline with emoji */}
-            <div className="max-w-4xl mx-auto mb-12">
-              <h2 className="text-2xl md:text-4xl font-semibold leading-tight mb-6 flex items-center justify-center gap-3">
-                <Zap className="text-primary h-8 w-8 md:h-10 md:w-10" />
-                Building at the Intersection of AI, Product, and Possibility
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-light">
-                I'm a product leader blending martech, automation, and AI to design systems that scale.
-                <br className="hidden md:block" />
-                Whether it's orchestrating LLMs, driving funnel growth, or launching platforms — I move fast and think deep.
+            <div className="max-w-3xl mx-auto mb-8">
+              <p className="text-lg md:text-xl text-muted-foreground font-light">
+                I build and scale AI-native products—combining product strategy, martech architecture, and automation to drive measurable growth.
               </p>
             </div>
-
-            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-2 justify-center mb-12">
+              {heroMetrics.map((pill, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center rounded-full border px-3 py-1 text-sm text-foreground"
+                >
+                  {pill}
+                </span>
+              ))}
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button asChild size="lg" className="text-lg px-8">
                 <Link to="/projects">
@@ -68,10 +128,10 @@ const Index = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link to="/case-studies">Case Studies</Link>
+                <Link to="/case-studies">Read Case Studies</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link to="/contact">Contact Me</Link>
+                <Link to="/contact">Contact</Link>
               </Button>
             </div>
           </div>
@@ -79,16 +139,21 @@ const Index = () => {
       </section>
 
 
-      {/* Section 3: What I Believe / Product Philosophy */}
+      {/* Section: What I Do (4 bullets) */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light italic text-foreground max-w-4xl mx-auto leading-relaxed">
-              💬 "I believe good products behave like good systems: they scale, adapt, and respect the user's time."
-            </blockquote>
-            <p className="text-muted-foreground mt-6 italic">
-              Most things worth building start with a messy whiteboard and a clear intention.
-            </p>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold">What I Do</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whatIDoItems.map((item, idx) => (
+              <Card key={idx} className="p-6">
+                <CardContent className="p-0">
+                  <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -97,13 +162,13 @@ const Index = () => {
       <section className="pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Work That Made a Dent</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">Impact Highlights</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
             {impactMetrics.map((metric, index) => {
               const IconComponent = metric.icon;
-              return (
-                <Card key={index} className="metric-card text-center p-6 cursor-pointer">
+              const content = (
+                <Card className="metric-card text-center p-6 cursor-pointer">
                   <CardContent className="p-0">
                     <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center mx-auto mb-3">
                       <IconComponent className="h-6 w-6 text-primary-foreground" />
@@ -113,35 +178,44 @@ const Index = () => {
                   </CardContent>
                 </Card>
               );
+              return metric.link ? (
+                <Link key={index} to={metric.link} className="block">
+                  {content}
+                </Link>
+              ) : (
+                <div key={index}>{content}</div>
+              );
             })}
           </div>
         </div>
       </section>
 
 
-      {/* Section 6: Outside Work */}
+      {/* Section: Featured Work */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="glass-card relative overflow-hidden">
-            <CardContent className="p-12 text-center relative z-10">
-              <div className="flex justify-center gap-4 mb-6">
-                <Car className="h-8 w-8 text-primary" />
-                <Camera className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-light mb-6 leading-relaxed">
-                When I'm not building products,<br />
-                I'm riding motorcycles, capturing moments through a lens, or chasing stories across new roads.
-              </h3>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/not-work">
-                  Photography & Riding
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold">Featured Work</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredWork.map((proj, idx) => (
+              <Link key={idx} to={proj.link} className="block">
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-semibold mb-2">{proj.title}</h4>
+                    <p className="text-sm text-muted-foreground mb-4">{proj.blurb}</p>
+                    <Button variant="outline" size="sm">
+                      {proj.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
+
+
 
       {/* Section 7: Let's Build Something Together */}
       <section className="pb-16 md:pb-24">
