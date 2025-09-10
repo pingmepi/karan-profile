@@ -19,7 +19,7 @@ const caseStudies = [
     ],
     outcomes: [
       "+90% registrations",
-      "Revenue uplift",
+      "significant revenue impact",
       "+25% conversion to qualified leads from events"
     ]
   },
@@ -36,8 +36,8 @@ const caseStudies = [
       "Instituted monthly data audits and cleanup cycles"
     ],
     outcomes: [
-      "+20% improvement in lead quality",
-      "25% faster reporting cycles",
+      "+20% lead quality",
+      "25% faster reporting",
       "40% reduction in duplicate CRM entries"
     ]
   },
@@ -61,9 +61,9 @@ const caseStudies = [
   },
   {
     id: "scheduling-microservice",
-    title: "Scheduling Microservice That Cut Ops Time by 70%",
+    title: "Scheduling Microservice That Delivered 70% ops savings",
     tags: ["Internal Tools", "SaaS Infra", "Lead Automation"],
-    description: "Led the design of a multi-tenant scheduling system to automate 1K+ monthly meetings across sales and academic teams — reducing friction and ops dependency.",
+    description: "Led the design of a multi-tenant scheduling system to automate 1,000+ meetings/mo across sales and academic teams — reducing friction and ops dependency.",
     details: [
       "Developed a modular scheduler using NextJS + Supabase",
       "Integrated CRM sync, role-based access, and slot logic",
@@ -72,8 +72,8 @@ const caseStudies = [
       "Enabled team-level view and audit logs for scheduling flows"
     ],
     outcomes: [
-      "70% reduction in ops effort",
-      "1,000+ meetings/month with 80% self-serve",
+      "70% ops savings",
+      "1,000+ meetings/mo",
       "25% faster lead-to-meeting time"
     ]
   },

@@ -11,7 +11,7 @@ const projects = [
   {
     title: "AI-Powered Marketing Automation",
     problem: "Designed lead nurturing and personalized communication workflows using n8n, WABA & Mandrill.",
-    impact: "Reduced drop-offs by 30% and boosted lifecycle engagement by 2.5×",
+    impact: "+90% registrations · +20% lead quality",
     tags: ["Martech", "AI", "CRM"],
     cta: "View Case Study",
     status: "completed",
@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Martech Stack Optimization",
     problem: "Audited, restructured, and optimized Netcore, HubSpot & GA4 stack.",
-    impact: "20% improvement in lead quality, 25% faster reporting cycles",
+    impact: "+20% lead quality · 25% faster reporting",
     tags: ["Product Strategy", "Automation", "Attribution"],
     cta: "View More",
     status: "completed",
@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Event CMS Platform",
     problem: "Designed Strapi + NextJS CMS integrated with Zoom API & CRM.",
-    impact: "Enabled teams to independently run 40+ events/month",
+    impact: "5× SEO traffic · significant revenue impact",
     tags: ["Infra", "Workflow", "Scale"],
     cta: "Read More",
     status: "completed",
@@ -62,7 +62,7 @@ const projects = [
   {
     title: "Scheduling Microservice",
     problem: "Calendly-style booking system with dynamic slot logic and CRM sync.",
-    impact: "Cut meeting ops time by 80%, supported 1000+ monthly meetings",
+    impact: "70% ops savings · 1,000+ meetings/mo",
     tags: ["Infra", "SaaS Design", "UX Simplification"],
     cta: "Case Study",
     status: "completed",
@@ -72,7 +72,7 @@ const projects = [
   {
     title: "Content Ops Automation",
     problem: "Automated technical content delivery pipelines for AlmaBetter.",
-    impact: "90% error reduction + 7-week predictable delivery cycles",
+    impact: "25% faster reporting",
     tags: ["Process Design", "Jira", "Education"],
     cta: "Learn More",
     status: "completed",

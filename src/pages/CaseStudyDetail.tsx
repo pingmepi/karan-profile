@@ -42,7 +42,7 @@ const caseStudies = {
       "Implemented A/B testing on subject lines, timings, and channels"
     ],
     outcomes: [
-      "+90% increase in event registrations",
+      "+90% registrations",
       "Reduced registration time by 60%",
       "Created templates now reused across 30+ campaigns",
       "Improved event-to-enrollment ratio by 2.5×"
@@ -84,8 +84,8 @@ const caseStudies = {
       "Built fallback logic for leads missing UTMs (used referrer, form path, campaign name)"
     ],
     outcomes: [
-      "20% improvement in lead quality",
-      "25% reduction in reporting turnaround (from 5 days to under 36 hours)",
+      "+20% lead quality",
+      "25% faster reporting",
       "40% decrease in duplicate lead entries",
       "Enabled channel-level ROI tracking → improved ad budget allocation",
       "Alignment across marketing, automation, and sales teams"
@@ -146,7 +146,7 @@ const caseStudies = {
   "scheduling-microservice": {
     title: "Building a Scheduling Microservice That Cut Ops Time by 70%",
     tags: ["Infrastructure", "UX", "CRM Sync"],
-    overview: "While working in the CTO's Office at Miles Education, I designed and shipped a Calendly-style scheduling microservice that streamlined appointment booking across marketing, sales, and academic teams. The solution not only eliminated manual coordination but became a reusable asset powering 1,000+ meetings/month.",
+    overview: "While working in the CTO's Office at Miles Education, I designed and shipped a Calendly-style scheduling microservice that streamlined appointment booking across marketing, sales, and academic teams. The solution not only eliminated manual coordination but became a reusable asset powering 1,000+ meetings/mo.",
     context: "Lead-to-meeting handoff was one of the weakest links in our funnel. Despite having inbound leads and outbound cadences, the actual scheduling process was: Manual (via emails, WhatsApp, or shared Google Sheets), untracked (no centralized view of booked or missed meetings), and unattributed (CRM didn't log source, time-to-meeting, or lead status). This created 30%+ drop-offs post-lead capture, no-show spikes due to poor reminders, and high operational load on support teams.",
     challenge: "We needed a multi-tenant, modular scheduling system that could: Allow dynamic slot-based booking based on available faculty or advisors, automatically sync meetings with CRM + calendars, trigger personalized reminders via WhatsApp & email, securely handle access (role-based views for marketing vs academic teams), and work without paying for enterprise Calendly or routing through Zapier.",
     approach: [
@@ -176,8 +176,8 @@ const caseStudies = {
       "Security: JWT-based user validation + DB-level permissions"
     ],
     outcomes: [
-      "70% reduction in ops effort for scheduling",
-      "1000+ self-serve meetings/month with automated sync",
+      "70% ops savings",
+      "1,000+ meetings/mo",
       "25% decrease in lead-to-meeting time",
       "Improved conversion rates for leads who scheduled within 48 hrs",
       "Reused the same microservice across 3 teams (marketing, academic advising, sales)"

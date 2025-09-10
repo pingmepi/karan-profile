@@ -8,7 +8,7 @@ const navigationItems = [
   { name: "Projects", path: "/projects" },
   { name: "Case Studies", path: "/case-studies" },
   { name: "Not Work", path: "/not-work" },
-  // { name: "Writings", path: "/writings" }, // Hidden
+  // { name: "Writings", path: "/writings" }, // Hidden intentionally
   { name: "Contact", path: "/contact" },
 ];
 

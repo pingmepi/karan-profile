@@ -127,7 +127,7 @@ export default function Contact() {
               <span className="text-sm font-medium">Twitter</span>
             </a>
             <a
-              href="#"
+              href="https://github.com/pingmepi"
               className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-smooth group"
             >
               <div className="p-3 rounded-lg bg-accent group-hover:bg-primary/10 transition-smooth">

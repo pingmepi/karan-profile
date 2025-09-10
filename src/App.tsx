@@ -9,7 +9,7 @@ import Projects from "./pages/Projects";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotWork from "./pages/NotWork";
-import Writings from "./pages/Writings";
+// import Writings from "./pages/Writings";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -30,7 +30,8 @@ const App = () => (
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/not-work" element={<NotWork />} />
             <Route path="/photography" element={<NotWork />} />
-            {/* <Route path="/writings" element={<Writings />} /> */}
+<<<<<<< Updated upstream
+            {/* <Route path="/writings" element={<Writings />} /> intentionally unlinked */}
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
