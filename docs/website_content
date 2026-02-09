@@ -1,0 +1,751 @@
+# Karan Mandalam — Site Content (Markdown Spec for LLMs, v2)
+
+> Single-file content source for all pages.
+> **Positioning:** AI **Product** Leader (product strategy × systems architecture × AI automation).
+> **Canonical metrics (use consistently):** **5× SEO traffic · significant revenue impact · 70% ops savings · +90% registrations · +20% lead quality · 25% faster reporting · 1,000+ meetings/mo**.
+> **Hobbies live only on Not Work; do not reference hobbies on work pages.**
+
+---
+
+## Page: `/` (Home)
+
+### Meta
+
+* **Title:** Karan Mandalam — AI Product Leader (Strategy, Martech, Automation)
+* **Description:** I lead AI-native product initiatives in martech and CRM orchestration—shipping outcomes like 5× SEO traffic, significant revenue impact, 70% ops savings, +90% registrations.
+
+---
+
+### Section: Hero
+
+**Content**
+
+* **H1:** AI Product Leader
+* **Subhead:** I build and scale AI-native products—combining product strategy, martech architecture, and automation to drive measurable growth.
+* **Metric pills:** **5× SEO traffic** · **Significant revenue impact** · **70% ops savings** · **+20% lead quality**
+* **CTAs:** View Projects · Read Case Studies · Contact
+
+**Presentation**
+
+* Full-width hero. Single-line H1. Subhead ≤ 120 chars.
+* Metric pills inline (desktop) / stacked (mobile).
+* Three primary buttons; clear focus states and keyboard order.
+
+---
+
+### Section: What I Do (4 bullets)
+
+**Content**
+
+* **Product Strategy & Roadmaps** — Own discovery→definition→delivery; align goals, score trade-offs, and drive iteration.
+* **Systems & Architecture** — Design API-first martech/CRM stacks with reliable attribution, privacy, and auditability.
+* **Automation & Agents** — n8n + LLM/HITL flows with retries, fallbacks, and cost controls, integrated into product surfaces.
+* **Measurement & Governance** — KPIs instrumented end-to-end (marketing → CRM → revenue) with dashboards leaders trust.
+
+**Presentation**
+
+* Four equal cards; concise copy; minimal icons.
+
+---
+
+### Section: Impact Highlights
+
+**Content**
+
+* **5× increase** in organic traffic via an SEO-first CMS.
+* **Significant revenue impact** from event-funnel optimisation (4-month window).
+* **70% reduction** in operational effort via automations (scheduler + comms).
+* **+90% registrations** after funnel & UX fixes.
+* **+20% lead quality** from attribution & segmentation.
+* **25% faster reporting** via consolidated analytics.
+
+**Presentation**
+
+* Horizontal metric strip with one-line context.
+* Each metric deep-links to a relevant case study.
+
+---
+
+### Section: Featured Work
+
+**Content (cards)**
+
+* **Event CMS + SEO System** — Strapi + Next.js; CRM/Zoom integrations; enabled **40+** events/month. → *View case study*
+* **Scheduling Microservice** — Multi-tenant, dynamic slot logic, CRM sync; **70%** ops reduction; **1,000+** meetings/month. → *View case study*
+* **MereKapade** — AI-led design commerce MVP; React + Canvas + Supabase + GPT. → *Read write-up*
+
+**Presentation**
+
+* 3 responsive tiles with diagram/thumbnail, 1-liner, deep-link.
+
+---
+
+### Section: About (micro-bio)
+
+**Content**
+I lead AI-native product initiatives across martech, automation, and CRM orchestration. I partner with marketing, engineering, and data teams to design systems, ship features, and instrument outcomes end-to-end. Previously built growth and learning products at AlmaBetter and UpGrad.
+
+**Presentation**
+
+* One concise paragraph. Links: LinkedIn · Resume (PDF).
+
+---
+
+### Section: Testimonials (optional)
+
+**Content**
+
+* “Karan aligns product strategy with the right architecture—attribution became boringly reliable.” — *Marketing Lead*
+* “The scheduler killed our ops fire drills and scaled without drama.” — *Sales Ops Manager*
+
+**Presentation**
+
+* Two pull-quotes; small avatars if permitted.
+
+---
+
+## Page: `/projects` (Projects)
+
+### Meta
+
+* **Title:** Selected AI, Martech, CRM & Platform Projects
+* **Description:** Product-led projects with clear stack, role, and outcomes—each linking to a deeper case study.
+
+---
+
+### Section: Intro + Filters
+
+**Content**
+Selected projects across AI, Martech, CRM, and platform automation.
+
+**Filters**
+Martech · AI · CRM · Platform · Commerce
+
+---
+
+### Section: Project Cards
+
+**AI-Powered Marketing Automation** *(Martech, AI, CRM)*
+
+* **Product role:** Defined problem statements, journey hypotheses, and success metrics; drove rollout and iteration.
+* **One-liner:** Personalised nurturing with n8n, Netcore/WABA, Mandrill.
+* **Stack:** n8n · Netcore · WABA · Mandrill · Postgres
+* **Outcomes:** **−30%** drop-offs; **2.5×** lifecycle engagement (defined cohort).
+* **Link:** /case-studies/martech-revamp-attribution
+
+**Martech Stack Optimisation** *(Martech, Attribution)*
+
+* **Product role:** Owned attribution roadmap and UTM governance; aligned marketing & data teams.
+* **One-liner:** GA4, Netcore, HubSpot, Metabase re-architected for attribution.
+* **Stack:** GA4 · HubSpot · Netcore · Metabase · Postgres
+* **Outcomes:** **+20%** lead quality; **25%** faster reporting; **−40%** CRM dupes.
+* **Link:** /case-studies/martech-revamp-attribution
+
+**Event CMS Platform** *(Platform, Ops)*
+
+* **Product role:** Prioritised CMS capabilities (SEO templates, promo blocks), success criteria, and internal adoption.
+* **One-liner:** Strapi + Next.js CMS; CRM & Zoom automations; SEO templates.
+* **Stack:** Strapi · Next.js · Zoom API · CRM
+* **Outcomes:** Teams self-serve **40+** events/month.
+* **Link:** /case-studies/event-funnels-cms
+
+**Scheduling Microservice** *(Platform, Ops)*
+
+* **Product role:** Wrote PRD for multi-tenant scheduling; defined slot logic & audit; led cross-team rollout.
+* **One-liner:** Multi-tenant scheduler with dynamic slots + CRM sync.
+* **Stack:** Next.js · Supabase · n8n · Webhooks · RBAC
+* **Outcomes:** **70%** ops reduction; **1,000+** meetings/mo; **25%** faster lead→meeting.
+* **Link:** /case-studies/scheduling-at-scale
+
+**MereKapade — AI Design Commerce** *(AI, Commerce)*
+
+* **Product role:** Solo PM/IC; market hypothesis, UX, MVP scope, validation loops.
+* **One-liner:** Prompt→design generation with live preview & saved sessions.
+* **Stack:** React · Canvas API · Supabase (Auth/RLS) · GPT
+* **Outcomes:** MVP in **8 weeks**; **100+** testers; **3.4** designs/session.
+* **Link:** /case-studies/merekapade
+
+**The Third Place — Community Infra** *(Platform, Privacy)*
+
+* **Product role:** Defined governance primitives (hosts, badges, visibility), admin-only edits, and privacy defaults.
+* **One-liner:** RBAC, events, badges, referrals; privacy-first visibility.
+* **Stack:** Supabase · Next.js · RBAC · Admin tools
+* **Outcomes:** Decoupled role/badge logic; closed beta live.
+* **Link:** /case-studies/community-infra
+
+**Content Ops Automation** *(Education, Ops)*
+
+* **Product role:** Introduced sprint cadence, ownership matrix, and outcome metrics.
+* **One-liner:** Sprint-driven content delivery with Jira + analytics.
+* **Stack:** Jira · Zapier · Metabase · Feedback intake
+* **Outcomes:** **−90%** errors; **7-week** predictable delivery; **−23%** drop-offs.
+* **Link:** /case-studies/content-ops-automation
+
+**Presentation**
+
+* Uniform card template: Title → Product role (1 line) → One-liner → Stack badges → Outcomes → Link.
+
+---
+
+## Page: `/case-studies` (Index)
+
+### Meta
+
+* **Title:** Deep Dives — Product Strategy, AI Automation, Attribution, Platforms
+* **Description:** Executive summaries, metrics, and artifacts—showing product decisions and system design behind the outcomes.
+
+---
+
+### Section: Intro
+
+**Content**
+Deep dives into AI-native product work. Each study covers problem framing, product decisions, architecture, and KPI outcomes.
+
+---
+
+### Section: Case Study Cards (with KPIs & tags)
+
+* **Event Funnels & CMS** — **+90% registrations · significant revenue impact · +25% event→QL · 40+ events/mo**
+  *Tags:* Product Strategy · Event Automation · SEO · CRM
+  **Link:** /case-studies/event-funnels-cms
+
+* **Martech Revamp & Attribution** — **+20% lead quality · 25% faster reporting · −40% CRM dupes**
+  *Tags:* Martech · Attribution · Analytics
+  **Link:** /case-studies/martech-revamp-attribution
+
+* **Scheduling at Scale** — **70% ops reduction · 1,000+ meetings/mo · 25% faster lead→meeting**
+  *Tags:* Platform · SaaS Infra · Ops
+  **Link:** /case-studies/scheduling-at-scale
+
+* **MereKapade (AI Commerce)** — **8 weeks MVP · 100+ testers · 3.4 designs/session**
+  *Tags:* AI · Consumer · Commerce
+  **Link:** /case-studies/merekapade
+
+* **Community Infra (Privacy-First)** — **Decoupled role/badge logic · Closed beta live**
+  *Tags:* Platform · Community · Privacy
+  **Link:** /case-studies/community-infra
+
+* **Content Ops Automation** — **−90% errors · 7-week predictable delivery · −23% drop-offs**
+  *Tags:* Agile Ops · Education · Analytics
+  **Link:** /case-studies/content-ops-automation
+
+---
+
+## Case Study Page: `/case-studies/event-funnels-cms`
+
+### Hero
+
+* **Title:** Event Funnels & SEO-first Event CMS
+* **Summary:** Redesigned event journeys and shipped an SEO-first Event CMS integrated with CRM & Zoom to improve registrations and reduce ops overhead.
+* **KPIs:** **+90% registrations** · **Significant revenue impact** · **+25% event→QL** · **40+ events/mo**
+* **Tags:** Product Strategy · Event Automation · Funnel Optimisation · SEO · CRM
+
+### Overview
+
+Fragmented journeys and login loops hurt conversions. I led the product work—reframed the funnel, set success metrics, and delivered an SEO-focused Event CMS to make events self-serve.
+
+### Context & Role
+
+* Companies: AlmaBetter (funnel/registrations), Miles Education (Event CMS)
+* Role: Lead PM / Program Manager (CTO’s Office)
+* Teams: Marketing, CRM, Engineering, Design, Ops
+
+### Problem
+
+* Registration friction (Google login loops; multi-step forms)
+* Manual event creation; uneven SEO
+* Broken attribution between events → CRM
+
+### Objectives
+
+* Increase registrations and lead quality
+* Enable self-serve event creation and promotion
+* Preserve clean attribution into CRM
+
+### Product Decisions
+
+* Prioritised **1-click registration** and form simplification over heavy pre-qualification.
+* Standardised SEO templates and promo blocks to scale content quickly.
+* Enforced UTM discipline and event→CRM mapping before adding new channels.
+
+### Solution
+
+* 1-click registration with inline email validation (n8n)
+* Removed Google login loop; simplified forms; conditional fields
+* Lifecycle journeys (WebEngage) + WABA fallback
+* Event CMS (Strapi + Next.js): SEO templates; CRM & Zoom integration
+* Attribution plumbing: UTM-consistent links; event→CRM normalisation
+
+### Architecture
+
+Next.js (web) → Strapi (CMS) → CRM & Zoom APIs · n8n for validation/reminders/tagging · UTM → CRM fields → Metabase.
+
+### Flows
+
+* Registration → Validation → CRM write → Reminder → Attendance sync
+* Event creation → SEO page publish → CRM/Zoom sync
+
+### Metrics & Impact
+
+* **+90% registrations**
+* **Significant revenue impact** within a 4-month window
+* **+25%** event→qualified-lead conversion
+* **40+** events/month via CMS
+
+### Evidence
+
+GA4 funnel; CRM opportunity mapping; Metabase cohorts; Zoom attendance logs.
+
+### Challenges & Trade-offs
+
+Form length vs qualification; SEO editorial guardrails; syncing across Zoom & CRM.
+
+### Lessons
+
+UTM discipline matters as much as UX; self-serve needs templates + validation.
+
+### Next
+
+Auto-generated session snippets; reminder cadence A/B; AI agenda builder.
+
+### Artifacts
+
+Funnel diagram; CMS schema; UTM spec; SEO template; n8n registration flow.
+
+### Tech
+
+Strapi · Next.js · n8n · WebEngage · WABA · Zoom API · GA4 · Postgres/Metabase · CRM
+
+---
+
+## Case Study Page: `/case-studies/martech-revamp-attribution`
+
+### Hero
+
+* **Title:** Martech Revamp for Attribution Accuracy
+* **Summary:** Re-architected GA4/Netcore/HubSpot/Metabase for clean attribution, faster reporting, and better lead quality.
+* **KPIs:** **+20% lead quality** · **25% faster reporting** · **−40% CRM duplicates**
+* **Tags:** Martech · Attribution · Analytics · Data Quality
+
+### Overview
+
+Attribution was inconsistent and reporting slow. I owned the product roadmap for measurement and rebuilt the data path to trust outcomes—daily.
+
+### Context & Role
+
+* Company: Miles Education
+* Role: Program Manager (CTO’s Office)
+
+### Problem
+
+Mixed UTM taxonomies; duplicate contacts; manual reporting.
+
+### Objectives
+
+Single source of truth; faster, self-serve reporting.
+
+### Product Decisions
+
+* Mandated a pragmatic UTM spec; wrote guardrails into tooling (link builders, validation).
+* Prioritised dedupe and enrichment before advanced analytics to avoid compounding errors.
+
+### Solution
+
+UTM standard + link governance; n8n enrichment (normalisation, tagging, dedupe); Metabase dashboards on Postgres; monthly audits.
+
+### Architecture
+
+Ingest (web/app) → GA4 → ETL (n8n) → CRM + Postgres → Metabase.
+
+### Metrics & Impact
+
+**+20%** lead quality · **25%** faster reporting · **−40%** CRM duplicates.
+
+### Evidence
+
+Pre/post UTM compliance; dedupe logs; dashboard load times; QBR snippets.
+
+### Challenges
+
+UTM enforcement across many operators; legacy campaigns.
+
+### Lessons
+
+Specs are necessary; enforcement via tools is sufficient.
+
+### Next
+
+MMM-style blended ROI; anomaly detection on campaigns.
+
+### Artifacts
+
+UTM spec; enrichment flow; dedupe logic; dashboards.
+
+### Tech
+
+GA4 · Netcore · HubSpot · n8n · Postgres · Metabase
+
+---
+
+## Case Study Page: `/case-studies/scheduling-at-scale`
+
+### Hero
+
+* **Title:** Multi-Tenant Scheduling Microservice
+* **Summary:** Dynamic slot logic + CRM sync reduced ops load and accelerated lead→meeting.
+* **KPIs:** **70% ops reduction** · **1,000+ meetings/mo** · **25% faster lead→meeting**
+* **Tags:** Platform · SaaS Infra · Ops Automation
+
+### Overview
+
+Manual scheduling slowed growth teams. I wrote the PRD, set success metrics, and led delivery across teams.
+
+### Context & Role
+
+Internal product for sales & academic teams; cross-functional leadership.
+
+### Problem
+
+Spreadsheet slots; inconsistent rules; no auditability.
+
+### Objectives
+
+Self-serve booking; consistent rules; unified audit trail.
+
+### Product Decisions
+
+* Declarative slot logic with test cases; auditability as a first-class requirement.
+* CRM as source of truth for people/state; scheduler as orchestration layer.
+
+### Solution
+
+Next.js + Supabase (RBAC, calendars, conflict checks); n8n triggers (reminders, reschedules, tagging); CRM sync + API fallback; webhooks; audit logs.
+
+### Architecture
+
+Scheduler service ↔ CRM ↔ n8n ↔ Notification providers.
+
+### Metrics & Impact
+
+**70%** ops reduction · **1,000+** meetings/mo · **25%** faster lead→meeting.
+
+### Evidence
+
+Ops time studies; CRM event logs; scheduler audits.
+
+### Challenges
+
+Multi-team priorities; timezones; overlap edge cases.
+
+### Lessons
+
+Testable slot logic and audit trails prevent regressions at scale.
+
+### Next
+
+Pool routing; no-show rebooking; lead-score-aware slot boosting.
+
+### Artifacts
+
+Slot-logic diagram; RBAC matrix; audit log examples.
+
+### Tech
+
+Next.js · Supabase (Auth/RLS) · n8n · Webhooks · CRM
+
+---
+
+## Case Study Page: `/case-studies/merekapade`
+
+### Hero
+
+* **Title:** Prompt-to-Design Commerce MVP
+* **Summary:** Users generate wearable designs from prompts with live preview and saved sessions.
+* **KPIs:** **MVP in 8 weeks** · **100+ testers** · **3.4 designs/session (first session avg)**
+* **Tags:** AI · Consumer · Commerce
+
+### Overview
+
+A solo build exploring AI-assisted design → purchase flows with a friction-light canvas UI.
+
+### Context & Role
+
+Solo PM/IC: market hypothesis, UX, MVP scope, validation loops.
+
+### Problem
+
+Cold-start creativity; session persistence; safe prompts.
+
+### Objectives
+
+Fast ideation → preview; save/share; low latency.
+
+### Product Decisions
+
+* Prioritised latency and usability over advanced generation controls.
+* Kept profiles RLS-secured for safety and portability.
+
+### Solution
+
+React + Canvas customiser; GPT for ideation; Supabase Auth/RLS; order model (size/SKU/pricing); token accounting + retries.
+
+### Architecture
+
+React FE ↔ Supabase (Auth/DB/Storage) ↔ Prompt service ↔ Order service.
+
+### Metrics & Impact
+
+**100+** testers; **3.4** designs per first session; qualitative feedback: playful & fast.
+
+### Evidence
+
+Event logs (session length, saves); prompt error rates; order funnel.
+
+### Challenges
+
+Prompt safety; rendering performance on low-end devices.
+
+### Lessons
+
+Preview latency trumps model fanciness for novice users.
+
+### Next
+
+Template marketplace; social share; checkout experiments.
+
+### Artifacts
+
+System diagram; schema; error-handling strategy; UI loop video.
+
+### Tech
+
+React · Canvas API · Supabase (Auth/RLS/Storage) · GPT
+
+---
+
+## Case Study Page: `/case-studies/community-infra`
+
+### Hero
+
+* **Title:** Community Infra — Events, Badges, Hosts, Referrals
+* **Summary:** RBAC-first architecture with privacy-centric visibility.
+* **KPIs:** **Decoupled role/badge logic** · **Closed beta live**
+* **Tags:** Platform · Community · Privacy UX
+
+### Overview
+
+Infra for communities to run events with assigned hosts, badges, and optional participant visibility.
+
+### Context & Role
+
+Architect & PM; admin-only edits by design.
+
+### Problem
+
+Role/badge coupling; visibility/privacy requirements; host workflows.
+
+### Objectives
+
+Separation of concerns; admin-only edits; privacy by default.
+
+### Product Decisions
+
+* Badge system separate from roles; one host per event; admin assignment.
+* Visibility flags enforced at API layer; no participant data sent by default.
+
+### Solution
+
+RBAC model; visibility filters; Google Sign-In; preferences endpoint; storage-efficient activity logging.
+
+### Architecture
+
+Supabase (RLS) + Next.js; endpoints for events/hosts/badges; admin console.
+
+### Metrics & Impact
+
+Clean governance; beta usage across growing communities.
+
+### Evidence
+
+ERD; RLS policies; privacy tests.
+
+### Challenges
+
+Balancing visibility with privacy and safety.
+
+### Lessons
+
+Make privacy choices backend-configurable and overridable.
+
+### Next
+
+Referral analytics; discussion-expiry overrides; reporting.
+
+### Artifacts
+
+ERD; visibility matrix; admin flows; RLS snippets.
+
+### Tech
+
+Supabase · Next.js · RBAC · Admin tools
+
+---
+
+## Case Study Page: `/case-studies/content-ops-automation`
+
+### Hero
+
+* **Title:** Content Ops → Predictable, Measurable, Sprint-Driven
+* **Summary:** Jira workflows + analytics turned content delivery into a reliable machine.
+* **KPIs:** **−90% errors** · **7-week predictable delivery** · **−23% learner drop-offs**
+* **Tags:** Agile Ops · Education · Analytics
+
+### Overview
+
+Transformed content ops using standardised workflows, feedback loops and dashboards.
+
+### Context & Role
+
+Cross-functional with content teams; process + tooling ownership.
+
+### Problem
+
+Ad-hoc delivery; unclear ownership; recurring errors; poor visibility.
+
+### Objectives
+
+Predictability, quality, transparency.
+
+### Product Decisions
+
+* Defined DRIs and rituals; built dashboards for velocity and defects.
+* Integrated learner feedback into sprint reviews for continuous improvement.
+
+### Solution
+
+Jira workflows; sprint reviews; ownership matrix; feedback ingestion; Zapier + Metabase dashboards; 2-week cadence.
+
+### Architecture
+
+Intake → Jira → Automation → Metabase dashboards → Review cadence.
+
+### Metrics & Impact
+
+**−90%** errors; **7-week** predictable delivery; **−23%** learner drop-offs.
+
+### Evidence
+
+Burndowns; error trend charts; release cadence logs.
+
+### Challenges
+
+Cultural change; initial slowdown with quality gates.
+
+### Lessons
+
+Measurement + visibility → accountability; rituals compound.
+
+### Next
+
+LLM-based ticket triage; QA gates in CI for content.
+
+### Artifacts
+
+Workflow diagrams; dashboards; checklists.
+
+### Tech
+
+Jira · Zapier · Metabase · Feedback tooling
+
+---
+
+## Page: `/not-work` (Hobby)
+
+> **Intentionally non-work. No analogies to product or leadership.**
+
+### Meta
+
+* **Title:** Photography & Motorcycling
+* **Description:** A small selection of frames and routes I’ve enjoyed. No work content here.
+
+---
+
+### Section: Photography
+
+**Content**
+A small selection of frames I’ve enjoyed making.
+
+**Albums**
+Street · Travel · Abstract · Portraits (4–8 images each; short captions optional)
+
+**Presentation**
+Masonry/lightbox gallery. Alt text. No work references.
+
+---
+
+### Section: Motorcycling
+
+**Content**
+Routes I’ve ridden and loved.
+
+**Ride cards (examples)**
+
+* **Pacific Coast Highway** — 655 mi · California, USA · Summer 2023
+* **Blue Ridge Parkway** — 469 mi · Virginia & North Carolina · Fall 2022
+* **Going-to-the-Sun Road** — 50 mi · Montana, USA · Summer 2023
+
+**Presentation**
+Simple cards with distance, place, season; optional single photo per card.
+
+---
+
+### Section: (Optional) Volunteering / Community
+
+**Content**
+Occasional mentoring and OSS contributions.
+
+**Presentation**
+Plain list. No logos. No metrics unless fully verifiable.
+
+---
+
+## Page: `/contact` (Contact)
+;
+### Meta
+
+* **Title:** Get in Touch — AI Product & Automation
+* **Description:** Exploring AI-native product ideas, marketing automation, or CRM orchestration? Let’s talk.
+
+---
+
+### Section: Intro
+
+**Content**
+**H1:** Let’s build something.
+Exploring AI-native product ideas, marketing automation, or CRM orchestration? I’m happy to chat.
+
+---
+
+### Section: Contact Options
+
+**Content**
+
+* **Email:** [kmandalam@gmail.com](mailto:kmandalam@gmail.com)
+* **Form fields:** Name · Work email · Company · What you’d like to build (textarea) · Optional link(s)
+* **Social:** LinkedIn · Twitter/X · GitHub · Instagram
+* **Response time:** I usually reply within 48 hours.
+
+**Presentation**
+Two-column layout (form + direct links). Clear success/failure states. Validate inputs.
+
+---
+
+## Global Implementation Notes
+
+* **Navigation:** Home · Projects · Case Studies · Not Work · Contact
+* **Linking:** Home metrics → relevant case studies; project cards → case studies/write-ups.
+* **Consistency:** Same numbers across pages; **replace any revenue figures with “significant revenue impact.”**
+* **Artifacts:** Provide PNG/SVG diagrams for: Event CMS architecture, UTM/attribution flow, n8n orchestration (HITL/fallbacks), Scheduler slot logic, Community ERD.
+* **Accessibility:** High contrast, focus states, alt text, semantic headings (one H1 per page).
+* **Performance:** Responsive images; lazy-load galleries/diagrams; prefetch case-study routes.
+* **Downloadables:** Resume/One-pager (PDF) linked on Home and Contact.

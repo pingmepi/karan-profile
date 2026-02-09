@@ -1,6 +1,10 @@
+"use client";
+
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
@@ -8,36 +12,42 @@ const navigationItems = [
   { name: "Projects", path: "/projects" },
   { name: "Case Studies", path: "/case-studies" },
   { name: "Not Work", path: "/not-work" },
-  // { name: "Writings", path: "/writings" }, // Hidden
+  // { name: "Writings", path: "/writings" }, // Hidden intentionally
   { name: "Contact", path: "/contact" },
 ];
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <NavLink to="/" className="text-xl font-semibold text-foreground hover:text-primary transition-smooth">
-            Karan
-          </NavLink>
+          <Link href="/" className="hover:opacity-80 transition-smooth">
+            <Image
+              src="/assets/logo.png"
+              alt="Karan Mandalam"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigationItems.slice(1).map((item) => (
-              <NavLink
+              <Link
                 key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-smooth hover:text-primary ${
-                    isActive ? "text-primary" : "text-muted-foreground"
-                  }`
-                }
+                href={item.path}
+                className={`text-sm font-medium transition-smooth hover:text-primary ${
+                  pathname === item.path ? "text-primary" : "text-muted-foreground"
+                }`}
               >
                 {item.name}
-              </NavLink>
+              </Link>
             ))}
           </div>
 
@@ -59,18 +69,16 @@ export function Navigation() {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-3">
               {navigationItems.slice(1).map((item) => (
-                <NavLink
+                <Link
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `text-sm font-medium transition-smooth hover:text-primary ${
-                      isActive ? "text-primary" : "text-muted-foreground"
-                    }`
-                  }
+                  className={`text-sm font-medium transition-smooth hover:text-primary ${
+                    pathname === item.path ? "text-primary" : "text-muted-foreground"
+                  }`}
                 >
                   {item.name}
-                </NavLink>
+                </Link>
               ))}
             </div>
           </div>
