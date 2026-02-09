@@ -5,8 +5,28 @@ import PhotoGrid from "../not-work/PhotoGrid";
 
 export const metadata: Metadata = {
   title: "Photography & Motorcycling – Karan Mandalam",
-  description: "A curated gallery of photos and riding adventures.",
+  description:
+    "A curated gallery of photos and riding adventures. Capturing moments through the lens and exploring the open road.",
+  keywords: [
+    "Photography",
+    "Motorcycling",
+    "Travel photography",
+    "Riding adventures",
+    "Photo gallery",
+  ],
   alternates: { canonical: "/photography" },
+  openGraph: {
+    title: "Photography & Motorcycling – Karan Mandalam",
+    description:
+      "A curated gallery of photos and riding adventures. Capturing moments through the lens and exploring the open road.",
+    url: "/photography",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Photography & Motorcycling – Karan Mandalam",
+    description: "A curated gallery of photos and riding adventures.",
+  },
 };
 
 const rides = [

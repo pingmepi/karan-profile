@@ -13,10 +13,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!caseStudy) {
     return { title: "Case Study Not Found" };
   }
+
+  const description = caseStudy.overview.slice(0, 155) + (caseStudy.overview.length > 155 ? "..." : "");
+
   return {
     title: `${caseStudy.title} – Karan Mandalam`,
-    description: caseStudy.overview.slice(0, 150),
+    description,
+    keywords: [
+      "Product case study",
+      "Martech",
+      "Product management",
+      ...caseStudy.tags,
+    ],
     alternates: { canonical: `/case-studies/${id}` },
+    openGraph: {
+      title: `${caseStudy.title} – Karan Mandalam`,
+      description,
+      url: `/case-studies/${id}`,
+      type: "article",
+      images: [
+        {
+          url: "/assets/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: caseStudy.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${caseStudy.title} – Karan Mandalam`,
+      description,
+      images: ["/assets/og-image.png"],
+    },
   };
 }
 

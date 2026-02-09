@@ -10,8 +10,28 @@ import PhotoGrid from "./PhotoGrid";
 export const metadata: Metadata = {
   title: "Not Work – Karan Mandalam",
   description:
-    "Photography, motorcycling adventures, and volunteer work that keeps me grounded.",
+    "Photography, motorcycling adventures, and volunteer work. Exploring creativity and community beyond product management.",
+  keywords: [
+    "Photography",
+    "Motorcycling",
+    "Volunteer work",
+    "Creative pursuits",
+    "Community work",
+  ],
   alternates: { canonical: "/not-work" },
+  openGraph: {
+    title: "Not Work – Karan Mandalam",
+    description:
+      "Photography, motorcycling adventures, and volunteer work. Exploring creativity and community beyond product management.",
+    url: "/not-work",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Not Work – Karan Mandalam",
+    description:
+      "Photography, motorcycling adventures, and volunteer work.",
+  },
 };
 
 const rides = [

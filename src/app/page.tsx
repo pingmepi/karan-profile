@@ -3,12 +3,47 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, DollarSign, Settings, Users, Target } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { PersonStructuredData, WebsiteStructuredData } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Karan Mandalam — AI Product Leader (Strategy, Martech, Automation)",
   description:
     "I lead AI-native product initiatives in martech and CRM orchestration—shipping outcomes like 5× SEO traffic, significant revenue impact, 70% ops savings, +90% registrations.",
+  keywords: [
+    "AI Product Manager",
+    "Product Leader",
+    "Martech",
+    "Marketing Automation",
+    "CRM Orchestration",
+    "Product Strategy",
+    "AI-native products",
+    "Growth Systems",
+    "Attribution",
+    "Karan Mandalam",
+  ],
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Karan Mandalam — AI Product Leader",
+    description:
+      "Leading AI-native product initiatives in martech and CRM orchestration. Proven outcomes: 5× SEO traffic, 70% ops savings, +90% registrations.",
+    url: "/",
+    type: "website",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Karan Mandalam - AI Product Leader",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Karan Mandalam — AI Product Leader",
+    description:
+      "Leading AI-native product initiatives in martech and CRM orchestration. Proven outcomes: 5× SEO traffic, 70% ops savings, +90% registrations.",
+    images: ["/assets/og-image.png"],
+  },
 };
 
 const heroMetrics = [
@@ -106,9 +141,26 @@ const featuredWork = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      {/* Section 1: Hero */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24 animate-fade-in">
+    <>
+      <PersonStructuredData
+        name="Karan Mandalam"
+        jobTitle="AI Product Leader"
+        url="https://karanmandalam.com"
+        sameAs={[
+          "https://www.linkedin.com/in/mandalam-karan/",
+          "https://x.com/pingmepi",
+          "https://github.com/pingmepi",
+        ]}
+        description="AI Product Leader specializing in martech, CRM orchestration, and marketing automation. Proven track record of delivering measurable outcomes in product strategy and AI-native systems."
+      />
+      <WebsiteStructuredData
+        name="Karan Mandalam - AI Product Leader"
+        url="https://karanmandalam.com"
+        description="Portfolio and case studies of Karan Mandalam, an AI Product Leader specializing in martech, CRM orchestration, and product strategy."
+      />
+      <div className="min-h-screen">
+        {/* Section 1: Hero */}
+        <section className="pt-20 pb-16 md:pt-32 md:pb-24 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">
@@ -248,6 +300,7 @@ export default function HomePage() {
           </Card>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

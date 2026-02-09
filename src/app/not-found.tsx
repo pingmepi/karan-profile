@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+// Note: metadata export doesn't work in client components
+// The noindex robots meta is handled in the root layout for 404s
+
 export default function NotFound() {
   const router = useRouter();
 

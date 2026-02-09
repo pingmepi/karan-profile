@@ -3,8 +3,29 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Writings – Karan Mandalam",
-  description: "Essays on product, technology, and creative pursuits.",
+  description:
+    "Essays and insights on product management, AI, martech, technology, and creative pursuits. Thoughts on building better products and systems.",
+  keywords: [
+    "Product writing",
+    "AI essays",
+    "Martech insights",
+    "Product management blog",
+    "Technology writing",
+  ],
   alternates: { canonical: "/writings" },
+  openGraph: {
+    title: "Writings – Karan Mandalam",
+    description:
+      "Essays and insights on product management, AI, martech, and technology.",
+    url: "/writings",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Writings – Karan Mandalam",
+    description:
+      "Essays and insights on product management, AI, martech, and technology.",
+  },
 };
 
 const posts = [

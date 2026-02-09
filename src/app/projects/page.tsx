@@ -7,8 +7,30 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Projects – Karan Mandalam",
-  description: "Selected projects across AI, martech, automation, and product.",
+  description:
+    "Selected projects across AI, martech, automation, and product strategy. Explore work in marketing automation, CRM optimization, and AI-powered systems.",
+  keywords: [
+    "AI projects",
+    "Martech projects",
+    "Marketing automation",
+    "CRM optimization",
+    "Product portfolio",
+    "AI-powered systems",
+  ],
   alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Projects – Karan Mandalam",
+    description:
+      "Selected projects across AI, martech, automation, and product strategy. Explore work in marketing automation, CRM optimization, and AI-powered systems.",
+    url: "/projects",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects – Karan Mandalam",
+    description:
+      "Selected projects across AI, martech, automation, and product strategy.",
+  },
 };
 
 const projects = [

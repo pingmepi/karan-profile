@@ -5,8 +5,31 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Case Studies – Karan Mandalam",
-  description: "Deep dives into product, automation, attribution, and AI outcomes.",
+  description:
+    "Deep dives into product, automation, attribution, and AI outcomes. Real-world case studies showing measurable impact in martech, CRM, and growth systems.",
+  keywords: [
+    "Product case studies",
+    "Martech case studies",
+    "Marketing automation",
+    "Attribution",
+    "CRM optimization",
+    "Product outcomes",
+    "AI implementation",
+  ],
   alternates: { canonical: "/case-studies" },
+  openGraph: {
+    title: "Case Studies – Karan Mandalam",
+    description:
+      "Deep dives into product, automation, attribution, and AI outcomes. Real-world case studies showing measurable impact.",
+    url: "/case-studies",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies – Karan Mandalam",
+    description:
+      "Deep dives into product, automation, attribution, and AI outcomes.",
+  },
 };
 
 const caseStudies = [
