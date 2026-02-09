@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { caseStudies } from "@/data/case-study-details";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://karanmandalam.com";
+  const baseUrl = "https://karan-profile-zeta.vercel.app";
 
   // Get all case study IDs
   const caseStudyIds = Object.keys(caseStudies);

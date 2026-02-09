@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://karanmandalam.com/sitemap.xml",
+    sitemap: "https://karan-profile-zeta.vercel.app/sitemap.xml",
   };
 }
 

@@ -168,8 +168,8 @@ Complete icon set already implemented:
 
 ## 🔗 Important URLs
 
-- Sitemap: `https://karanmandalam.com/sitemap.xml`
-- Robots: `https://karanmandalam.com/robots.txt`
+- Sitemap: `https://karan-profile-zeta.vercel.app/sitemap.xml`
+- Robots: `https://karan-profile-zeta.vercel.app/robots.txt`
 - Google Search Console: Submit sitemap here
 - Structured Data Testing: https://search.google.com/test/rich-results
 

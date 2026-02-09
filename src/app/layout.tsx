@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   description:
     "I lead AI-native product initiatives in martech and CRM orchestration—shipping outcomes like 5× SEO traffic, significant revenue impact, 70% ops savings, +90% registrations.",
-  metadataBase: new URL("https://karanmandalam.com"),
+  metadataBase: new URL("https://karan-profile-zeta.vercel.app"),
   openGraph: {
     type: "website",
     siteName: "Karan Mandalam",

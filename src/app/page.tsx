@@ -145,7 +145,7 @@ export default function HomePage() {
       <PersonStructuredData
         name="Karan Mandalam"
         jobTitle="AI Product Leader"
-        url="https://karanmandalam.com"
+        url="https://karan-profile-zeta.vercel.app"
         sameAs={[
           "https://www.linkedin.com/in/mandalam-karan/",
           "https://x.com/pingmepi",
@@ -155,7 +155,7 @@ export default function HomePage() {
       />
       <WebsiteStructuredData
         name="Karan Mandalam - AI Product Leader"
-        url="https://karanmandalam.com"
+        url="https://karan-profile-zeta.vercel.app"
         description="Portfolio and case studies of Karan Mandalam, an AI Product Leader specializing in martech, CRM orchestration, and product strategy."
       />
       <div className="min-h-screen">
