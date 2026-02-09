@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     // 5. Prepare email payload
     const emailPayload = {
       from: "Portfolio Contact <noreply@contact.merekapade.com>",
-      to: "mandalam.karan@mileseducation.com",
+      to: "kmandalam@gmail.com",
       subject: `New Contact: ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       replyTo: email,
