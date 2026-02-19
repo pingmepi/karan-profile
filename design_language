@@ -1,160 +1,107 @@
-
-
-A bold, editorial, dark-themed design system built for immersive digital experiences.
+# Kinetic Geometry Design System
+> "Order through mathematical joy and dynamic assembly."
 
 ---
 
 ## 1. ✨ Visual Design Principles
 
-* **Dark Elegance:** Use deep backgrounds to highlight vibrant gradients and typography.
-* **Typography First:** Expressive serif headlines paired with clean, readable sans-serif body text.
-* **High Contrast:** Light text on dark backgrounds for optimal readability and visual punch.
-* **Human-Centric:** Soft shadows, smooth gradients, and personal imagery keep things relatable.
-* **Clean Composition:** Use whitespace (or “darkspace”) to group content clearly.
+*   **Constructive Play:** The interface is not just a static display; it is a playground. Elements should feel tangible, stackable, and capable of interaction.
+*   **Geometric Truth:** Design is built from fundamental primitives—**Circles, Squares, Triangles**. No decoration, only structure.
+*   **Kinetic Energy:** Motion is physics-based. Gravity, collision, and momentum replace standard "ease-in-out" CSS transitions.
+*   **Radical Contrast:** Rejection of subtle gradients. We use absolute blacks, stark whites, and punchy primary colors.
+*   **Grid as Game Board:** The layout grid is visible and acts as the "rules" of the system, but elements can break free.
 
 ---
 
-## 2. 🎨 Color Palette
+## 2. 🎨 Color Palette (The Bauhaus Set)
 
-| Role                   | Color             | Hex                                        |
-| ---------------------- | ----------------- | ------------------------------------------ |
-| **Primary Background** | Deep Charcoal     | `#121212`                                  |
-| **Surface Background** | Dark Gray         | `#1E1E1E`                                  |
-| **Primary Text**       | Off-White         | `#F5F5F5`                                  |
-| **Secondary Text**     | Muted Gray        | `#B3B3B3`                                  |
-| **Accent Gradient**    | Purple to Indigo  | `linear-gradient(90deg, #8F5AFF, #3D3DAA)` |
-| **Highlight**          | Electric Blue     | `#3D3DAA`                                  |
-| **CTA Button BG**      | White or Gradient | `#F5F5F5` or Gradient                      |
+| Role | Color Name | Hex | Usage |
+| :--- | :--- | :--- | :--- |
+| **Canvas** | **Gallery White** | `#F2F0E9` | Main background. Warm, paper-like off-white. |
+| **Ink** | **Construct Black** | `#121212` | Text, borders, structural lines. |
+| **Primary** | **Klein Blue** | `#002FA7` | Key actions, header backgrounds, large shapes. |
+| **Accent A** | **Signal Red** | `#FF2400` | Errors, alerts, or high-impact highlights. |
+| **Accent B** | **Bauhaus Yellow**| `#FFD700` | Decorative geometry, hover states. |
+
+> **Dark Mode Strategy:** Inverts Canvas to `#121212` and Ink to `#F2F0E9`. Primary colors remain vibrant to pop against the dark.
 
 ---
 
 ## 3. 🔠 Typography System
 
-| Element                 | Font             | Size | Weight      | Color     |
-| ----------------------- | ---------------- | ---- | ----------- | --------- |
-| **H1 (Name/Title)**     | Playfair Display | 96px | Bold Italic | `#F5F5F5` |
-| **H2 (Section Titles)** | Inter            | 36px | Semibold    | `#F5F5F5` |
-| **Body Text**           | Inter            | 16px | Regular     | `#F5F5F5` |
-| **Caption**             | Inter            | 12px | Light       | `#B3B3B3` |
+We use a pairing of an eccentric "Art School" display font with a highly geometric utilitarian sans-serif.
 
-> 🔤 All text should have at least 4.5:1 contrast against the background.
+| Element | Font | Weight | Characteristics |
+| :--- | :--- | :--- | :--- |
+| **Display (H1, H2)** | **Syne** | Extra Bold (800) | Unconventional, wide distinct shapes. "Art Gallery" vibe. |
+| **Body (p, li)** | **DM Sans** | Regular (400) | Geometric, low-contrast, highly legible. |
+| **Code / Tech** | **JetBrains Mono**| Medium (500) | For technical details, emphasizing the "system" aspect. |
+
+**Typography Rules:**
+*   **H1:** 8rem+ (Desktop). Massive. Overlapping other elements is allowed.
+*   **Line Quality:** All headers usually accompanied by a thick (2px-4px) underline or geometric primitive.
 
 ---
 
 ## 4. 🧩 UI Components
 
-### Buttons
+### Buttons & Actions
+*   **The "Primitive" Button:** Buttons are rarely just text. They are shapes.
+    *   *Primary:* A solid geometric shape (Square or Circle) with centered text. No rounded corners on squares (0px radius).
+    *   *Interaction:* On click, the button physically depresses (y-axis translation) + sharp color shift.
+*   **Cursor:** Custom cursor. A large stroke circle or crosshair that reacts to magnetic elements.
 
-| Type             | Style                                                         |
-| ---------------- | ------------------------------------------------------------- |
-| **Primary**      | Pill-shaped, White text on gradient or black                  |
-| **Secondary**    | Outlined with light border, on hover changes to gradient text |
-| **Hover State**  | Subtle scale (1.05) + shadow                                  |
-| **Active State** | Inset shadow, deeper tone                                     |
+### The "Card"
+*   **Style:** Thick borders (2px solid `#121212`). Minimal padding.
+*   **Shadow:** Hard drop shadows (No blur). `box-shadow: 8px 8px 0px #002FA7`.
+*   **Hover:** Shadow snaps to `0px`, card moves `8px 8px` to simulate being pressed flat.
 
-### Cards
-
-| Type              | Style                                                                         |
-| ----------------- | ----------------------------------------------------------------------------- |
-| **Project Cards** | Dark surface background, thumbnail preview, hover reveals gradient arrow icon |
-| **Info Cards**    | Inset container, bordered with soft glow or gradient edge                     |
-
----
-
-## 5. 📐 Layout & Spacing
-
-* **Grid:** 12-column responsive grid
-* **Content Width Max:** 1140px
-* **Section Padding:** 80px (desktop), 40px (mobile)
-* **Card Spacing:** 24px grid gutter
-* **Vertical Rhythm:** 8px baseline unit
+### Navigation
+*   **Deconstructed Nav:** Navigation items are scattered or stacked like building blocks, rather than a traditional top bar.
+*   **Sticky Blocks:** Nav elements follow the user but collide with content "walls".
 
 ---
 
-## 6. 📱 Responsiveness
+## 5. 🕹 Interaction & Physics
 
-| Device                  | Behavior                                                |
-| ----------------------- | ------------------------------------------------------- |
-| **Mobile (≤768px)**     | Collapse grid to 1-column, font sizes reduce by 20%     |
-| **Tablet (768–1024px)** | 2-column layout, fixed header shrinks                   |
-| **Desktop (≥1025px)**   | Full layout, fixed navigation, subtle animations active |
+This is the defining feature of the theme.
 
----
-
-## 7. 🧠 Interaction Patterns
-
-| Action               | Result                               |
-| -------------------- | ------------------------------------ |
-| **Hover on Cards**   | Reveal overlay + gradient arrow icon |
-| **CTA Hover**        | Smooth scale-up + drop shadow        |
-| **Scroll into View** | Fade-in with 250ms delay             |
-| **Click Project**    | Modal or case study page opens       |
+*   **Library:** `Matter.js` or `Framer Motion` (layout animations).
+*   **Gravity:** Hero elements fall into place on load.
+*   **Draggable:** Users can pick up project cards and throw them.
+*   **Collision:** Scrolling isn't just vertical translation; it pushes elements out of the way.
 
 ---
 
-## 8. 🚫 Do’s & Don’ts
+## 6. 📐 Layout System
 
-### ✅ Do:
-
-* Maintain high contrast between text and background
-* Use gradients for emphasis (not everywhere)
-* Allow generous padding around content
-
-### ❌ Don’t:
-
-* Overuse animations or gradients
-* Use pure black (`#000000`) — it breaks the softness
-* Mix more than two font families
+*   **The Modular Grid:** Visible grid lines (`1px solid #E5E5E5`).
+*   **Asymmetry:** Layouts are balanced but rarely symmetrical. A large circle on the left might be balanced by a dense text block on the far right.
+*   **Spacing:** Large, dramatic whitespace. 
 
 ---
 
-## 9. 💻 Example Use Case (Homepage Hero Section)
+## 7. 💻 Implementation Guide (Tailwind Config)
 
-```html
-<section style="background-color:#121212; padding:80px; color:#F5F5F5;">
-  <h1 style="font-family:'Playfair Display'; font-size:96px; font-style:italic;">Johar Khalzani</h1>
-  <p style="font-family:'Inter'; font-size:16px;">Senior UX Designer with a passion for solving real problems through beautiful, usable design.</p>
-  <button style="background:linear-gradient(90deg, #8F5AFF, #3D3DAA); color:#F5F5F5; border-radius:32px; padding:16px 32px;">Let’s Collaborate</button>
-</section>
-```
-
----
-
-## 10. 🧬 Design Tokens (for Dev/AI Tools)
-
-```json
-{
-  "colors": {
-    "bgPrimary": "#121212",
-    "bgSurface": "#1E1E1E",
-    "textPrimary": "#F5F5F5",
-    "textSecondary": "#B3B3B3",
-    "accentGradient": ["#8F5AFF", "#3D3DAA"],
-    "highlight": "#3D3DAA"
+```ts
+// tailwind.config.ts extension
+theme: {
+  colors: {
+    gallery: "#F2F0E9",
+    ink: "#121212",
+    klein: "#002FA7",
+    signal: "#FF2400",
+    bauhaus: "#FFD700",
   },
-  "fonts": {
-    "heading": "Playfair Display",
-    "body": "Inter"
+  fontFamily: {
+    display: ["Syne", "sans-serif"],
+    body: ["DM Sans", "sans-serif"],
+    mono: ["JetBrains Mono", "monospace"],
   },
-  "fontSizes": {
-    "h1": "96px",
-    "h2": "36px",
-    "body": "16px",
-    "caption": "12px"
-  },
-  "spacing": {
-    "sectionPadding": "80px",
-    "gridGutter": "24px",
-    "baselineUnit": "8px"
-  },
-  "components": {
-    "buttonPrimary": {
-      "shape": "pill",
-      "bg": "accentGradient",
-      "textColor": "textPrimary",
-      "hoverEffect": "scale + shadow"
-    }
+  boxShadow: {
+    'brutal': '8px 8px 0px 0px #121212',
+    'brutal-hover': '4px 4px 0px 0px #121212',
+    'brutal-klein': '8px 8px 0px 0px #002FA7',
   }
 }
 ```
-
