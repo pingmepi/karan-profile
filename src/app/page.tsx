@@ -36,7 +36,7 @@ const systemCards = [
   },
   {
     title: "Growth Systems",
-    body: "Funnel instrumentation, UTM normalization, multi-touch attribution. ₹9M revenue impact.",
+    body: "Funnel instrumentation, UTM normalization, multi-touch attribution. ₹1Cr revenue impact.",
     accent: "bg-signal",
   },
   {
@@ -56,16 +56,19 @@ const currentBuilds = [
     name: "MyThirdPlace",
     description: "Community & events infrastructure",
     status: "Live",
+    href: "/work/community-infra",
   },
   {
     name: "MereKapade",
     description: "AI-assisted commerce experiment",
     status: "MVP",
+    href: "/work/merekapade",
   },
   {
     name: "AI Orchestration",
     description: "Multi-agent pipelines with eval gating",
     status: "In Progress",
+    href: "/products",
   },
 ];
 
@@ -187,27 +190,28 @@ export default function HomePage() {
 
           <div className="space-y-6">
             {currentBuilds.map((build, i) => (
-              <motion.div
-                key={build.name}
-                className="brutal-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-30px" }}
-                custom={i}
-              >
-                <div>
-                  <h3 className="text-xl font-display font-bold">
-                    {build.name}
-                  </h3>
-                  <p className="font-body text-sm text-muted-foreground">
-                    {build.description}
-                  </p>
-                </div>
-                <span className="font-mono text-xs border-2 border-foreground px-3 py-1 shrink-0 self-start md:self-auto">
-                  {build.status}
-                </span>
-              </motion.div>
+              <Link key={build.name} href={build.href}>
+                <motion.div
+                  className="brutal-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 cursor-pointer"
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-30px" }}
+                  custom={i}
+                >
+                  <div>
+                    <h3 className="text-xl font-display font-bold">
+                      {build.name}
+                    </h3>
+                    <p className="font-body text-sm text-muted-foreground">
+                      {build.description}
+                    </p>
+                  </div>
+                  <span className="font-mono text-xs border-2 border-foreground px-3 py-1 shrink-0 self-start md:self-auto">
+                    {build.status}
+                  </span>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
