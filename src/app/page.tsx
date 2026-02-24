@@ -1,306 +1,223 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, DollarSign, Settings, Users, Target } from "lucide-react";
-import Link from "next/link";
-import type { Metadata } from "next";
-import { PersonStructuredData, WebsiteStructuredData } from "@/components/StructuredData";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Karan Mandalam — AI Product Leader (Strategy, Martech, Automation)",
-  description:
-    "I lead AI-native product initiatives in martech and CRM orchestration—shipping outcomes like 5× SEO traffic, significant revenue impact, 70% ops savings, +90% registrations.",
-  keywords: [
-    "AI Product Manager",
-    "Product Leader",
-    "Martech",
-    "Marketing Automation",
-    "CRM Orchestration",
-    "Product Strategy",
-    "AI-native products",
-    "Growth Systems",
-    "Attribution",
-    "Karan Mandalam",
-  ],
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: "Karan Mandalam — AI Product Leader",
-    description:
-      "Leading AI-native product initiatives in martech and CRM orchestration. Proven outcomes: 5× SEO traffic, 70% ops savings, +90% registrations.",
-    url: "/",
-    type: "website",
-    images: [
-      {
-        url: "/assets/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Karan Mandalam - AI Product Leader",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Karan Mandalam — AI Product Leader",
-    description:
-      "Leading AI-native product initiatives in martech and CRM orchestration. Proven outcomes: 5× SEO traffic, 70% ops savings, +90% registrations.",
-    images: ["/assets/og-image.png"],
-  },
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+/* ─── Animation variants ─── */
+const dropIn = {
+  hidden: { y: -80, opacity: 0 },
+  visible: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 300,
+      damping: 24,
+      delay: i * 0.12,
+    },
+  }),
 };
 
-const heroMetrics = [
-  "5× SEO traffic",
-  "Significant revenue impact",
-  "70% ops savings",
-  "+20% lead quality",
-];
+const fadeUp = {
+  hidden: { y: 30, opacity: 0 },
+  visible: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: 0.4 + i * 0.1 },
+  }),
+};
 
-const whatIDoItems = [
+/* ─── Data ─── */
+const systemCards = [
   {
-    title: "Product Strategy & Roadmaps",
-    description:
-      "Own discovery→definition→delivery; align goals, score trade-offs, and drive iteration.",
+    title: "Marketing Orchestration",
+    body: "Event-driven comms infra across CRM, WhatsApp, and analytics — trigger-based, not manual.",
+    accent: "bg-klein",
   },
   {
-    title: "Systems & Architecture",
-    description:
-      "Design API-first martech/CRM stacks with reliable attribution, privacy, and auditability.",
+    title: "Growth Systems",
+    body: "Funnel instrumentation, UTM normalization, multi-touch attribution. ₹9M revenue impact.",
+    accent: "bg-signal",
   },
   {
-    title: "Automation & Agents",
-    description:
-      "n8n + LLM/HITL flows with retries, fallbacks, and cost controls, integrated into product surfaces.",
+    title: "Platform Builds",
+    body: "CMS, scheduling services, state machines. Operator-level tooling for content and events.",
+    accent: "bg-bauhaus",
   },
   {
-    title: "Measurement & Governance",
-    description:
-      "KPIs instrumented end-to-end (marketing → CRM → revenue) with dashboards leaders trust.",
-  },
-];
-
-const impactMetrics = [
-  {
-    icon: "TrendingUp" as const,
-    metric: "5× increase",
-    description: "in organic traffic via an SEO-first CMS.",
-    link: "/case-studies/event-funnels-cms",
-  },
-  {
-    icon: "DollarSign" as const,
-    metric: "Significant revenue impact",
-    description: "from event-funnel optimisation (4-month window).",
-    link: "/case-studies/event-funnels-cms",
-  },
-  {
-    icon: "Settings" as const,
-    metric: "70% reduction",
-    description: "in operational effort via automations (scheduler + comms).",
-    link: "/case-studies/scheduling-at-scale",
-  },
-  {
-    icon: "Users" as const,
-    metric: "+90% registrations",
-    description: "after funnel & UX fixes.",
-    link: "/case-studies/event-funnels-cms",
-  },
-  {
-    icon: "Target" as const,
-    metric: "+20% lead quality",
-    description: "from attribution & segmentation.",
-    link: "/case-studies/martech-revamp-attribution",
-  },
-  {
-    icon: "TrendingUp" as const,
-    metric: "25% faster reporting",
-    description: "via consolidated analytics.",
-    link: "/case-studies/martech-revamp-attribution",
+    title: "AI Workflows",
+    body: "LLM orchestration, NLP2SQL, generative pipelines. 25% faster reporting via consolidated analytics.",
+    accent: "bg-klein",
   },
 ];
 
-const iconMap = { TrendingUp, DollarSign, Settings, Users, Target };
-
-const featuredWork = [
+const currentBuilds = [
   {
-    title: "Event CMS + SEO System",
-    blurb: "Strapi + Next.js; CRM/Zoom integrations; enabled 40+ events/month.",
-    link: "/case-studies/event-funnels-cms",
-    cta: "View case study",
+    name: "MyThirdPlace",
+    description: "Community & events infrastructure",
+    status: "Live",
   },
   {
-    title: "Scheduling Microservice",
-    blurb:
-      "Multi-tenant, dynamic slot logic, CRM sync; 70% ops reduction; 1,000+ meetings/month.",
-    link: "/case-studies/scheduling-at-scale",
-    cta: "View case study",
+    name: "MereKapade",
+    description: "AI-assisted commerce experiment",
+    status: "MVP",
   },
   {
-    title: "MereKapade",
-    blurb: "AI-led design commerce MVP; React + Canvas + Supabase + GPT.",
-    link: "/case-studies/merekapade",
-    cta: "Read write-up",
+    name: "AI Orchestration",
+    description: "Multi-agent pipelines with eval gating",
+    status: "In Progress",
   },
 ];
 
 export default function HomePage() {
   return (
-    <>
-      <PersonStructuredData
-        name="Karan Mandalam"
-        jobTitle="AI Product Leader"
-        url="https://karan-profile-zeta.vercel.app"
-        sameAs={[
-          "https://www.linkedin.com/in/mandalam-karan/",
-          "https://x.com/pingmepi",
-          "https://github.com/pingmepi",
-        ]}
-        description="AI Product Leader specializing in martech, CRM orchestration, and marketing automation. Proven track record of delivering measurable outcomes in product strategy and AI-native systems."
-      />
-      <WebsiteStructuredData
-        name="Karan Mandalam - AI Product Leader"
-        url="https://karan-profile-zeta.vercel.app"
-        description="Portfolio and case studies of Karan Mandalam, an AI Product Leader specializing in martech, CRM orchestration, and product strategy."
-      />
-      <div className="min-h-screen">
-        {/* Section 1: Hero */}
-        <section className="pt-20 pb-16 md:pt-32 md:pb-24 animate-fade-in">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">
-              AI Product Leader
-            </h1>
-            <div className="max-w-3xl mx-auto mb-8">
-              <p className="text-lg md:text-xl text-muted-foreground font-light">
-                I build and scale AI-native products—combining product strategy, martech architecture, and automation to drive measurable growth.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2 justify-center mb-12">
-              {heroMetrics.map((pill, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center rounded-full border px-3 py-1 text-sm text-foreground"
-                >
-                  {pill}
+    <main className="min-h-screen">
+      {/* ═══════════ HERO ═══════════ */}
+      <section className="pt-24 md:pt-32 pb-20 relative overflow-hidden grid-visible">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          {/* Geometric shapes — gravity-drop entrance */}
+          <div className="absolute top-20 right-8 md:right-24 pointer-events-none">
+            <motion.div
+              className="w-16 h-16 md:w-24 md:h-24 bg-klein"
+              variants={dropIn}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+            />
+          </div>
+          <div className="absolute top-40 right-24 md:right-48 pointer-events-none">
+            <motion.div
+              className="w-8 h-8 md:w-12 md:h-12 bg-signal rotate-45"
+              variants={dropIn}
+              initial="hidden"
+              animate="visible"
+              custom={1}
+            />
+          </div>
+          <div className="absolute top-28 right-48 md:right-72 pointer-events-none">
+            <motion.div
+              className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-bauhaus"
+              variants={dropIn}
+              initial="hidden"
+              animate="visible"
+              custom={2}
+            />
+          </div>
+
+          {/* Heading */}
+          <motion.h1
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] leading-none font-display font-extrabold mb-6 max-w-4xl"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            I build systems
+            <br />
+            that bring order
+            <br />
+            to chaos.
+          </motion.h1>
+
+          {/* Sub */}
+          <motion.p
+            className="font-body text-lg md:text-xl text-muted-foreground max-w-xl mb-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            Growth infrastructure, automation, AI workflows, and new product
+            bets.
+          </motion.p>
+
+          {/* CTA buttons — brutal squares */}
+          <motion.div
+            className="flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.4 }}
+          >
+            <Link href="/work" className="brutal-btn-primary">
+              See the work →
+            </Link>
+            <Link href="/about" className="brutal-btn border-2 border-foreground shadow-brutal hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]">
+              About me
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ WHERE I'VE WORKED ON SYSTEMS ═══════════ */}
+      <section className="py-20 bg-ink dark:bg-gallery text-gallery dark:text-ink">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-12">
+            Where I&apos;ve worked on systems
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {systemCards.map((card, i) => (
+              <motion.div
+                key={card.title}
+                className="border-2 border-gallery dark:border-ink p-6 md:p-8 shadow-brutal bg-ink dark:bg-gallery text-gallery dark:text-ink hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-150"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                custom={i}
+              >
+                {/* Accent bar */}
+                <div className={`w-10 h-1.5 ${card.accent} mb-4`} />
+                <h3 className="text-xl md:text-2xl font-display font-bold mb-3">
+                  {card.title}
+                </h3>
+                <p className="font-body text-sm text-gallery/70 dark:text-ink/70">
+                  {card.body}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ CURRENTLY BUILDING ═══════════ */}
+      <section className="py-20 section-gap">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-12 geo-underline">
+            Currently building
+          </h2>
+
+          <div className="space-y-6">
+            {currentBuilds.map((build, i) => (
+              <motion.div
+                key={build.name}
+                className="brutal-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-30px" }}
+                custom={i}
+              >
+                <div>
+                  <h3 className="text-xl font-display font-bold">
+                    {build.name}
+                  </h3>
+                  <p className="font-body text-sm text-muted-foreground">
+                    {build.description}
+                  </p>
+                </div>
+                <span className="font-mono text-xs border-2 border-foreground px-3 py-1 shrink-0 self-start md:self-auto">
+                  {build.status}
                 </span>
-              ))}
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button asChild size="lg" className="text-lg px-8">
-                <Link href="/projects">
-                  View Projects
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link href="/case-studies">Read Case Studies</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link href="/contact">Contact</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* Section: What I Do */}
-      <section className="pb-16 md:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold">What I Do</h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whatIDoItems.map((item, idx) => (
-              <Card key={idx} className="p-6">
-                <CardContent className="p-0">
-                  <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Section: Impact Highlights */}
-      <section className="pb-16 md:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Impact Highlights</h3>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-            {impactMetrics.map((metric, index) => {
-              const IconComponent = iconMap[metric.icon];
-              const content = (
-                <Card className="metric-card text-center p-6 cursor-pointer">
-                  <CardContent className="p-0">
-                    <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center mx-auto mb-3">
-                      <IconComponent className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <div className="text-xl font-bold text-foreground mb-2">{metric.metric}</div>
-                    <p className="text-sm text-muted-foreground">{metric.description}</p>
-                  </CardContent>
-                </Card>
-              );
-              return metric.link ? (
-                <Link key={index} href={metric.link} className="block">
-                  {content}
-                </Link>
-              ) : (
-                <div key={index}>{content}</div>
-              );
-            })}
+          <div className="mt-12">
+            <Link href="/products" className="brutal-btn-primary">
+              All products →
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Section: Featured Work */}
-      <section className="pb-16 md:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold">Featured Work</h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredWork.map((proj, idx) => (
-              <Link key={idx} href={proj.link} className="block">
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-semibold mb-2">{proj.title}</h4>
-                    <p className="text-sm text-muted-foreground mb-4">{proj.blurb}</p>
-                    <Button variant="outline" size="sm">
-                      {proj.cta} <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section: CTA */}
-      <section className="pb-16 md:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="glass-card">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-6">Let&apos;s Build Something Together</h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Got a product idea, automation problem, or AI workflow to figure out?
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="text-lg px-8">
-                  <Link href="/contact">
-                    Contact Me
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                  <Link href="/projects">Explore Projects</Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-      </div>
-    </>
+    </main>
   );
 }

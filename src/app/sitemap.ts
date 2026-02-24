@@ -1,66 +1,50 @@
 import { MetadataRoute } from "next";
-import { caseStudies } from "@/data/case-study-details";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://karan-profile-zeta.vercel.app";
 
-  // Get all case study IDs
-  const caseStudyIds = Object.keys(caseStudies);
-
-  // Static pages
-  const staticPages = [
+  return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/projects`,
+      url: `${baseUrl}/work`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/case-studies`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/writings`,
+      url: `${baseUrl}/products`,
       lastModified: new Date(),
-      changeFrequency: "weekly" as const,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/agentic`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/not-work`,
+      url: `${baseUrl}/life`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/photography`,
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.5,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
-      changeFrequency: "yearly" as const,
+      changeFrequency: "yearly",
       priority: 0.6,
     },
   ];
-
-  // Dynamic case study pages
-  const caseStudyPages = caseStudyIds.map((id) => ({
-    url: `${baseUrl}/case-studies/${id}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
-
-  return [...staticPages, ...caseStudyPages];
 }
-
