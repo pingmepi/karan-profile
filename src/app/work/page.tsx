@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Work",
@@ -15,14 +17,16 @@ const systems = [
         impact: "Automated 70% of event communications pipeline",
         description:
             "Built event-driven comms infra across CRM, WhatsApp, and analytics platforms. Replaced manual broadcast workflows with trigger-based orchestration.",
+        slug: "event-funnels-cms",
     },
     {
         title: "Growth Event Engine",
         domain: "Growth Systems",
         stack: "UTM Framework · Funnel Instrumentation · Attribution",
-        impact: "₹9M revenue impact via funnel optimization",
+        impact: "₹1Cr revenue impact via funnel optimization",
         description:
             "Designed the event tracking engine powering growth funnels — UTM normalization, multi-touch attribution, and conversion instrumentation end-to-end.",
+        slug: "martech-revamp-attribution",
     },
     {
         title: "CMS & Scheduling Platform",
@@ -31,6 +35,7 @@ const systems = [
         impact: "Enabled 40+ events/month at scale",
         description:
             "Shipped CMS platforms and scheduling services with workflow state machines. Operator-level tooling for content, events, and automation.",
+        slug: "scheduling-at-scale",
     },
     {
         title: "LLM Orchestration Pipelines",
@@ -39,6 +44,7 @@ const systems = [
         impact: "25% faster reporting via consolidated analytics",
         description:
             "Built LLM orchestration layers, NLP-to-SQL query interfaces, and generative pipelines for content and data workflows.",
+        slug: "content-ops-automation",
     },
 ];
 
@@ -59,9 +65,10 @@ export default function WorkPage() {
             {/* Systems Grid */}
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {systems.map((system, i) => (
-                    <div
+                    <Link
                         key={system.title}
-                        className={`brutal-card p-6 md:p-8 ${i % 2 === 0 ? "" : "brutal-card-klein"
+                        href={`/work/${system.slug}`}
+                        className={`group brutal-card p-6 md:p-8 flex flex-col ${i % 2 === 0 ? "" : "brutal-card-klein"
                             }`}
                     >
                         {/* Domain tag */}
@@ -86,7 +93,13 @@ export default function WorkPage() {
                                 {system.impact}
                             </span>
                         </div>
-                    </div>
+
+                        {/* CTA */}
+                        <div className="mt-4 flex items-center gap-2 font-display font-bold text-sm text-klein dark:text-bauhaus group-hover:gap-3 transition-all duration-150">
+                            View case study
+                            <ArrowRight className="w-4 h-4" />
+                        </div>
+                    </Link>
                 ))}
             </div>
         </main>

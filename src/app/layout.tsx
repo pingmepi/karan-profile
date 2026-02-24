@@ -42,10 +42,6 @@ export const metadata: Metadata = {
     site: "@pingmepi",
     images: ["/assets/og-image.png"],
   },
-  icons: {
-    icon: "/assets/favicon.ico",
-    apple: "/assets/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
