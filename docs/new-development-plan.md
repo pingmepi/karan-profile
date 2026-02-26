@@ -53,7 +53,7 @@ Four clean blocks:
 Event-driven comms infra across CRM, WhatsApp, analytics.
 
 **Growth Systems**
-Event engine → ₹9M impact, funnel instrumentation, UTM normalization.
+Event engine → ₹1Cr impact, funnel instrumentation, UTM normalization.
 
 **Platform Builds**
 CMS platforms, scheduling service, workflow state machines.
