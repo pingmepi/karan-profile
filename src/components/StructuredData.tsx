@@ -1,113 +1,42 @@
-import Script from "next/script";
+import React from "react";
 
-interface PersonStructuredDataProps {
-  name: string;
-  jobTitle: string;
-  url: string;
-  sameAs: string[];
-  description: string;
-}
-
-export function PersonStructuredData({
-  name,
-  jobTitle,
-  url,
-  sameAs,
-  description,
-}: PersonStructuredDataProps) {
-  const structuredData = {
+export const StructuredData = () => {
+  const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name,
-    jobTitle,
-    url,
-    sameAs,
-    description,
-    knowsAbout: [
-      "Product Management",
-      "Artificial Intelligence",
-      "Marketing Technology",
-      "CRM Systems",
-      "Marketing Automation",
-      "Product Strategy",
-      "Growth Systems",
-    ],
+    "name": "Karan Mandalam",
+    "url": "https://karan-profile-zeta.vercel.app",
+    "jobTitle": "Systems Builder",
+    "description": "I build systems that bring order to chaos. Growth infrastructure, automation, AI workflows, and new product bets.",
+    "sameAs": [
+      "https://twitter.com/pingmepi",
+      "https://linkedin.com/in/mandalam-karan",
+      "https://instagram.com/theghostinphotographs"
+    ]
   };
 
-  return (
-    <Script
-      id="person-structured-data"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-    />
-  );
-}
-
-interface WebsiteStructuredDataProps {
-  name: string;
-  url: string;
-  description: string;
-}
-
-export function WebsiteStructuredData({
-  name,
-  url,
-  description,
-}: WebsiteStructuredDataProps) {
-  const structuredData = {
+  const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name,
-    url,
-    description,
+    "name": "Karan Mandalam | Systems Builder",
+    "url": "https://karan-profile-zeta.vercel.app",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://karan-profile-zeta.vercel.app/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   };
 
   return (
-    <Script
-      id="website-structured-data"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+    </>
   );
-}
-
-interface ArticleStructuredDataProps {
-  headline: string;
-  description: string;
-  author: string;
-  datePublished?: string;
-  dateModified?: string;
-  url: string;
-}
-
-export function ArticleStructuredData({
-  headline,
-  description,
-  author,
-  datePublished,
-  dateModified,
-  url,
-}: ArticleStructuredDataProps) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline,
-    description,
-    author: {
-      "@type": "Person",
-      name: author,
-    },
-    datePublished,
-    dateModified: dateModified || datePublished,
-    url,
-  };
-
-  return (
-    <Script
-      id="article-structured-data"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-    />
-  );
-}
-
+};

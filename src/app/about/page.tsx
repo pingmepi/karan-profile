@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "About",
@@ -111,18 +112,18 @@ export default function AboutPage() {
                     Outside Work
                 </h2>
                 <div className="flex gap-6">
-                    <a
+                    <Link
                         href="/life"
                         className="brutal-card p-4 px-6 font-display font-bold text-sm"
                     >
                         Photography →
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/life"
                         className="brutal-card p-4 px-6 font-display font-bold text-sm"
                     >
                         Riding →
-                    </a>
+                    </Link>
                 </div>
             </section>
         </main>

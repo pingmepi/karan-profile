@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Agentic",
@@ -40,9 +41,9 @@ export default function AgenticPage() {
                 </h1>
                 <p className="font-body text-lg text-muted-foreground max-w-xl">
                     Technical. Short. No philosophy here — that lives in{" "}
-                    <a href="/about" className="text-klein dark:text-bauhaus underline">
+                    <Link href="/about" className="text-klein dark:text-bauhaus underline">
                         /about
-                    </a>
+                    </Link>
                     .
                 </p>
             </div>
