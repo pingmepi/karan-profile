@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
+import { StructuredData } from "@/components/StructuredData";
+
 const syne = Syne({
   subsets: ["latin"],
   variable: "--font-syne",
@@ -54,6 +56,7 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
+        <StructuredData />
         <TooltipProvider>
           <Toaster />
           <Sonner />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Life",
@@ -8,12 +9,12 @@ export const metadata: Metadata = {
 
 /* Placeholder image paths — replace with real assets */
 const photography = [
-    { src: "/assets/photos/photo-1.jpg", alt: "Street composition" },
-    { src: "/assets/photos/photo-2.jpg", alt: "Architecture detail" },
-    { src: "/assets/photos/photo-3.jpg", alt: "Light study" },
-    { src: "/assets/photos/photo-4.jpg", alt: "Urban geometry" },
-    { src: "/assets/photos/photo-5.jpg", alt: "Portrait" },
-    { src: "/assets/photos/photo-6.jpg", alt: "Night frame" },
+    { src: "/assets/photos/photo-1.jpg", alt: "Street composition", width: 600, height: 800 },
+    { src: "/assets/photos/photo-2.jpg", alt: "Architecture detail", width: 600, height: 800 },
+    { src: "/assets/photos/photo-3.jpg", alt: "Light study", width: 600, height: 800 },
+    { src: "/assets/photos/photo-4.jpg", alt: "Urban geometry", width: 600, height: 800 },
+    { src: "/assets/photos/photo-5.jpg", alt: "Portrait", width: 600, height: 800 },
+    { src: "/assets/photos/photo-6.jpg", alt: "Night frame", width: 600, height: 800 },
 ];
 
 export default function LifePage() {
@@ -39,10 +40,10 @@ export default function LifePage() {
                     {photography.map((photo) => (
                         <div
                             key={photo.alt}
-                            className="break-inside-avoid border-2 border-ink dark:border-gallery shadow-brutal hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-150 overflow-hidden"
+                            className="break-inside-avoid border-2 border-ink dark:border-gallery shadow-brutal hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-150 overflow-hidden relative group"
                         >
-                            {/* Placeholder div — replace with next/image when assets exist */}
                             <div className="w-full aspect-[3/4] bg-muted flex items-center justify-center">
+                                {/* Ready for assets: <Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} className="object-cover transition-transform group-hover:scale-105" /> */}
                                 <span className="font-mono text-xs text-muted-foreground">
                                     {photo.alt}
                                 </span>
