@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 /* ─── Animation variants ─── */
 const dropIn = {
@@ -56,19 +57,21 @@ const currentBuilds = [
         name: "MyThirdPlace",
         description: "Community & events infrastructure",
         status: "Live",
-        href: "/work/community-infra",
+        caseStudyHref: "/work/community-infra",
+        liveUrl: "https://mythirdplace.rapchai.com",
     },
     {
         name: "MereKapade",
         description: "AI-assisted commerce experiment",
         status: "MVP",
-        href: "/work/merekapade",
+        caseStudyHref: "/work/merekapade",
+        liveUrl: "https://merekapade.com",
     },
     {
         name: "AI Orchestration",
         description: "Multi-agent pipelines with eval gating",
         status: "In Progress",
-        href: "/products",
+        caseStudyHref: "/products",
     },
 ];
 
@@ -190,15 +193,16 @@ export function HomeClient() {
 
                     <div className="space-y-6">
                         {currentBuilds.map((build, i) => (
-                            <Link key={build.name} href={build.href}>
-                                <motion.div
-                                    className="brutal-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 cursor-pointer"
-                                    variants={fadeUp}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-30px" }}
-                                    custom={i}
-                                >
+                            <motion.div
+                                key={build.name}
+                                className="brutal-card p-6 flex flex-col gap-4"
+                                variants={fadeUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-30px" }}
+                                custom={i}
+                            >
+                                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                                     <div>
                                         <h3 className="text-xl font-display font-bold">
                                             {build.name}
@@ -210,8 +214,28 @@ export function HomeClient() {
                                     <span className="font-mono text-xs border-2 border-foreground px-3 py-1 shrink-0 self-start md:self-auto">
                                         {build.status}
                                     </span>
-                                </motion.div>
-                            </Link>
+                                </div>
+                                <div className="flex items-center gap-3 flex-wrap">
+                                    <Link
+                                        href={build.caseStudyHref}
+                                        className="inline-flex items-center gap-2 font-display font-bold text-sm text-klein dark:text-bauhaus"
+                                    >
+                                        View case study
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Link>
+                                    {build.liveUrl && (
+                                        <a
+                                            href={build.liveUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 font-display font-bold text-sm border-2 border-foreground px-3 py-1"
+                                        >
+                                            Live
+                                            <ExternalLink className="w-4 h-4" />
+                                        </a>
+                                    )}
+                                </div>
+                            </motion.div>
                         ))}
                     </div>
 

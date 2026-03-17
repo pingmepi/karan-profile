@@ -7,6 +7,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { StructuredData } from "@/components/StructuredData";
+import { WhatsAppPing } from "@/components/WhatsAppPing";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -63,6 +64,7 @@ export default function RootLayout({
           <div className="min-h-screen bg-background">
             <Navigation />
             {children}
+            <WhatsAppPing />
           </div>
         </TooltipProvider>
       </body>

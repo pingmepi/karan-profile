@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { caseStudies, getCaseStudyBySlug, getAllSlugs } from "@/data/case-studies";
 
 interface Props {
@@ -80,6 +80,20 @@ export default function CaseStudyPage({ params }: Props) {
                         </span>
                     ))}
                 </div>
+
+                {cs.liveUrl && (
+                    <div className="mt-6">
+                        <a
+                            href={cs.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 brutal-btn border-2 border-foreground shadow-brutal hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]"
+                        >
+                            {cs.liveLabel ?? "Live Site"}
+                            <ExternalLink className="w-4 h-4" />
+                        </a>
+                    </div>
+                )}
             </header>
 
             {/* Sections */}
