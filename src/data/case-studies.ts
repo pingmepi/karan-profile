@@ -11,6 +11,8 @@ export interface CaseStudy {
     tags: string[];
     tech: string[];
     sections: CaseStudySection[];
+    liveUrl?: string;
+    liveLabel?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -247,6 +249,8 @@ export const caseStudies: CaseStudy[] = [
         ],
         tags: ["AI", "Consumer", "Commerce"],
         tech: ["React", "Canvas API", "Supabase (Auth/RLS/Storage)", "GPT"],
+        liveUrl: "https://merekapade.com",
+        liveLabel: "Live Product",
         sections: [
             {
                 heading: "Overview",
@@ -311,6 +315,8 @@ export const caseStudies: CaseStudy[] = [
         kpis: ["Decoupled role/badge logic", "Closed beta live"],
         tags: ["Platform", "Community", "Privacy UX"],
         tech: ["Supabase", "Next.js", "RBAC", "Admin tools"],
+        liveUrl: "https://mythirdplace.rapchai.com",
+        liveLabel: "Live Product",
         sections: [
             {
                 heading: "Overview",

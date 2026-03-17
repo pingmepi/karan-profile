@@ -19,6 +19,8 @@ const products = [
         status: "MVP",
         featured: false,
         caseStudySlug: "merekapade",
+        liveUrl: "https://merekapade.com",
+        liveLabel: "Live",
     },
     {
         title: "AI Orchestration Workflows",
@@ -33,7 +35,7 @@ const products = [
         title: "In-Progress Builds",
         tagline: "Experiments and explorations",
         description:
-            "RAG frameworks, NLP2SQL interfaces, and agentic job search systems. Active experiments in applied AI with evaluation-first development.",
+            "RAG frameworks and agentic job search systems. Active experiments in applied AI with evaluation-first development.",
         stack: "Various",
         status: "Exploring",
         featured: false,
@@ -55,10 +57,7 @@ export default function ProductsPage() {
 
             {/* Hero Product — MyThirdPlace */}
             <div className="max-w-5xl mx-auto mb-12">
-                <Link
-                    href="/work/community-infra"
-                    className="group block bg-klein text-gallery p-8 md:p-12 border-2 border-ink shadow-brutal hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-150"
-                >
+                <div className="group block bg-klein text-gallery p-8 md:p-12 border-2 border-ink shadow-brutal">
                     <span className="inline-block font-mono text-xs uppercase tracking-widest text-bauhaus mb-4 border-b-2 border-bauhaus pb-1">
                         Primary
                     </span>
@@ -72,63 +71,68 @@ export default function ProductsPage() {
                     <div className="font-mono text-xs text-gallery/60 mb-4">
                         Next.js · Supabase · Razorpay · Vercel
                     </div>
-                    <div className="flex items-center justify-between">
-                        <span className="inline-block border-2 border-gallery px-4 py-1 font-display font-bold text-sm">
+                    <div className="flex items-center justify-between gap-3">
+                        <a
+                            href="https://mythirdplace.rapchai.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 border-2 border-gallery px-4 py-1 font-display font-bold text-sm hover:bg-gallery hover:text-ink transition-colors"
+                        >
                             Live
-                        </span>
-                        <span className="flex items-center gap-2 font-display font-bold text-sm text-bauhaus group-hover:gap-3 transition-all duration-150">
+                            <ExternalLink className="w-4 h-4" />
+                        </a>
+                        <Link
+                            href="/work/community-infra"
+                            className="inline-flex items-center gap-2 font-display font-bold text-sm text-bauhaus border-2 border-bauhaus px-3 py-1.5 hover:bg-bauhaus hover:text-ink transition-all duration-150"
+                        >
                             View case study
                             <ArrowRight className="w-4 h-4" />
-                        </span>
+                        </Link>
                     </div>
-                </Link>
+                </div>
             </div>
 
             {/* Remaining Products */}
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                {products.map((product) => {
-                    const CardContent = (
-                        <>
-                            <span className="inline-block font-mono text-xs uppercase tracking-widest text-klein dark:text-bauhaus mb-3">
-                                {product.status}
-                            </span>
-                            <h3 className="text-xl mb-2">{product.title}</h3>
-                            <p className="font-body text-xs text-muted-foreground mb-1 italic">
-                                {product.tagline}
-                            </p>
-                            <p className="font-body text-sm text-muted-foreground mb-4">
-                                {product.description}
-                            </p>
-                            <div className="font-mono text-xs text-muted-foreground border-t-2 border-foreground pt-3">
-                                {product.stack}
-                            </div>
+                {products.map((product) => (
+                    <div key={product.title} className="group brutal-card p-6 flex flex-col">
+                        <span className="inline-block font-mono text-xs uppercase tracking-widest text-klein dark:text-bauhaus mb-3">
+                            {product.status}
+                        </span>
+                        <h3 className="text-xl mb-2">{product.title}</h3>
+                        <p className="font-body text-xs text-muted-foreground mb-1 italic">
+                            {product.tagline}
+                        </p>
+                        <p className="font-body text-sm text-muted-foreground mb-4">
+                            {product.description}
+                        </p>
+                        <div className="font-mono text-xs text-muted-foreground border-t-2 border-foreground pt-3">
+                            {product.stack}
+                        </div>
+                        <div className="mt-4 flex items-center gap-3 flex-wrap">
                             {product.caseStudySlug && (
-                                <div className="mt-4 flex items-center gap-2 font-display font-bold text-sm text-klein dark:text-bauhaus">
+                                <Link
+                                    href={`/work/${product.caseStudySlug}`}
+                                    className="inline-flex items-center gap-2 font-display font-bold text-sm text-klein dark:text-bauhaus"
+                                >
                                     View case study
                                     <ArrowRight className="w-4 h-4" />
-                                </div>
+                                </Link>
                             )}
-                        </>
-                    );
-
-                    if (product.caseStudySlug) {
-                        return (
-                            <Link
-                                key={product.title}
-                                href={`/work/${product.caseStudySlug}`}
-                                className="group brutal-card p-6 flex flex-col"
-                            >
-                                {CardContent}
-                            </Link>
-                        );
-                    }
-
-                    return (
-                        <div key={product.title} className="brutal-card p-6 flex flex-col">
-                            {CardContent}
+                            {product.liveUrl && (
+                                <a
+                                    href={product.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 font-display font-bold text-sm border-2 border-foreground px-3 py-1"
+                                >
+                                    {product.liveLabel ?? "Live"}
+                                    <ExternalLink className="w-4 h-4" />
+                                </a>
+                            )}
                         </div>
-                    );
-                })}
+                    </div>
+                ))}
             </div>
         </main>
     );
