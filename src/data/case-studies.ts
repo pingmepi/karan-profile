@@ -310,66 +310,156 @@ export const caseStudies: CaseStudy[] = [
     },
     {
         slug: "community-infra",
-        title: "Community Infra — Events, Badges, Hosts, Referrals",
-        summary: "RBAC-first architecture with privacy-centric visibility.",
-        kpis: ["Decoupled role/badge logic", "Closed beta live"],
-        tags: ["Platform", "Community", "Privacy UX"],
-        tech: ["Supabase", "Next.js", "RBAC", "Admin tools"],
+        title: "The Third Place — Live Community Platform with Payments & Admin Panel",
+        summary:
+            "Shipped a full-stack community and events platform from zero to production — consumer app with Razorpay payments, GA4/GTM analytics, and a dedicated admin panel (Command Center) with RBAC, recurring events, and social posting.",
+        kpis: [
+            "118 commits (consumer)",
+            "36 commits (admin)",
+            "Live Razorpay payments",
+            "42 PRs shipped",
+        ],
+        tags: ["Full-Stack", "Payments", "Analytics", "Product Build", "0→1"],
+        tech: [
+            "Next.js (SSR)",
+            "TypeScript",
+            "Supabase (Auth/RLS/Storage)",
+            "Razorpay",
+            "Resend",
+            "GA4/GTM",
+            "React",
+            "Vite",
+            "Tailwind",
+            "Vercel",
+        ],
         liveUrl: "https://mythirdplace.rapchai.com",
         liveLabel: "Live Product",
         sections: [
             {
                 heading: "Overview",
                 content:
-                    "Infra for communities to run events with assigned hosts, badges, and optional participant visibility.",
+                    "The Third Place is a live community and events platform — the idea that work and home aren't enough, people need shared spaces. I built both the consumer app and the admin panel (Command Center) from scratch, shipping real payment flows, analytics, and operational tooling into production.",
             },
             {
                 heading: "Context & Role",
-                content: "Architect & PM; admin-only edits by design.",
+                content:
+                    "Solo architect, PM, and IC. Built both applications end-to-end: consumer-facing Next.js app and React-based admin dashboard. 118 commits on the consumer app, 36 on admin, 42 PRs merged on GitHub.",
             },
             {
-                heading: "Problem",
+                heading: "Consumer App — What Shipped",
                 content:
-                    "Role/badge coupling; visibility/privacy requirements; host workflows.",
+                    "Razorpay payment integration with idempotent sessions, orphaned payment cleanup, and cancellation guards. Payment confirmation emails via Resend. Short URLs for events (/e/:shortCode) and communities (/c/:slug). Image and video gallery with adaptive masonry layout. Post-signup name prompt modal for progressive profiling. GA4/GTM analytics covering auth events, e-commerce tracking, and community engagement. SEO meta tags with IST timezone handling and canonical URLs.",
             },
             {
-                heading: "Objectives",
+                heading: "Command Center (Admin Panel)",
                 content:
-                    "Separation of concerns; admin-only edits; privacy by default.",
+                    "Full admin dashboard with quick-create modals and at-a-glance status cards. RBAC with 5 distinct roles. Recurring event management with decoupled editing and bulk operations. Short URL management for marketing. Hootsuite social posting integration. Video gallery uploads. Payment session tracking and audit logging. Strict TypeScript, N+1 query fixes, and email templates.",
             },
             {
                 heading: "Product Decisions",
                 content:
-                    "Badge system separate from roles; one host per event; admin assignment. Visibility flags enforced at API layer; no participant data sent by default.",
-            },
-            {
-                heading: "Solution",
-                content:
-                    "RBAC model; visibility filters; Google Sign-In; preferences endpoint; storage-efficient activity logging.",
+                    "Chose Razorpay over Stripe for India-first payment UX — built idempotent session handling to prevent double charges. Implemented RLS at the Supabase layer so privacy is enforced at the database, not the UI. Decoupled recurring events from single events to allow independent editing without cascade bugs. Made audit logging a first-class requirement from Phase 1.",
             },
             {
                 heading: "Architecture",
                 content:
-                    "Supabase (RLS) + Next.js; endpoints for events/hosts/badges; admin console.",
+                    "Consumer: Next.js (SSR) → Supabase (PostgreSQL + Auth + RLS + Storage) → Razorpay → Resend → Vercel.\nAdmin: React + Vite → Supabase → Hootsuite API.\nShared Supabase instance with RLS policies governing consumer vs admin access patterns.",
             },
             {
                 heading: "Metrics & Impact",
                 content:
-                    "Clean governance; beta usage across growing communities.",
+                    "Live in production processing real payments. 4 phases of admin panel completed. Full analytics pipeline from user signup through payment conversion. Gallery, events, and communities all operational with real user traffic.",
             },
             {
-                heading: "Evidence",
-                content: "ERD; RLS policies; privacy tests.",
-            },
-            {
-                heading: "Challenges",
+                heading: "Challenges & Trade-offs",
                 content:
-                    "Balancing visibility with privacy and safety.",
+                    "Razorpay's webhook reliability required building orphaned session cleanup and polling UX as fallbacks. Balancing admin flexibility (5 roles) with simplicity — solved by progressive disclosure in the UI. GA4/GTM event taxonomy needed IST timezone normalization to avoid attribution errors on day boundaries.",
             },
             {
                 heading: "Lessons",
                 content:
-                    "Make privacy choices backend-configurable and overridable.",
+                    "Payment integrations need defensive engineering — idempotency keys, orphaned session cleanup, and cancellation guards aren't optional. Audit logging from day one saves debugging time later. RLS-enforced privacy is more trustworthy than UI-layer permission checks.",
+            },
+        ],
+    },
+    {
+        slug: "job-search-agent",
+        title: "Job Search Agent — Multi-Agent AI System with Eval-Driven CI",
+        summary:
+            "Built a multi-agent system that converts job postings into complete application packs via Telegram — OCR ingestion, LLM-powered resume mutation with truthfulness guards, LaTeX compilation, and eval-gated CI preventing regressions.",
+        kpis: [
+            "222 tests passing",
+            "39 commits",
+            "CI gates green",
+            "Production on Railway",
+        ],
+        tags: ["AI", "Agents", "Eval Frameworks", "Multi-Agent", "0→1"],
+        tech: [
+            "Python",
+            "FastAPI",
+            "OpenRouter LLMs",
+            "LaTeX",
+            "PostgreSQL",
+            "Telegram Bot API",
+            "Railway",
+            "Google Drive API",
+            "Google Calendar API",
+        ],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "A production multi-agent system that takes a job posting (URL or screenshot) and produces a complete application pack: tailored resume, cover letter, outreach drafts, and follow-up schedule. Deployed on Railway with a Telegram bot interface, eval-driven CI gating, and 222 passing tests.",
+            },
+            {
+                heading: "Context & Role",
+                content:
+                    "Solo builder — architecture, implementation, eval framework, and deployment. 39 commits, 21+ Linear issues tracked, PRD with planner/executor/profile agent architecture. Phase 2 active (Oct 2025 – Apr 2026).",
+            },
+            {
+                heading: "Problem",
+                content:
+                    "Job applications are repetitive but high-stakes: each requires a tailored resume, cover letter, and outreach strategy. Manual tailoring takes 30–60 minutes per application. Existing AI tools generate generic output with no quality guarantees — hallucinated skills, broken formatting, and no way to prevent regressions.",
+            },
+            {
+                heading: "Agent Architecture",
+                content:
+                    "Three-agent system: Planner Agent parses job descriptions and identifies requirements, keywords, and match signals. Executor Agent mutates resume content within editable regions only — enforcing truthfulness guards that prevent fabricated skills or experience. Profile Agent maintains a canonical user profile that evolves across applications.\n\nAll agents orchestrated via OpenRouter with cost tracking per invocation.",
+            },
+            {
+                heading: "Eval-Driven CI Gating",
+                content:
+                    "The core differentiator: every code change runs through an eval suite before merging. Metrics tracked: compile rate (LaTeX must produce valid PDF), forbidden claims detection (no hallucinated skills), edit region violations (mutations only in designated sections), cost per application (OpenRouter spend), and latency budgets.\n\n222 tests enforce these constraints. CI gates prevent regressions — a PR that increases forbidden claims or breaks compilation cannot merge.",
+            },
+            {
+                heading: "Ingestion & Output Pipeline",
+                content:
+                    "Input: Telegram bot receives job posting URL or screenshot (OCR extraction). Processing: parse JD → match against profile → mutate resume → compile LaTeX (single-page enforcement) → generate outreach drafts (email, LinkedIn DM, referral ask). Output: compiled PDF uploaded to Google Drive, calendar event created for follow-up, escalation tiers for automated follow-up scheduling.",
+            },
+            {
+                heading: "Product Decisions",
+                content:
+                    "Chose Telegram over web UI for zero-friction input — paste a link, get a pack. LaTeX over DOCX for precise formatting control and ATS compatibility. Editable regions over full-document mutation to enforce truthfulness — the LLM can only modify designated sections, never fabricate new experience. Eval-first development: wrote the eval framework before building the agents, so quality constraints shaped the architecture.",
+            },
+            {
+                heading: "Architecture",
+                content:
+                    "Telegram webhook → FastAPI service → Agent orchestrator (Planner → Executor → Profile) → LaTeX compiler → Google Drive upload → Calendar event creation.\n\nPostgreSQL for application history and profile state. Railway for deployment with environment-based config.",
+            },
+            {
+                heading: "Metrics & Impact",
+                content:
+                    "222 tests passing with CI gates enforced. 39 commits across the project. Production-deployed on Railway. Complete application pack generated from a single Telegram message. Eval framework catches forbidden claims, compilation failures, and edit violations before they reach production.",
+            },
+            {
+                heading: "Challenges & Trade-offs",
+                content:
+                    "LLM output variance required building the eval framework first — without it, resume mutations would drift toward hallucination. LaTeX single-page enforcement needed iterative font/margin tuning per resume variant. Cost control: OpenRouter routing lets the system pick cheaper models for parsing while reserving expensive models for resume mutation.",
+            },
+            {
+                heading: "Lessons",
+                content:
+                    "Eval frameworks aren't overhead — they're the product. Without CI-gated quality checks, LLM-powered systems degrade silently. Truthfulness guards must be architectural (editable regions), not just prompt-level. Telegram bots are underrated as production interfaces for personal tools.",
             },
         ],
     },

@@ -1,78 +1,121 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Life",
-    description: "Photography and riding. Just curated identity.",
+    description: "Motorcycling community building, volunteering with U&I Trust, and photography.",
     alternates: { canonical: "/life" },
 };
-
-/* Placeholder image paths — replace with real assets */
-const photography = [
-    { src: "/assets/photos/photo-1.jpg", alt: "Street composition", width: 600, height: 800 },
-    { src: "/assets/photos/photo-2.jpg", alt: "Architecture detail", width: 600, height: 800 },
-    { src: "/assets/photos/photo-3.jpg", alt: "Light study", width: 600, height: 800 },
-    { src: "/assets/photos/photo-4.jpg", alt: "Urban geometry", width: 600, height: 800 },
-    { src: "/assets/photos/photo-5.jpg", alt: "Portrait", width: 600, height: 800 },
-    { src: "/assets/photos/photo-6.jpg", alt: "Night frame", width: 600, height: 800 },
-];
 
 export default function LifePage() {
     return (
         <main className="pt-24 pb-16 section-gap min-h-screen">
-            <div className="max-w-5xl mx-auto mb-20">
+            <div className="max-w-5xl mx-auto px-6 md:px-12 mb-20">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl geo-underline mb-6">
                     Life
                 </h1>
                 <p className="font-body text-lg text-muted-foreground max-w-xl">
-                    No metaphors. No forced justification. Just curated identity.
+                    The things that matter outside of work.
                 </p>
             </div>
 
-            {/* Photography Section */}
-            <section className="max-w-5xl mx-auto mb-24">
+            {/* Riding Section — The Handlebar Dialogue */}
+            <section className="max-w-5xl mx-auto px-6 md:px-12 mb-24">
                 <h2 className="text-3xl md:text-4xl geo-underline mb-10">
-                    Photography
+                    The Handlebar Dialogue
                 </h2>
 
-                {/* Masonry-style grid */}
-                <div className="columns-2 md:columns-3 gap-6 space-y-6">
-                    {photography.map((photo) => (
-                        <div
-                            key={photo.alt}
-                            className="break-inside-avoid border-2 border-ink dark:border-gallery shadow-brutal hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-150 overflow-hidden relative group"
-                        >
-                            <div className="w-full aspect-[3/4] bg-muted flex items-center justify-center">
-                                {/* Ready for assets: <Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} className="object-cover transition-transform group-hover:scale-105" /> */}
-                                <span className="font-mono text-xs text-muted-foreground">
-                                    {photo.alt}
-                                </span>
-                            </div>
+                <div className="brutal-card p-6 md:p-8 mb-6">
+                    <div className={`w-10 h-1.5 bg-signal mb-4`} />
+                    <p className="font-body text-base text-muted-foreground mb-6">
+                        A motorcycle community built on structured dialogue and intentional route curation.
+                        Not just group rides — a system for building connection through shared experience.
+                    </p>
+
+                    <div className="space-y-4">
+                        <div className="border-l-4 border-signal pl-4">
+                            <h3 className="font-display font-bold text-sm mb-1">Saturday for Sunday</h3>
+                            <p className="font-body text-xs text-muted-foreground">
+                                Ride flow designed around a weekend cadence — Saturday route planning and safety briefings, Sunday ride execution. Structured enough to be safe, loose enough to be fun.
+                            </p>
                         </div>
-                    ))}
+                        <div className="border-l-4 border-signal pl-4">
+                            <h3 className="font-display font-bold text-sm mb-1">Route Curation</h3>
+                            <p className="font-body text-xs text-muted-foreground">
+                                Panchapalli Dam, Rocky Ridge, and surrounding routes vetted for road quality, scenic value, and group safety. Every route ridden before being added to the rotation.
+                            </p>
+                        </div>
+                        <div className="border-l-4 border-signal pl-4">
+                            <h3 className="font-display font-bold text-sm mb-1">Safety & Social Architecture</h3>
+                            <p className="font-body text-xs text-muted-foreground">
+                                Safety protocols baked into the ride structure — not afterthoughts. The social architecture is designed to make new riders feel included without slowing down experienced ones.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            {/* Divider — geometric */}
-            <div className="max-w-5xl mx-auto flex items-center gap-4 mb-24">
+            {/* Divider */}
+            <div className="max-w-5xl mx-auto px-6 md:px-12 flex items-center gap-4 mb-24">
                 <div className="h-0.5 flex-1 bg-foreground" />
                 <div className="w-4 h-4 bg-klein rotate-45" />
                 <div className="h-0.5 flex-1 bg-foreground" />
             </div>
 
-            {/* Riding Section */}
-            <section className="max-w-5xl mx-auto">
-                <h2 className="text-3xl md:text-4xl geo-underline mb-10">Riding</h2>
+            {/* Volunteering — U&I Trust */}
+            <section className="max-w-5xl mx-auto px-6 md:px-12 mb-24">
+                <h2 className="text-3xl md:text-4xl geo-underline mb-10">
+                    Volunteering
+                </h2>
 
-                <div className="border-2 border-ink dark:border-gallery shadow-brutal-klein p-8 md:p-12">
-                    {/* Hero riding image placeholder */}
-                    <div className="w-full aspect-video bg-muted flex items-center justify-center mb-6">
-                        <span className="font-mono text-sm text-muted-foreground">
-                            Riding photo
-                        </span>
+                <div className="brutal-card p-6 md:p-8">
+                    <div className={`w-10 h-1.5 bg-bauhaus mb-4`} />
+                    <h3 className="text-xl font-display font-bold mb-2">
+                        U&I Trust
+                    </h3>
+                    <p className="font-mono text-xs text-muted-foreground mb-4">
+                        ~3 years · Volunteer → Center Leader → Fundraising Coach
+                    </p>
+                    <p className="font-body text-base text-muted-foreground mb-6">
+                        Worked with underprivileged children on education. Started as a volunteer teacher, eventually took ownership of a new center built from scratch — managing 40+ volunteers, designing SOPs, and tracking student progress.
+                    </p>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div className="border-2 border-foreground p-3 text-center">
+                            <div className="font-display font-extrabold text-lg text-klein dark:text-bauhaus">40+</div>
+                            <div className="font-body text-xs text-muted-foreground">volunteers managed</div>
+                        </div>
+                        <div className="border-2 border-foreground p-3 text-center">
+                            <div className="font-display font-extrabold text-lg text-klein dark:text-bauhaus">10%</div>
+                            <div className="font-body text-xs text-muted-foreground">YoY fundraising growth</div>
+                        </div>
+                        <div className="border-2 border-foreground p-3 text-center">
+                            <div className="font-display font-extrabold text-lg text-klein dark:text-bauhaus">50%</div>
+                            <div className="font-body text-xs text-muted-foreground">next leaders from team</div>
+                        </div>
+                        <div className="border-2 border-foreground p-3 text-center">
+                            <div className="font-display font-extrabold text-lg text-klein dark:text-bauhaus">~3 yrs</div>
+                            <div className="font-body text-xs text-muted-foreground">active involvement</div>
+                        </div>
                     </div>
-                    <p className="font-body text-base text-muted-foreground max-w-xl">
-                        Two wheels, open roads. No metaphors needed.
+                </div>
+            </section>
+
+            {/* Divider */}
+            <div className="max-w-5xl mx-auto px-6 md:px-12 flex items-center gap-4 mb-24">
+                <div className="h-0.5 flex-1 bg-foreground" />
+                <div className="w-4 h-4 bg-signal rotate-45" />
+                <div className="h-0.5 flex-1 bg-foreground" />
+            </div>
+
+            {/* Photography Section */}
+            <section className="max-w-5xl mx-auto px-6 md:px-12">
+                <h2 className="text-3xl md:text-4xl geo-underline mb-10">
+                    Photography
+                </h2>
+
+                <div className="brutal-card p-8 md:p-12 text-center">
+                    <p className="font-body text-base text-muted-foreground">
+                        Photos coming soon.
                     </p>
                 </div>
             </section>

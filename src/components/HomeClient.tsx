@@ -29,57 +29,66 @@ const fadeUp = {
 };
 
 /* ─── Data ─── */
-const systemCards = [
+const whatIDo = [
     {
-        title: "Marketing Orchestration",
-        body: "Event-driven comms infra across CRM, WhatsApp, and analytics — trigger-based, not manual.",
+        title: "Agents & Automation",
+        body: "Multi-agent AI systems, eval-driven CI gating, Telegram bots, 90+ n8n production workflows. LLM orchestration with cost controls and truthfulness guards.",
         accent: "bg-klein",
     },
     {
-        title: "Growth Systems",
-        body: "Funnel instrumentation, UTM normalization, multi-touch attribution. ₹1Cr revenue impact.",
+        title: "Systems & Architecture",
+        body: "Razorpay payment flows with idempotent sessions, Supabase RLS architecture, admin panel RBAC with 5 roles. Full-stack from database to deployment.",
         accent: "bg-signal",
     },
     {
-        title: "Platform Builds",
-        body: "CMS, scheduling services, state machines. Operator-level tooling for content and events.",
+        title: "Growth Infrastructure",
+        body: "Event funnels, UTM attribution, CRM orchestration, scheduling microservices. Marketing ops that compound — not manual broadcasts.",
         accent: "bg-bauhaus",
     },
     {
-        title: "AI Workflows",
-        body: "LLM orchestration, NLP2SQL, generative pipelines. 25% faster reporting via consolidated analytics.",
+        title: "Measurement & Governance",
+        body: "Eval-driven development. CI gates for LLM outputs — truthfulness, cost, latency. GA4/GTM instrumentation. Audit logging and RBAC from day one.",
         accent: "bg-klein",
     },
 ];
 
-const currentBuilds = [
+const featuredWork = [
     {
-        name: "MyThirdPlace",
-        description: "Community & events infrastructure",
+        name: "Job Search Agent",
+        description: "Multi-agent AI, eval gates, Telegram, LaTeX",
+        status: "Production",
+        caseStudyHref: "/work/job-search-agent",
+    },
+    {
+        name: "The Third Place",
+        description: "Live community platform, Razorpay, analytics, admin panel",
         status: "Live",
         caseStudyHref: "/work/community-infra",
         liveUrl: "https://mythirdplace.rapchai.com",
     },
     {
         name: "MereKapade",
-        description: "AI-assisted commerce experiment",
+        description: "AI design commerce, fabric.js canvas, GPT",
         status: "MVP",
         caseStudyHref: "/work/merekapade",
         liveUrl: "https://merekapade.com",
     },
-    {
-        name: "AI Orchestration",
-        description: "Multi-agent pipelines with eval gating",
-        status: "In Progress",
-        caseStudyHref: "/products",
-    },
+];
+
+const impactMetrics = [
+    { metric: "3 products", detail: "shipped 0→1", href: "/products" },
+    { metric: "₹1Cr+/qtr", detail: "revenue via GTM", href: "/work/event-funnels-cms" },
+    { metric: "30% churn reduction", detail: "CRM automation", href: "/work/martech-revamp-attribution" },
+    { metric: "-50% lead drop-off", detail: "funnel optimization", href: "/work/event-funnels-cms" },
+    { metric: "5× SEO traffic", detail: "via CMS platform", href: "/work/event-funnels-cms" },
+    { metric: "+20% lead quality", detail: "martech attribution", href: "/work/martech-revamp-attribution" },
 ];
 
 export function HomeClient() {
     return (
         <main className="min-h-screen">
             {/* ═══════════ HERO ═══════════ */}
-            <section className="pt-24 md:pt-32 pb-20 relative overflow-hidden grid-visible">
+            <section aria-label="Introduction" className="pt-24 md:pt-32 pb-20 relative overflow-hidden grid-visible">
                 <div className="max-w-5xl mx-auto px-6 md:px-12">
                     {/* Geometric shapes — gravity-drop entrance */}
                     <div className="absolute top-20 right-8 md:right-24 pointer-events-none">
@@ -131,8 +140,8 @@ export function HomeClient() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.5 }}
                     >
-                        Growth infrastructure, automation, AI workflows, and new product
-                        bets.
+                        AI agents, payment infrastructure, growth automation, and
+                        full-stack product builds — shipped to production.
                     </motion.p>
 
                     {/* CTA buttons — brutal squares */}
@@ -152,15 +161,42 @@ export function HomeClient() {
                 </div>
             </section>
 
-            {/* ═══════════ WHERE I'VE WORKED ON SYSTEMS ═══════════ */}
-            <section className="py-20 bg-ink dark:bg-gallery text-gallery dark:text-ink">
+            {/* ═══════════ IMPACT METRICS ═══════════ */}
+            <section aria-label="Impact metrics" className="py-12 border-y-2 border-foreground">
+                <div className="max-w-5xl mx-auto px-6 md:px-12">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        {impactMetrics.map((item, i) => (
+                            <motion.div
+                                key={item.metric}
+                                variants={fadeUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-30px" }}
+                                custom={i}
+                            >
+                                <Link href={item.href} className="group block text-center">
+                                    <div className="font-display font-extrabold text-2xl md:text-3xl text-klein dark:text-bauhaus group-hover:text-signal transition-colors">
+                                        {item.metric}
+                                    </div>
+                                    <div className="font-body text-xs text-muted-foreground mt-1">
+                                        {item.detail}
+                                    </div>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════ WHAT I DO ═══════════ */}
+            <section aria-label="What I do" className="py-20 bg-ink dark:bg-gallery text-gallery dark:text-ink">
                 <div className="max-w-5xl mx-auto px-6 md:px-12">
                     <h2 className="text-3xl md:text-5xl font-display font-bold mb-12">
-                        Where I&apos;ve worked on systems
+                        What I do
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {systemCards.map((card, i) => (
+                        {whatIDo.map((card, i) => (
                             <motion.div
                                 key={card.title}
                                 className="border-2 border-gallery dark:border-ink p-6 md:p-8 shadow-brutal bg-ink dark:bg-gallery text-gallery dark:text-ink hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-150"
@@ -184,15 +220,15 @@ export function HomeClient() {
                 </div>
             </section>
 
-            {/* ═══════════ CURRENTLY BUILDING ═══════════ */}
-            <section className="py-20 section-gap">
+            {/* ═══════════ FEATURED WORK ═══════════ */}
+            <section aria-label="Featured work" className="py-20 section-gap">
                 <div className="max-w-5xl mx-auto px-6 md:px-12">
                     <h2 className="text-3xl md:text-5xl font-display font-bold mb-12 geo-underline">
-                        Currently building
+                        Featured work
                     </h2>
 
                     <div className="space-y-6">
-                        {currentBuilds.map((build, i) => (
+                        {featuredWork.map((build, i) => (
                             <motion.div
                                 key={build.name}
                                 className="brutal-card p-6 flex flex-col gap-4"
