@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next";
+import { getAllSlugs } from "@/data/case-studies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://karan-profile-zeta.vercel.app";
 
-  return [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -23,10 +24,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/agentic`,
+      url: `${baseUrl}/skills`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/life`,
@@ -47,4 +48,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
   ];
+
+  const caseStudyRoutes: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
+    url: `${baseUrl}/work/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes];
 }

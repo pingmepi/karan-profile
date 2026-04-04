@@ -37,6 +37,7 @@ export default function CaseStudyPage({ params }: Props) {
 
     return (
         <main className="pt-24 pb-16 min-h-screen">
+            <article>
             {/* Back link */}
             <div className="max-w-4xl mx-auto px-6 md:px-12 mb-8">
                 <Link
@@ -126,6 +127,8 @@ export default function CaseStudyPage({ params }: Props) {
                     </div>
                 </section>
             </div>
+
+            </article>
 
             {/* Bottom navigation */}
             <div className="max-w-4xl mx-auto px-6 md:px-12 mt-16 pt-8 border-t-2 border-foreground">

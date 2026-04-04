@@ -5,45 +5,72 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
     title: "Work",
     description:
-        "Shipped production systems — marketing orchestration, growth infrastructure, platform builds, and AI workflows.",
+        "Shipped production systems — AI agents, payment infrastructure, growth systems, platform builds, and automation workflows.",
     alternates: { canonical: "/work" },
 };
 
 const systems = [
     {
-        title: "Event-Driven Comms Infrastructure",
-        domain: "Marketing Orchestration",
-        stack: "CRM · WhatsApp · Analytics · Webhooks",
-        impact: "Automated 70% of event communications pipeline",
+        title: "Job Search Agent",
+        domain: "AI & Multi-Agent Systems",
+        stack: "Python · FastAPI · OpenRouter · LaTeX · Telegram · Railway",
+        impact: "222 tests with eval CI gates in production",
         description:
-            "Built event-driven comms infra across CRM, WhatsApp, and analytics platforms. Replaced manual broadcast workflows with trigger-based orchestration.",
+            "Multi-agent system converting job postings into complete application packs — OCR ingestion, LLM resume mutation with truthfulness guards, and eval-gated CI preventing regressions.",
+        slug: "job-search-agent",
+    },
+    {
+        title: "The Third Place — Community Platform",
+        domain: "Full-Stack Product Build",
+        stack: "Next.js · Supabase · Razorpay · GA4/GTM · Resend",
+        impact: "Live with payments, 118 commits, 42 PRs shipped",
+        description:
+            "Community and events platform with Razorpay payment flows, GA4/GTM analytics, and a full admin panel (Command Center) with RBAC, recurring events, and social posting.",
+        slug: "community-infra",
+    },
+    {
+        title: "Event Funnels & SEO-first Event CMS",
+        domain: "Growth Systems",
+        stack: "Strapi · Next.js · n8n · WebEngage · WABA · GA4",
+        impact: "+90% registrations, significant revenue impact",
+        description:
+            "Redesigned event journeys and shipped an SEO-first Event CMS integrated with CRM & Zoom to improve registrations and reduce ops overhead.",
         slug: "event-funnels-cms",
     },
     {
-        title: "Growth Event Engine",
-        domain: "Growth Systems",
-        stack: "UTM Framework · Funnel Instrumentation · Attribution",
-        impact: "₹1Cr revenue impact via funnel optimization",
-        description:
-            "Designed the event tracking engine powering growth funnels — UTM normalization, multi-touch attribution, and conversion instrumentation end-to-end.",
-        slug: "martech-revamp-attribution",
-    },
-    {
-        title: "CMS & Scheduling Platform",
+        title: "Multi-Tenant Scheduling Microservice",
         domain: "Platform Builds",
-        stack: "Strapi · Next.js · State Machines · Cron",
-        impact: "Enabled 40+ events/month at scale",
+        stack: "Next.js · Supabase (Auth/RLS) · n8n · Webhooks · CRM",
+        impact: "70% ops reduction, 1,000+ meetings/mo",
         description:
-            "Shipped CMS platforms and scheduling services with workflow state machines. Operator-level tooling for content, events, and automation.",
+            "Calendly-style scheduling service with dynamic slot logic, CRM sync, and automated reminders. Reused across 3 teams.",
         slug: "scheduling-at-scale",
     },
     {
-        title: "LLM Orchestration Pipelines",
-        domain: "AI Workflows",
-        stack: "LLM Chains · NLP2SQL · Generative Pipelines",
-        impact: "25% faster reporting via consolidated analytics",
+        title: "Martech Revamp for Attribution Accuracy",
+        domain: "Marketing Orchestration",
+        stack: "GA4 · Netcore · HubSpot · n8n · Postgres · Metabase",
+        impact: "+20% lead quality, 25% faster reporting",
         description:
-            "Built LLM orchestration layers, NLP-to-SQL query interfaces, and generative pipelines for content and data workflows.",
+            "Re-architected GA4/Netcore/HubSpot/Metabase for clean attribution, faster reporting, and better lead quality.",
+        slug: "martech-revamp-attribution",
+    },
+    {
+        title: "Prompt-to-Design Commerce MVP",
+        domain: "AI & Consumer Product",
+        stack: "React · Canvas API · Supabase · OpenAI",
+        impact: "MVP in 8 weeks, 100+ testers, 3.4 designs/session",
+        description:
+            "AI-powered custom apparel platform — users describe designs in words, the system generates and previews them on a real-time canvas.",
+        slug: "merekapade",
+    },
+    {
+        title: "Content Ops Automation",
+        domain: "Agile Operations",
+        stack: "Jira · Zapier · Metabase · Feedback tooling",
+        impact: "-90% errors, 7-week predictable delivery",
+        description:
+            "Transformed content ops using standardised Jira workflows, sprint-based tracking, and analytics dashboards.",
         slug: "content-ops-automation",
     },
 ];
@@ -52,18 +79,17 @@ export default function WorkPage() {
     return (
         <main className="pt-24 pb-16 section-gap grid-visible min-h-screen">
             {/* Page Header */}
-            <div className="max-w-5xl mx-auto mb-20">
+            <div className="max-w-5xl mx-auto px-6 md:px-12 mb-20">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl geo-underline mb-6">
                     Work
                 </h1>
                 <p className="font-body text-lg text-muted-foreground max-w-2xl">
-                    Only shipped, production systems. Structured, operator-level
-                    documentation. No philosophy. No unfinished experiments.
+                    Shipped production systems. AI agents first, then full-stack builds, growth infrastructure, and automation.
                 </p>
             </div>
 
             {/* Systems Grid */}
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {systems.map((system, i) => (
                     <Link
                         key={system.title}
