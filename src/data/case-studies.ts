@@ -464,6 +464,93 @@ export const caseStudies: CaseStudy[] = [
         ],
     },
     {
+        slug: "mental-health-platform",
+        title: "Website Rebuild for a Mental Health Platform",
+        summary:
+            "Full website rebuild for a mental health startup — SEO implementation, lead capture quiz, structured content architecture, and deployment pipeline.",
+        kpis: [
+            "Complete rebuild shipped",
+            "SEO-first architecture",
+            "Lead capture quiz",
+            "3 priority bands delivered",
+        ],
+        tags: ["Client Work", "Full-Stack", "SEO", "Product Build"],
+        tech: ["Next.js", "JavaScript", "SEO", "Sitemap/Robots.txt"],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "A mental health platform needed their website rebuilt from scratch — better SEO, a lead capture mechanism, and a structured content architecture that could scale.",
+            },
+            {
+                heading: "Context & Role",
+                content:
+                    "Freelance engagement. Owned the full rebuild — scope definition, technical architecture, implementation, and deployment.",
+            },
+            {
+                heading: "What Shipped",
+                content:
+                    "Complete website rebuild with SEO-first architecture — sitemap, robots.txt, meta tags, structured data. Mental Fitness Quiz as the primary lead capture mechanism. Content architecture designed for scalability. Delivered in 3 priority bands with clear scope boundaries.",
+            },
+            {
+                heading: "Product Decisions",
+                content:
+                    "Prioritised SEO fundamentals before visual polish — the site needed to be discoverable before it needed to be pretty. Designed the quiz as a progressive engagement tool rather than a gated form.",
+            },
+            {
+                heading: "Lessons",
+                content:
+                    "Scope-of-work documents with priority bands prevent scope creep and set clear expectations. SEO implementation from day one compounds over time.",
+            },
+        ],
+    },
+    {
+        slug: "quant-trading-platform",
+        title: "Quant Trading Platform with Broker Integrations",
+        summary:
+            "Python-based trading platform with broker OAuth/TOTP authentication, order execution pipeline, and automated smoke testing — containerized with Docker.",
+        kpis: [
+            "Broker OAuth + TOTP auth",
+            "Order execution pipeline",
+            "Smoke test suite",
+            "Docker containerized",
+        ],
+        tags: ["Client Work", "Python", "Fintech", "Infrastructure"],
+        tech: ["Python", "Docker", "Shell", "OAuth", "REST APIs"],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "A fintech client needed a quant trading platform that could authenticate with Indian brokers, execute orders programmatically, and run automated smoke tests to verify connectivity and order flow.",
+            },
+            {
+                heading: "Context & Role",
+                content:
+                    "Freelance engagement. Owned architecture, broker integration, authentication flows, and deployment infrastructure.",
+            },
+            {
+                heading: "What Shipped",
+                content:
+                    "Broker authentication via OAuth and TOTP (supporting direct-connect flows). Order placement pipeline with session management. Automated smoke testing suite for connectivity and order validation. Docker containerized for reproducible deployment.",
+            },
+            {
+                heading: "Product Decisions",
+                content:
+                    "Built authentication as a modular layer — new brokers can be added without touching the order pipeline. Smoke tests run on every deployment to catch broker API changes early. Containerized from day one to avoid environment drift.",
+            },
+            {
+                heading: "Challenges",
+                content:
+                    "Indian broker APIs have inconsistent auth flows — some use OAuth, others TOTP, some both. Built an abstraction layer that normalizes these into a single session interface.",
+            },
+            {
+                heading: "Lessons",
+                content:
+                    "Financial APIs need defensive engineering — session timeouts, retry logic, and smoke tests aren't optional. Modular auth layers pay off when integrating multiple providers.",
+            },
+        ],
+    },
+    {
         slug: "content-ops-automation",
         title: "Content Ops → Predictable, Measurable, Sprint-Driven",
         summary:

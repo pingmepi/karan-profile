@@ -56,7 +56,7 @@ const featuredWork = [
     {
         name: "Job Search Agent",
         description: "Multi-agent AI, eval gates, Telegram, LaTeX",
-        status: "Production",
+        status: "Live",
         caseStudyHref: "/work/job-search-agent",
     },
     {
@@ -69,7 +69,7 @@ const featuredWork = [
     {
         name: "MereKapade",
         description: "AI design commerce, fabric.js canvas, GPT",
-        status: "MVP",
+        status: "Building",
         caseStudyHref: "/work/merekapade",
         liveUrl: "https://merekapade.com",
     },
