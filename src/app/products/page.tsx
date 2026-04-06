@@ -16,7 +16,7 @@ const featuredProducts = [
         description:
             "Converts job postings into complete application packs via Telegram — OCR ingestion, LLM resume mutation with truthfulness guards, LaTeX compilation, and eval-gated CI preventing regressions.",
         stack: "Python · FastAPI · OpenRouter · LaTeX · PostgreSQL · Telegram · Railway",
-        status: "Production",
+        status: "Live",
         caseStudySlug: "job-search-agent",
         tags: ["AI", "Agents", "Eval"],
     },
@@ -26,7 +26,7 @@ const featuredProducts = [
         description:
             "Admin panel with RBAC (5 roles), recurring event management, Hootsuite social posting, gallery uploads, payment session tracking, and audit logging.",
         stack: "React · TypeScript · Vite · Supabase · Tailwind · Shadcn/ui",
-        status: "Completed",
+        status: "Live",
         tags: ["Product Build", "Infra", "Systems"],
     },
     {
@@ -35,8 +35,28 @@ const featuredProducts = [
         description:
             "Landing page routing users to food ordering and community/events ecosystem. Shipped fast with Next.js 16 App Router and Framer Motion animations.",
         stack: "Next.js 16 · Framer Motion · Tailwind",
-        status: "Shipped",
+        status: "Live",
         tags: ["Design", "Product Build"],
+    },
+    {
+        title: "Mental Health Platform Rebuild",
+        tagline: "Client: full website rebuild with SEO & lead capture",
+        description:
+            "Complete website rebuild for a mental health startup — SEO-first architecture, lead capture quiz, structured content, and deployment pipeline.",
+        stack: "Next.js · JavaScript · SEO",
+        status: "Live",
+        caseStudySlug: "mental-health-platform",
+        tags: ["Client Work", "Full-Stack", "SEO"],
+    },
+    {
+        title: "Quant Trading Platform",
+        tagline: "Client: broker integrations & order execution",
+        description:
+            "Python trading platform with broker OAuth/TOTP authentication, order execution pipeline, and automated smoke testing. Docker containerized.",
+        stack: "Python · Docker · OAuth · REST APIs",
+        status: "Building",
+        caseStudySlug: "quant-trading-platform",
+        tags: ["Client Work", "Python", "Fintech"],
     },
 ];
 
@@ -47,7 +67,7 @@ const products = [
         description:
             "AI-led design commerce MVP. Users describe a t-shirt design in words, the system generates and previews it on a real-time canvas. Exploring prompt-to-purchase flows.",
         stack: "React · fabric.js · Supabase · OpenAI (GPT-4o / DALL-E)",
-        status: "MVP",
+        status: "Building",
         caseStudySlug: "merekapade",
         liveUrl: "https://merekapade.com",
         liveLabel: "Live",
