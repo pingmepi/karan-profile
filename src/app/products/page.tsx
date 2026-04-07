@@ -119,7 +119,7 @@ const allProducts = [
         title: "Tribeca KPI Dashboard",
         tagline: "Analytics dashboard for business KPIs at a glance",
         description:
-            "Python-built dashboard with KPI strips, trend charts, and multi-bar visualizations. Designed for operations teams who need a daily snapshot without digging through spreadsheets.",
+            "Dashboard with KPI strips, trend charts, and multi-bar visualizations. Designed for operations teams who need a daily business snapshot without digging through spreadsheets.",
         stack: "Python · Data Visualization",
         status: "Live",
         caseStudySlug: "tribeca-dashboard",

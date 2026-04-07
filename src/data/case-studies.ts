@@ -23,17 +23,11 @@ export const caseStudies: CaseStudy[] = [
             "Redesigned event journeys and shipped an SEO-first Event CMS integrated with CRM & Zoom to improve registrations and reduce ops overhead.",
         kpis: [
             "+90% registrations",
-            "Significant revenue impact",
-            "+25% event→QL",
-            "40+ events/mo",
+            "+25% event→qualified lead",
+            "40+ events/month self-serve",
+            "Revenue impact within 4 months",
         ],
-        tags: [
-            "Product Strategy",
-            "Event Automation",
-            "Funnel Optimisation",
-            "SEO",
-            "CRM",
-        ],
+        tags: ["Growth Product", "Funnel Optimization", "SEO", "CRM Integration"],
         tech: [
             "Strapi",
             "Next.js",
@@ -108,8 +102,8 @@ export const caseStudies: CaseStudy[] = [
         title: "Martech Revamp for Attribution Accuracy",
         summary:
             "Re-architected GA4/Netcore/HubSpot/Metabase for clean attribution, faster reporting, and better lead quality.",
-        kpis: ["+20% lead quality", "25% faster reporting", "−40% CRM duplicates"],
-        tags: ["Martech", "Attribution", "Analytics", "Data Quality"],
+        kpis: ["+20% lead quality", "25% faster reporting", "40% fewer CRM duplicates", "Single source of truth"],
+        tags: ["Data Strategy", "Attribution", "Decision Infrastructure"],
         tech: ["GA4", "Netcore", "HubSpot", "n8n", "Postgres", "Metabase"],
         sections: [
             {
@@ -175,10 +169,11 @@ export const caseStudies: CaseStudy[] = [
             "Dynamic slot logic + CRM sync reduced ops load and accelerated lead→meeting.",
         kpis: [
             "70% ops reduction",
-            "1,000+ meetings/mo",
+            "1,000+ meetings/month automated",
             "25% faster lead→meeting",
+            "Self-serve booking",
         ],
-        tags: ["Platform", "SaaS Infra", "Ops Automation"],
+        tags: ["Platform Product", "Ops Efficiency", "Internal Tools"],
         tech: ["Next.js", "Supabase (Auth/RLS)", "n8n", "Webhooks", "CRM"],
         sections: [
             {
@@ -244,10 +239,11 @@ export const caseStudies: CaseStudy[] = [
             "Users generate wearable designs from prompts with live preview and saved sessions.",
         kpis: [
             "MVP in 8 weeks",
-            "100+ testers",
-            "3.4 designs/session",
+            "100+ early testers",
+            "3.4 designs per session",
+            "Prompt-to-purchase flow validated",
         ],
-        tags: ["AI", "Consumer", "Commerce"],
+        tags: ["Generative AI", "Consumer Product", "Commerce"],
         tech: ["React", "Canvas API", "Supabase (Auth/RLS/Storage)", "GPT"],
         liveUrl: "https://merekapade.com",
         liveLabel: "Live Product",
@@ -314,12 +310,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Shipped a full-stack community and events platform from zero to production — consumer app with Razorpay payments, GA4/GTM analytics, and a dedicated admin panel with RBAC, recurring events, and social posting.",
         kpis: [
-            "Live Razorpay payments",
-            "3 platforms shipped",
-            "RBAC with 5 roles",
-            "Full analytics pipeline",
+            "3 platforms live in production",
+            "Real payments processing",
+            "End-to-end analytics pipeline",
+            "5-role access control system",
         ],
-        tags: ["Full-Stack", "Payments", "Analytics", "Product Build", "0→1"],
+        tags: ["Platform Product", "Payments", "Analytics", "0→1"],
         tech: [
             "Next.js (SSR)",
             "TypeScript",
@@ -393,12 +389,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Built a multi-agent system that converts job postings into complete application packs via Telegram — OCR ingestion, LLM-powered resume mutation with truthfulness guards, LaTeX compilation, and eval-gated CI preventing regressions.",
         kpis: [
-            "222 tests passing",
-            "39 commits",
-            "CI gates green",
-            "Production on Railway",
+            "Multi-agent orchestration",
+            "Eval-gated quality control",
+            "Zero hallucinated claims",
+            "Telegram → full application pack",
         ],
-        tags: ["AI", "Agents", "Eval Frameworks", "Multi-Agent", "0→1"],
+        tags: ["AI Product", "Multi-Agent Systems", "Quality Engineering", "0→1"],
         tech: [
             "Python",
             "FastAPI",
@@ -419,7 +415,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Context & Role",
                 content:
-                    "Solo builder — architecture, implementation, eval framework, and deployment. 39 commits, 21+ Linear issues tracked, PRD with planner/executor/profile agent architecture. Phase 2 active (Oct 2025 – Apr 2026).",
+                    "Solo builder — owned architecture, implementation, eval framework, and deployment. PRD with planner/executor/profile agent architecture. 21+ Linear issues planned and shipped. Phase 2 active (Oct 2025 – Apr 2026).",
             },
             {
                 heading: "Problem",
@@ -434,7 +430,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Eval-Driven CI Gating",
                 content:
-                    "The core differentiator: every code change runs through an eval suite before merging. Metrics tracked: compile rate (LaTeX must produce valid PDF), forbidden claims detection (no hallucinated skills), edit region violations (mutations only in designated sections), cost per application (OpenRouter spend), and latency budgets.\n\n222 tests enforce these constraints. CI gates prevent regressions — a PR that increases forbidden claims or breaks compilation cannot merge.",
+                    "The core differentiator: every change runs through an eval suite before shipping. Metrics tracked: compile rate (LaTeX must produce valid PDF), forbidden claims detection (no hallucinated skills), edit region violations (mutations only in designated sections), cost per application (OpenRouter spend), and latency budgets.\n\nEval gates prevent regressions — any change that increases forbidden claims or breaks output quality cannot ship.",
             },
             {
                 heading: "Ingestion & Output Pipeline",
@@ -454,7 +450,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Metrics & Impact",
                 content:
-                    "222 tests passing with CI gates enforced. 39 commits across the project. Production-deployed on Railway. Complete application pack generated from a single Telegram message. Eval framework catches forbidden claims, compilation failures, and edit violations before they reach production.",
+                    "Production-deployed and generating complete application packs from a single Telegram message. Eval framework catches forbidden claims, compilation failures, and edit violations before they reach users. Quality gates enforced on every change.",
             },
             {
                 heading: "Challenges & Trade-offs",
@@ -474,12 +470,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Full website rebuild for a mental health startup — SEO implementation, lead capture quiz, structured content architecture, and deployment pipeline.",
         kpis: [
-            "Complete rebuild shipped",
+            "Full platform shipped",
             "SEO-first architecture",
-            "Lead capture quiz",
-            "3 priority bands delivered",
+            "Lead capture via quiz",
+            "Scoped in 3 priority bands",
         ],
-        tags: ["Client Work", "Full-Stack", "SEO", "Product Build"],
+        tags: ["Client Delivery", "SEO", "Lead Generation", "0→1"],
         tech: ["Next.js", "JavaScript", "SEO", "Sitemap/Robots.txt"],
         sections: [
             {
@@ -515,12 +511,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Python-based trading platform with broker OAuth/TOTP authentication, order execution pipeline, and automated smoke testing — containerized with Docker.",
         kpis: [
-            "Broker OAuth + TOTP auth",
-            "Order execution pipeline",
-            "Smoke test suite",
-            "Docker containerized",
+            "Multi-broker authentication",
+            "Automated order execution",
+            "Pre-deploy smoke testing",
+            "Production-ready infra",
         ],
-        tags: ["Client Work", "Python", "Fintech", "Infrastructure"],
+        tags: ["Client Delivery", "Fintech", "Trading Systems"],
         tech: ["Python", "Docker", "Shell", "OAuth", "REST APIs"],
         sections: [
             {
@@ -536,7 +532,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "What Shipped",
                 content:
-                    "Broker authentication via OAuth and TOTP (supporting direct-connect flows). Order placement pipeline with session management. Automated smoke testing suite for connectivity and order validation. Docker containerized for reproducible deployment.",
+                    "Broker authentication via OAuth and TOTP (supporting direct-connect flows). Order placement pipeline with session management. Automated smoke testing suite for connectivity and order validation. Containerized for reproducible deployment across environments.",
             },
             {
                 heading: "Product Decisions",
@@ -561,12 +557,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Production workflow library running on self-hosted n8n — AI agents, sales automation, email orchestration, calendar management, social posting, and web scrapers. Eliminates 80+ hours/week of manual ops.",
         kpis: [
-            "90+ workflows",
-            "80+ hrs/week saved",
-            "Self-hosted EC2",
-            "AI agent workflows",
+            "90+ production workflows",
+            "80+ hrs/week ops eliminated",
+            "AI agent orchestration",
+            "Cross-team automation",
         ],
-        tags: ["Automation", "AI", "Ops", "n8n"],
+        tags: ["Automation Strategy", "AI Agents", "Ops Efficiency"],
         tech: ["n8n", "Python", "Docker", "AWS EC2", "Various APIs"],
         sections: [
             {
@@ -602,12 +598,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "VAPI voice AI integration that walks users through identity verification and KYC flows over a phone call — proof-of-concept for voice-first fintech onboarding.",
         kpis: [
-            "Voice-first KYC",
-            "VAPI integration",
-            "Tool server pattern",
+            "Voice-first onboarding",
+            "Hands-free KYC flow",
+            "Reusable tool server pattern",
             "Shipped",
         ],
-        tags: ["Voice AI", "Fintech", "API"],
+        tags: ["Voice AI", "Fintech", "Onboarding UX"],
         tech: ["VAPI", "REST APIs", "Node.js"],
         sections: [
             {
@@ -634,11 +630,11 @@ export const caseStudies: CaseStudy[] = [
             "Flutter app for ephemeral voice notes — record a thought, set a countdown, and it's gone. Encrypted local storage, no cloud, no accounts.",
         kpis: [
             "Zero cloud dependency",
-            "Encrypted storage",
-            "Ephemeral by design",
-            "Flutter/Dart",
+            "Privacy-by-architecture",
+            "Self-destructing recordings",
+            "No accounts needed",
         ],
-        tags: ["Mobile", "Privacy", "Flutter"],
+        tags: ["Mobile Product", "Privacy-First", "Consumer"],
         tech: ["Flutter", "Dart", "Encrypted Storage"],
         sections: [
             {
@@ -664,12 +660,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Python analytics dashboard with KPI strips, trend charts, and multi-bar visualizations — designed for operations teams who need a daily business snapshot.",
         kpis: [
-            "KPI strip cards",
-            "Trend visualizations",
-            "Multi-bar charts",
-            "Python-built",
+            "At-a-glance business health",
+            "Automated daily snapshots",
+            "Period-over-period trends",
+            "No analyst dependency",
         ],
-        tags: ["Data", "Analytics", "Python"],
+        tags: ["Decision Infrastructure", "Analytics", "Ops Visibility"],
         tech: ["Python", "Data Visualization"],
         sections: [
             {
@@ -695,11 +691,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Jira workflows + analytics turned content delivery into a reliable machine.",
         kpis: [
-            "−90% errors",
+            "90% error reduction",
             "7-week predictable delivery",
-            "−23% learner drop-offs",
+            "23% fewer learner drop-offs",
+            "Sprint-driven content ops",
         ],
-        tags: ["Agile Ops", "Education", "Analytics"],
+        tags: ["Process Design", "Ops Efficiency", "Education"],
         tech: ["Jira", "Zapier", "Metabase", "Feedback tooling"],
         sections: [
             {
