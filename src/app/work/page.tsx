@@ -12,65 +12,65 @@ export const metadata: Metadata = {
 const systems = [
     {
         title: "Job Search Agent",
-        domain: "AI & Multi-Agent Systems",
+        domain: "AI Product",
         stack: "Python · FastAPI · OpenRouter · LaTeX · Telegram · Railway",
-        impact: "222 tests with eval CI gates in production",
+        impact: "Multi-agent orchestration with eval-gated quality control",
         description:
-            "Multi-agent system converting job postings into complete application packs — OCR ingestion, LLM resume mutation with truthfulness guards, and eval-gated CI preventing regressions.",
+            "Paste a job link into Telegram, get back a tailored application pack. Three specialized agents collaborate with quality gates that catch hallucinated claims before anything ships.",
         slug: "job-search-agent",
     },
     {
         title: "The Third Place — Community Platform",
-        domain: "Full-Stack Product Build",
+        domain: "Platform Product",
         stack: "Next.js · Supabase · Razorpay · GA4/GTM · Resend",
-        impact: "Live with payments, 118 commits, 42 PRs shipped",
+        impact: "3 platforms live, processing real payments",
         description:
-            "Community and events platform with Razorpay payment flows, GA4/GTM analytics, and a full admin panel (Command Center) with RBAC, recurring events, and social posting.",
+            "Community and events platform for local communities — discover events, pay for experiences, and manage everything from a single admin panel. Live with real users and real money.",
         slug: "community-infra",
     },
     {
         title: "Event Funnels & SEO-first Event CMS",
-        domain: "Growth Systems",
+        domain: "Growth Product",
         stack: "Strapi · Next.js · n8n · WebEngage · WABA · GA4",
-        impact: "+90% registrations, significant revenue impact",
+        impact: "+90% registrations, revenue impact within 4 months",
         description:
-            "Redesigned event journeys and shipped an SEO-first Event CMS integrated with CRM & Zoom to improve registrations and reduce ops overhead.",
+            "Redesigned event journeys and shipped a self-serve Event CMS. Removed friction from registration, fixed attribution, and enabled 40+ events/month without manual ops.",
         slug: "event-funnels-cms",
     },
     {
         title: "Multi-Tenant Scheduling Microservice",
-        domain: "Platform Builds",
+        domain: "Platform Product",
         stack: "Next.js · Supabase (Auth/RLS) · n8n · Webhooks · CRM",
-        impact: "70% ops reduction, 1,000+ meetings/mo",
+        impact: "70% ops reduction, 1,000+ meetings/month automated",
         description:
-            "Calendly-style scheduling service with dynamic slot logic, CRM sync, and automated reminders. Reused across 3 teams.",
+            "Self-serve booking system replacing manual scheduling across sales and academic teams. Dynamic slot logic, CRM sync, and automated reminders.",
         slug: "scheduling-at-scale",
     },
     {
         title: "Martech Revamp for Attribution Accuracy",
-        domain: "Marketing Orchestration",
+        domain: "Data Strategy",
         stack: "GA4 · Netcore · HubSpot · n8n · Postgres · Metabase",
-        impact: "+20% lead quality, 25% faster reporting",
+        impact: "+20% lead quality, single source of truth",
         description:
-            "Re-architected GA4/Netcore/HubSpot/Metabase for clean attribution, faster reporting, and better lead quality.",
+            "Rebuilt the data path from tracking to dashboards so teams could trust the numbers. Clean attribution, deduplicated CRM, and self-serve reporting.",
         slug: "martech-revamp-attribution",
     },
     {
         title: "Prompt-to-Design Commerce MVP",
-        domain: "AI & Consumer Product",
+        domain: "Generative AI",
         stack: "React · Canvas API · Supabase · OpenAI",
         impact: "MVP in 8 weeks, 100+ testers, 3.4 designs/session",
         description:
-            "AI-powered custom apparel platform — users describe designs in words, the system generates and previews them on a real-time canvas.",
+            "Describe a t-shirt design in words, see it on a real-time canvas instantly. Exploring prompt-to-purchase flows for custom merchandise.",
         slug: "merekapade",
     },
     {
         title: "Content Ops Automation",
-        domain: "Agile Operations",
+        domain: "Process Design",
         stack: "Jira · Zapier · Metabase · Feedback tooling",
-        impact: "-90% errors, 7-week predictable delivery",
+        impact: "90% error reduction, 7-week predictable delivery",
         description:
-            "Transformed content ops using standardised Jira workflows, sprint-based tracking, and analytics dashboards.",
+            "Turned ad-hoc content delivery into a sprint-driven machine. Standardized workflows, feedback loops, and dashboards replaced guesswork with predictability.",
         slug: "content-ops-automation",
     },
 ];

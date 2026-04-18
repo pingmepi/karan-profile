@@ -23,17 +23,11 @@ export const caseStudies: CaseStudy[] = [
             "Redesigned event journeys and shipped an SEO-first Event CMS integrated with CRM & Zoom to improve registrations and reduce ops overhead.",
         kpis: [
             "+90% registrations",
-            "Significant revenue impact",
-            "+25% event→QL",
-            "40+ events/mo",
+            "+25% event→qualified lead",
+            "40+ events/month self-serve",
+            "Revenue impact within 4 months",
         ],
-        tags: [
-            "Product Strategy",
-            "Event Automation",
-            "Funnel Optimisation",
-            "SEO",
-            "CRM",
-        ],
+        tags: ["Growth Product", "Funnel Optimization", "SEO", "CRM Integration"],
         tech: [
             "Strapi",
             "Next.js",
@@ -108,8 +102,8 @@ export const caseStudies: CaseStudy[] = [
         title: "Martech Revamp for Attribution Accuracy",
         summary:
             "Re-architected GA4/Netcore/HubSpot/Metabase for clean attribution, faster reporting, and better lead quality.",
-        kpis: ["+20% lead quality", "25% faster reporting", "−40% CRM duplicates"],
-        tags: ["Martech", "Attribution", "Analytics", "Data Quality"],
+        kpis: ["+20% lead quality", "25% faster reporting", "40% fewer CRM duplicates", "Single source of truth"],
+        tags: ["Data Strategy", "Attribution", "Decision Infrastructure"],
         tech: ["GA4", "Netcore", "HubSpot", "n8n", "Postgres", "Metabase"],
         sections: [
             {
@@ -175,10 +169,11 @@ export const caseStudies: CaseStudy[] = [
             "Dynamic slot logic + CRM sync reduced ops load and accelerated lead→meeting.",
         kpis: [
             "70% ops reduction",
-            "1,000+ meetings/mo",
+            "1,000+ meetings/month automated",
             "25% faster lead→meeting",
+            "Self-serve booking",
         ],
-        tags: ["Platform", "SaaS Infra", "Ops Automation"],
+        tags: ["Platform Product", "Ops Efficiency", "Internal Tools"],
         tech: ["Next.js", "Supabase (Auth/RLS)", "n8n", "Webhooks", "CRM"],
         sections: [
             {
@@ -244,10 +239,11 @@ export const caseStudies: CaseStudy[] = [
             "Users generate wearable designs from prompts with live preview and saved sessions.",
         kpis: [
             "MVP in 8 weeks",
-            "100+ testers",
-            "3.4 designs/session",
+            "100+ early testers",
+            "3.4 designs per session",
+            "Prompt-to-purchase flow validated",
         ],
-        tags: ["AI", "Consumer", "Commerce"],
+        tags: ["Generative AI", "Consumer Product", "Commerce"],
         tech: ["React", "Canvas API", "Supabase (Auth/RLS/Storage)", "GPT"],
         liveUrl: "https://merekapade.com",
         liveLabel: "Live Product",
@@ -312,14 +308,14 @@ export const caseStudies: CaseStudy[] = [
         slug: "community-infra",
         title: "The Third Place — Live Community Platform with Payments & Admin Panel",
         summary:
-            "Shipped a full-stack community and events platform from zero to production — consumer app with Razorpay payments, GA4/GTM analytics, and a dedicated admin panel (Command Center) with RBAC, recurring events, and social posting.",
+            "Shipped a full-stack community and events platform from zero to production — consumer app with Razorpay payments, GA4/GTM analytics, and a dedicated admin panel with RBAC, recurring events, and social posting.",
         kpis: [
-            "118 commits (consumer)",
-            "36 commits (admin)",
-            "Live Razorpay payments",
-            "42 PRs shipped",
+            "3 platforms live in production",
+            "Real payments processing",
+            "End-to-end analytics pipeline",
+            "5-role access control system",
         ],
-        tags: ["Full-Stack", "Payments", "Analytics", "Product Build", "0→1"],
+        tags: ["Platform Product", "Payments", "Analytics", "0→1"],
         tech: [
             "Next.js (SSR)",
             "TypeScript",
@@ -338,12 +334,17 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Overview",
                 content:
-                    "The Third Place is a live community and events platform — the idea that work and home aren't enough, people need shared spaces. I built both the consumer app and the admin panel (Command Center) from scratch, shipping real payment flows, analytics, and operational tooling into production.",
+                    "The Third Place is a live community and events platform — the idea that work and home aren't enough, people need shared spaces. I built three interconnected platforms from scratch: a consumer app for discovery and payments, an admin panel for operators, and a landing page that ties the ecosystem together.",
+            },
+            {
+                heading: "The Ecosystem",
+                content:
+                    "Three platforms, one shared Supabase backend:\n\n• Consumer App (mythirdplace.rapchai.com) — Event discovery, community pages, Razorpay payments, GA4/GTM analytics\n• Admin Panel (admin.rapchai.com) — RBAC with 5 roles, event management, social posting, payment tracking, audit logging\n• Landing Page (rapchai.com) — Neo-brutalist ecosystem landing routing users to food ordering and community/events",
             },
             {
                 heading: "Context & Role",
                 content:
-                    "Solo architect, PM, and IC. Built both applications end-to-end: consumer-facing Next.js app and React-based admin dashboard. 118 commits on the consumer app, 36 on admin, 42 PRs merged on GitHub.",
+                    "Solo architect, PM, and IC. Built all three applications end-to-end — from database schema and RLS policies to frontend and deployment.",
             },
             {
                 heading: "Consumer App — What Shipped",
@@ -351,9 +352,9 @@ export const caseStudies: CaseStudy[] = [
                     "Razorpay payment integration with idempotent sessions, orphaned payment cleanup, and cancellation guards. Payment confirmation emails via Resend. Short URLs for events (/e/:shortCode) and communities (/c/:slug). Image and video gallery with adaptive masonry layout. Post-signup name prompt modal for progressive profiling. GA4/GTM analytics covering auth events, e-commerce tracking, and community engagement. SEO meta tags with IST timezone handling and canonical URLs.",
             },
             {
-                heading: "Command Center (Admin Panel)",
+                heading: "Admin Panel — What Shipped",
                 content:
-                    "Full admin dashboard with quick-create modals and at-a-glance status cards. RBAC with 5 distinct roles. Recurring event management with decoupled editing and bulk operations. Short URL management for marketing. Hootsuite social posting integration. Video gallery uploads. Payment session tracking and audit logging. Strict TypeScript, N+1 query fixes, and email templates.",
+                    "Full admin dashboard with quick-create modals and at-a-glance status cards. RBAC with 5 distinct roles. Recurring event management with decoupled editing and bulk operations. Short URL management for marketing. Hootsuite social posting integration. Video gallery uploads. Payment session tracking and audit logging.",
             },
             {
                 heading: "Product Decisions",
@@ -363,12 +364,12 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Architecture",
                 content:
-                    "Consumer: Next.js (SSR) → Supabase (PostgreSQL + Auth + RLS + Storage) → Razorpay → Resend → Vercel.\nAdmin: React + Vite → Supabase → Hootsuite API.\nShared Supabase instance with RLS policies governing consumer vs admin access patterns.",
+                    "Consumer: Next.js (SSR) → Supabase (PostgreSQL + Auth + RLS + Storage) → Razorpay → Resend → Vercel.\nAdmin: React + Vite → Supabase → Hootsuite API.\nLanding: Next.js 16 + Framer Motion → Vercel.\nShared Supabase instance with RLS policies governing consumer vs admin access patterns.",
             },
             {
                 heading: "Metrics & Impact",
                 content:
-                    "Live in production processing real payments. 4 phases of admin panel completed. Full analytics pipeline from user signup through payment conversion. Gallery, events, and communities all operational with real user traffic.",
+                    "Three platforms live in production. Consumer app processing real payments with full analytics pipeline from signup through payment conversion. Admin panel operational across all 4 phases. Gallery, events, and communities all serving real user traffic.",
             },
             {
                 heading: "Challenges & Trade-offs",
@@ -378,7 +379,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Lessons",
                 content:
-                    "Payment integrations need defensive engineering — idempotency keys, orphaned session cleanup, and cancellation guards aren't optional. Audit logging from day one saves debugging time later. RLS-enforced privacy is more trustworthy than UI-layer permission checks.",
+                    "Payment integrations need defensive engineering — idempotency keys, orphaned session cleanup, and cancellation guards aren't optional. Audit logging from day one saves debugging time later. RLS-enforced privacy is more trustworthy than UI-layer permission checks. Shipping three interconnected platforms on a shared backend forces you to think about access patterns from day one.",
             },
         ],
     },
@@ -388,12 +389,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Built a multi-agent system that converts job postings into complete application packs via Telegram — OCR ingestion, LLM-powered resume mutation with truthfulness guards, LaTeX compilation, and eval-gated CI preventing regressions.",
         kpis: [
-            "222 tests passing",
-            "39 commits",
-            "CI gates green",
-            "Production on Railway",
+            "Multi-agent orchestration",
+            "Eval-gated quality control",
+            "Zero hallucinated claims",
+            "Telegram → full application pack",
         ],
-        tags: ["AI", "Agents", "Eval Frameworks", "Multi-Agent", "0→1"],
+        tags: ["AI Product", "Multi-Agent Systems", "Quality Engineering", "0→1"],
         tech: [
             "Python",
             "FastAPI",
@@ -414,7 +415,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Context & Role",
                 content:
-                    "Solo builder — architecture, implementation, eval framework, and deployment. 39 commits, 21+ Linear issues tracked, PRD with planner/executor/profile agent architecture. Phase 2 active (Oct 2025 – Apr 2026).",
+                    "Solo builder — owned architecture, implementation, eval framework, and deployment. PRD with planner/executor/profile agent architecture. 21+ Linear issues planned and shipped. Phase 2 active (Oct 2025 – Apr 2026).",
             },
             {
                 heading: "Problem",
@@ -429,7 +430,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Eval-Driven CI Gating",
                 content:
-                    "The core differentiator: every code change runs through an eval suite before merging. Metrics tracked: compile rate (LaTeX must produce valid PDF), forbidden claims detection (no hallucinated skills), edit region violations (mutations only in designated sections), cost per application (OpenRouter spend), and latency budgets.\n\n222 tests enforce these constraints. CI gates prevent regressions — a PR that increases forbidden claims or breaks compilation cannot merge.",
+                    "The core differentiator: every change runs through an eval suite before shipping. Metrics tracked: compile rate (LaTeX must produce valid PDF), forbidden claims detection (no hallucinated skills), edit region violations (mutations only in designated sections), cost per application (OpenRouter spend), and latency budgets.\n\nEval gates prevent regressions — any change that increases forbidden claims or breaks output quality cannot ship.",
             },
             {
                 heading: "Ingestion & Output Pipeline",
@@ -449,7 +450,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "Metrics & Impact",
                 content:
-                    "222 tests passing with CI gates enforced. 39 commits across the project. Production-deployed on Railway. Complete application pack generated from a single Telegram message. Eval framework catches forbidden claims, compilation failures, and edit violations before they reach production.",
+                    "Production-deployed and generating complete application packs from a single Telegram message. Eval framework catches forbidden claims, compilation failures, and edit violations before they reach users. Quality gates enforced on every change.",
             },
             {
                 heading: "Challenges & Trade-offs",
@@ -469,12 +470,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Full website rebuild for a mental health startup — SEO implementation, lead capture quiz, structured content architecture, and deployment pipeline.",
         kpis: [
-            "Complete rebuild shipped",
+            "Full platform shipped",
             "SEO-first architecture",
-            "Lead capture quiz",
-            "3 priority bands delivered",
+            "Lead capture via quiz",
+            "Scoped in 3 priority bands",
         ],
-        tags: ["Client Work", "Full-Stack", "SEO", "Product Build"],
+        tags: ["Client Delivery", "SEO", "Lead Generation", "0→1"],
         tech: ["Next.js", "JavaScript", "SEO", "Sitemap/Robots.txt"],
         sections: [
             {
@@ -510,12 +511,12 @@ export const caseStudies: CaseStudy[] = [
         summary:
             "Python-based trading platform with broker OAuth/TOTP authentication, order execution pipeline, and automated smoke testing — containerized with Docker.",
         kpis: [
-            "Broker OAuth + TOTP auth",
-            "Order execution pipeline",
-            "Smoke test suite",
-            "Docker containerized",
+            "Multi-broker authentication",
+            "Automated order execution",
+            "Pre-deploy smoke testing",
+            "Production-ready infra",
         ],
-        tags: ["Client Work", "Python", "Fintech", "Infrastructure"],
+        tags: ["Client Delivery", "Fintech", "Trading Systems"],
         tech: ["Python", "Docker", "Shell", "OAuth", "REST APIs"],
         sections: [
             {
@@ -531,7 +532,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 heading: "What Shipped",
                 content:
-                    "Broker authentication via OAuth and TOTP (supporting direct-connect flows). Order placement pipeline with session management. Automated smoke testing suite for connectivity and order validation. Docker containerized for reproducible deployment.",
+                    "Broker authentication via OAuth and TOTP (supporting direct-connect flows). Order placement pipeline with session management. Automated smoke testing suite for connectivity and order validation. Containerized for reproducible deployment across environments.",
             },
             {
                 heading: "Product Decisions",
@@ -551,16 +552,151 @@ export const caseStudies: CaseStudy[] = [
         ],
     },
     {
+        slug: "n8n-workflows",
+        title: "90+ Automation Workflows — AI Agents, Sales, Ops",
+        summary:
+            "Production workflow library running on self-hosted n8n — AI agents, sales automation, email orchestration, calendar management, social posting, and web scrapers. Eliminates 80+ hours/week of manual ops.",
+        kpis: [
+            "90+ production workflows",
+            "80+ hrs/week ops eliminated",
+            "AI agent orchestration",
+            "Cross-team automation",
+        ],
+        tags: ["Automation Strategy", "AI Agents", "Ops Efficiency"],
+        tech: ["n8n", "Python", "Docker", "AWS EC2", "Various APIs"],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "A library of 90+ production workflows on a self-hosted n8n instance (EC2 + Docker Compose), built across two companies and independent consulting. Covers everything from AI agents to CRM automation to web scrapers.",
+            },
+            {
+                heading: "AI Agent Workflows",
+                content:
+                    "Calling Agent for automated outbound calls, Planner Agent for task decomposition, Restaurant Booking Agent for reservation management. Content generation workflows using LLMs for social media and email.",
+            },
+            {
+                heading: "Sales & Marketing",
+                content:
+                    "Lead routing and lifecycle journeys across CRM, WhatsApp, and email. Calendar management and meeting scheduling. UTM tracking and attribution pipeline feeding into Metabase dashboards.",
+            },
+            {
+                heading: "Operations",
+                content:
+                    "Web scrapers for competitor monitoring and data collection. Social media automation (X/Twitter, Hootsuite). Google Drive workflow automation. Error handling with retries, logging, and alerting — no silent failures.",
+            },
+            {
+                heading: "Impact",
+                content:
+                    "At Miles Education ($30M ARR): eliminated 80+ hours/week of manual ops across sales, marketing, and alumni teams. Self-hosted architecture keeps data in-house and costs predictable.",
+            },
+        ],
+    },
+    {
+        slug: "voice-ai-kyc",
+        title: "Voice AI Tool Server for Identity Verification",
+        summary:
+            "VAPI voice AI integration that walks users through identity verification and KYC flows over a phone call — proof-of-concept for voice-first fintech onboarding.",
+        kpis: [
+            "Voice-first onboarding",
+            "Hands-free KYC flow",
+            "Reusable tool server pattern",
+            "Shipped",
+        ],
+        tags: ["Voice AI", "Fintech", "Onboarding UX"],
+        tech: ["VAPI", "REST APIs", "Node.js"],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "A tool server that integrates with VAPI voice AI to conduct identity verification and KYC flows entirely over voice. Built as a proof-of-concept for fintech companies exploring voice-first onboarding.",
+            },
+            {
+                heading: "How It Works",
+                content:
+                    "VAPI handles the voice interaction and speech recognition. The tool server orchestrates the verification flow — collecting identity details, validating against mock data, and routing through verification steps. Designed as a reusable pattern for any voice-driven workflow.",
+            },
+            {
+                heading: "Why Voice",
+                content:
+                    "Many KYC users are uncomfortable with forms or have accessibility needs. Voice removes friction and makes verification accessible to a wider audience. The tool server pattern means the same backend can power multiple voice workflows.",
+            },
+        ],
+    },
+    {
+        slug: "void-app",
+        title: "The Void — Privacy-First Voice Notes That Disappear",
+        summary:
+            "Flutter app for ephemeral voice notes — record a thought, set a countdown, and it's gone. Encrypted local storage, no cloud, no accounts.",
+        kpis: [
+            "Zero cloud dependency",
+            "Privacy-by-architecture",
+            "Self-destructing recordings",
+            "No accounts needed",
+        ],
+        tags: ["Mobile Product", "Privacy-First", "Consumer"],
+        tech: ["Flutter", "Dart", "Encrypted Storage"],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "A mobile app for people who want to think out loud without creating a permanent record. Record a voice note, set a countdown timer, and it self-destructs. No cloud sync, no accounts, no data leaving the device.",
+            },
+            {
+                heading: "Design Philosophy",
+                content:
+                    "Most note-taking apps optimize for permanence. The Void optimizes for impermanence — the freedom to capture a fleeting thought without the anxiety of it being stored, synced, or searchable forever.",
+            },
+            {
+                heading: "Technical Approach",
+                content:
+                    "All recordings stored in encrypted local storage on the device. Countdown timer triggers permanent deletion — no recovery, no trash folder. No network calls, no analytics, no user accounts. Privacy isn't a feature, it's the architecture.",
+            },
+        ],
+    },
+    {
+        slug: "tribeca-dashboard",
+        title: "KPI Dashboard for Business Operations",
+        summary:
+            "Python analytics dashboard with KPI strips, trend charts, and multi-bar visualizations — designed for operations teams who need a daily business snapshot.",
+        kpis: [
+            "At-a-glance business health",
+            "Automated daily snapshots",
+            "Period-over-period trends",
+            "No analyst dependency",
+        ],
+        tags: ["Decision Infrastructure", "Analytics", "Ops Visibility"],
+        tech: ["Python", "Data Visualization"],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "A dashboard built for operations teams who need to check business health every morning without digging through spreadsheets or waiting for a BI team to build reports.",
+            },
+            {
+                heading: "What It Shows",
+                content:
+                    "KPI strip cards with current values and period-over-period change. Trend charts showing directional movement. Multi-bar charts for comparative analysis across business units or time periods.",
+            },
+            {
+                heading: "Why Custom-Built",
+                content:
+                    "Off-the-shelf BI tools require SQL knowledge or analyst support for every new view. This dashboard is opinionated — it shows exactly what the ops team decided matters, updated automatically, with no query writing required.",
+            },
+        ],
+    },
+    {
         slug: "content-ops-automation",
         title: "Content Ops → Predictable, Measurable, Sprint-Driven",
         summary:
             "Jira workflows + analytics turned content delivery into a reliable machine.",
         kpis: [
-            "−90% errors",
+            "90% error reduction",
             "7-week predictable delivery",
-            "−23% learner drop-offs",
+            "23% fewer learner drop-offs",
+            "Sprint-driven content ops",
         ],
-        tags: ["Agile Ops", "Education", "Analytics"],
+        tags: ["Process Design", "Ops Efficiency", "Education"],
         tech: ["Jira", "Zapier", "Metabase", "Feedback tooling"],
         sections: [
             {
