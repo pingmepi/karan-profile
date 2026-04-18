@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Life",
@@ -68,10 +69,26 @@ export default function LifePage() {
                 </h2>
 
                 <div className="brutal-card p-6 md:p-8">
-                    <div className={`w-10 h-1.5 bg-bauhaus mb-4`} />
-                    <h3 className="text-xl font-display font-bold mb-2">
-                        U&I Trust
-                    </h3>
+                    <div className="flex items-start gap-6 mb-4">
+                        <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 border-2 border-foreground bg-white p-2">
+                            <Image
+                                src="/assets/logos/ui-trust.png"
+                                alt="U&I Trust — Be the Change"
+                                fill
+                                className="object-contain"
+                                sizes="(max-width: 768px) 80px, 96px"
+                            />
+                        </div>
+                        <div className="flex-1">
+                            <div className={`w-10 h-1.5 bg-bauhaus mb-4`} />
+                            <h3 className="text-xl font-display font-bold mb-2">
+                                U&I Trust
+                            </h3>
+                            <p className="font-body text-sm text-muted-foreground italic">
+                                Be the Change.
+                            </p>
+                        </div>
+                    </div>
                     <p className="font-mono text-xs text-muted-foreground mb-4">
                         ~3 years · Volunteer → Center Leader → Fundraising Coach
                     </p>
