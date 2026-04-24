@@ -46,6 +46,24 @@ const systems = [
             "Built LLM orchestration layers, NLP-to-SQL query interfaces, and generative pipelines for content and data workflows.",
         slug: "content-ops-automation",
     },
+    {
+        title: "Job Search Agent",
+        domain: "AI Workflows",
+        stack: "Telegram · FastAPI · PostgreSQL · Google Drive",
+        impact: "Webhook-first intake → tailored artifact packs",
+        description:
+            "Built a multi-agent workflow that turns vetted job posts into tailored resumes, outreach drafts, structured reports, and Drive-organized outputs.",
+        slug: "job-search-agent",
+    },
+    {
+        title: "Photo Sorting Pipeline",
+        domain: "Platform Builds",
+        stack: "Python · FastAPI · SQLite FTS5 · Ollama",
+        impact: "Confidence-routed classification with local model chain",
+        description:
+            "Built photo ingest, dedup, and search infrastructure with worker-local Ollama classification, model fallback, and confidence-based routing into publish, review, and reject states.",
+        slug: "photo-sorter",
+    },
 ];
 
 export default function WorkPage() {
@@ -57,8 +75,7 @@ export default function WorkPage() {
                     Work
                 </h1>
                 <p className="font-body text-lg text-muted-foreground max-w-2xl">
-                    Only shipped, production systems. Structured, operator-level
-                    documentation. No philosophy. No unfinished experiments.
+                    Production systems with structured case-study documentation.
                 </p>
             </div>
 

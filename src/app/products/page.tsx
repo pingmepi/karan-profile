@@ -5,7 +5,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 export const metadata: Metadata = {
     title: "Products",
     description:
-        "Product bets — MyThirdPlace, MereKapade, AI workflow systems, and in-progress builds.",
+        "Product bets — MyThirdPlace, Job Search Agent, Photo Sorter, and MereKapade.",
     alternates: { canonical: "/products" },
 };
 
@@ -23,22 +23,24 @@ const products = [
         liveLabel: "Live",
     },
     {
-        title: "AI Orchestration Workflows",
-        tagline: "LLM pipelines for production",
+        title: "Job Search Agent",
+        tagline: "Webhook-first application automation",
         description:
-            "Multi-agent orchestration, evaluation gating, and cost-controlled inference pipelines. Building the infrastructure layer for autonomous AI systems.",
-        stack: "LangChain · Genkit · Telegram · Eval Frameworks",
-        status: "In Progress",
+            "Telegram-vetted job intake flows through a multi-agent pipeline that produces tailored resumes, outreach drafts, structured markdown reports, and Drive-organized artifact packs. Deterministic eval fixtures gate releases.",
+        stack: "FastAPI · Telegram · PostgreSQL · Google Drive",
+        status: "Deployed",
         featured: false,
+        caseStudySlug: "job-search-agent",
     },
     {
-        title: "In-Progress Builds",
-        tagline: "Experiments and explorations",
+        title: "Photo Sorter",
+        tagline: "Photo ops with local vision models",
         description:
-            "RAG frameworks and agentic job search systems. Active experiments in applied AI with evaluation-first development.",
-        stack: "Various",
-        status: "Exploring",
+            "Custom photo ingest, dedupe, and search infrastructure with worker-local Ollama classification, ordered model fallback, and confidence-routed review states. Current runtime guidance uses PhotoPrism plus local Ollama on the worker VM.",
+        stack: "Python · FastAPI · SQLite/FTS5 · Ollama",
+        status: "Active",
         featured: false,
+        caseStudySlug: "photo-sorter",
     },
 ];
 
@@ -51,7 +53,7 @@ export default function ProductsPage() {
                     Products
                 </h1>
                 <p className="font-body text-lg text-muted-foreground max-w-2xl">
-                    Deliberate product directions. Not side projects.
+                    Current product builds with live links and case studies.
                 </p>
             </div>
 

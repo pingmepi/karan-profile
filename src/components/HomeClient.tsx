@@ -47,7 +47,7 @@ const systemCards = [
     },
     {
         title: "AI Workflows",
-        body: "LLM orchestration, NLP2SQL, generative pipelines. 25% faster reporting via consolidated analytics.",
+        body: "Webhook-first agents, eval-gated pipelines, and confidence-routed classification with local models.",
         accent: "bg-klein",
     },
 ];
@@ -61,17 +61,17 @@ const currentBuilds = [
         liveUrl: "https://mythirdplace.rapchai.com",
     },
     {
-        name: "MereKapade",
-        description: "AI-assisted commerce experiment",
-        status: "MVP",
-        caseStudyHref: "/work/merekapade",
-        liveUrl: "https://merekapade.com",
+        name: "Job Search Agent",
+        description: "Webhook-first multi-agent job application system",
+        status: "Deployed",
+        caseStudyHref: "/work/job-search-agent",
     },
     {
-        name: "AI Orchestration",
-        description: "Multi-agent pipelines with eval gating",
-        status: "In Progress",
-        caseStudyHref: "/products",
+        name: "Photo Sorter",
+        description:
+            "Photo ingestion, Ollama classification, and confidence-routed review states",
+        status: "Active",
+        caseStudyHref: "/work/photo-sorter",
     },
 ];
 

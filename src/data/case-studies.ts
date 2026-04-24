@@ -442,6 +442,164 @@ export const caseStudies: CaseStudy[] = [
             },
         ],
     },
+    {
+        slug: "job-search-agent",
+        title: "Webhook-First Job Search Agent",
+        summary:
+            "Telegram-vetted job intake flows through a multi-agent system that generates tailored resumes, outreach drafts, structured reports, and Drive-organized artifacts.",
+        kpis: [
+            "Webhook-first intake",
+            "Railway deployed",
+            "Drive artifact packs",
+            "CI eval gating",
+        ],
+        tags: ["AI Workflows", "Automation", "Eval Systems", "Recruiting Ops"],
+        tech: [
+            "FastAPI",
+            "Telegram",
+            "PostgreSQL",
+            "Google Drive",
+            "OCR",
+            "Railway",
+            "Eval Fixtures",
+        ],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "Built a Telegram webhook pipeline that turns vetted job posts into tailored application artifacts and records run state for each run.",
+            },
+            {
+                heading: "Context & Role",
+                content:
+                    "Solo builder: product scope, pipeline orchestration, deployment, and quality gates.",
+            },
+            {
+                heading: "Problem",
+                content:
+                    "Manual application tailoring is slow and inconsistent.",
+            },
+            {
+                heading: "Objectives",
+                content:
+                    "Accept vetted intake, generate tailored collateral end-to-end, keep outputs auditable, and gate changes with deterministic evals.",
+            },
+            {
+                heading: "Product Decisions",
+                content:
+                    "Switched intake to webhooks instead of polling. Moved from SQLite to PostgreSQL for concurrent webhook processing. Kept Google Drive as the artifact surface so every run lands in a predictable folder.",
+            },
+            {
+                heading: "Solution",
+                content:
+                    "Telegram webhook → routing/orchestration → resume tailoring + optional outreach drafts + markdown report → Drive upload. Added run logging, webhook event lifecycle tracking, replay tooling, and follow-up detection/generation paths.",
+            },
+            {
+                heading: "Architecture",
+                content:
+                    "Telegram webhook → FastAPI on Railway → PostgreSQL state/logs → LLM/OCR pipeline → Drive artifacts + follow-up jobs.",
+            },
+            {
+                heading: "Metrics & Impact",
+                content:
+                    "Railway deployment. Each run produces a tailored resume PDF, optional outreach drafts, a structured application report, and a per-job Drive folder. Releases are checked against curated eval fixtures.",
+            },
+            {
+                heading: "Evidence",
+                content:
+                    "Webhook event lifecycle tables, per-step run logs, replay CLI, Drive upload integration, CI gate, and deployed health endpoint.",
+            },
+            {
+                heading: "Challenges & Trade-offs",
+                content:
+                    "Concurrency forced a SQLite → PostgreSQL move. Headless Google OAuth for Drive/Calendar required deployment-friendly token handling.",
+            },
+            {
+                heading: "Lessons",
+                content:
+                    "The pipeline treats artifacts, state transitions, evals, webhooks, and audit trails as first-class.",
+            },
+        ],
+    },
+    {
+        slug: "photo-sorter",
+        title: "Photo Sorting Pipeline with Ollama-Routed Review States",
+        summary:
+            "Built custom photo ingest, dedupe, and search infrastructure with worker-local Ollama classification, ordered model fallback, and confidence-based routing into review states.",
+        kpis: [
+            "Qwen → LLaVA fallback",
+            "Confidence-routed review",
+            "Hash-based dedupe",
+            "PhotoPrism runtime path",
+        ],
+        tags: ["Vision Systems", "Infra", "Search", "Human-in-the-Loop"],
+        tech: [
+            "Python",
+            "FastAPI",
+            "SQLite/FTS5",
+            "Ollama",
+            "Terraform",
+            "Ansible",
+            "PhotoPrism",
+        ],
+        sections: [
+            {
+                heading: "Overview",
+                content:
+                    "Started as a custom system for turning unsorted photos into structured, searchable records. The pipeline now classifies locally with Ollama, routes low-confidence outputs for review, and uses PhotoPrism for the primary library/frontend in the current runtime guidance.",
+            },
+            {
+                heading: "Context & Role",
+                content:
+                    "Built the ingest pipeline, worker/app topology, deploy path, and current runtime boundary.",
+            },
+            {
+                heading: "Problem",
+                content:
+                    "Raw photo dumps are hard to search, duplicate-heavy, and too noisy for fully automatic classification.",
+            },
+            {
+                heading: "Objectives",
+                content:
+                    "Process unsorted photos, classify them locally, and keep low-confidence results reviewable.",
+            },
+            {
+                heading: "Product Decisions",
+                content:
+                    "Ollama stays on the worker VM with ordered fallback models. Confidence thresholds route outputs into published (≥0.80), needs review (≥0.50), or rejected states. Current runtime guidance uses PhotoPrism on the worker VM as the primary library/frontend.",
+            },
+            {
+                heading: "Solution",
+                content:
+                    "Worker pipeline computes hashes, skips duplicates, runs image classification through worker-local Ollama, writes sidecar JSON and DB metadata, then exposes search/review flows via FastAPI + SQLite FTS5. Current runtime guidance keeps local Ollama and uses PhotoPrism for the primary library/frontend.",
+            },
+            {
+                heading: "Architecture",
+                content:
+                    "Ingest request → worker pipeline → hash dedupe → Ollama classification (qwen2.5vl:3b with llava:7b fallback) → confidence routing → metadata store/search UI or PhotoPrism runtime.",
+            },
+            {
+                heading: "Metrics & Impact",
+                content:
+                    "Deployed smoke checks passed for the app and worker services. Low-confidence outputs are explicitly routed for human review instead of silently accepted. The runtime was simplified around the higher-memory worker VM.",
+            },
+            {
+                heading: "Evidence",
+                content:
+                    "Worker fallback logs, confidence-gating tests, deployment verification docs, and active PhotoPrism/Ollama runtime documentation.",
+            },
+            {
+                heading: "Challenges & Trade-offs",
+                content:
+                    "NFS between app and worker hosts was environment-sensitive, and local-model reliability required fallback handling.",
+            },
+            {
+                heading: "Lessons",
+                content:
+                    "Current runtime guidance keeps Ollama on the worker VM and PhotoPrism as the primary library/frontend.",
+            },
+        ],
+    },
 ];
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
