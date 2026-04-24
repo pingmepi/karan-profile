@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "Agentic",
     description:
-        "Why structure precedes autonomy — mapping systems to agentic capabilities and what I'm exploring now.",
+        "Webhook-first agents, evaluation gates, and local-model routing systems I'm building now.",
     alternates: { canonical: "/agentic" },
 };
 
@@ -21,14 +21,14 @@ const sections = [
         title: "Mapping Systems to Agentic Capabilities",
         primitive: "□",
         content:
-            "The infrastructure I've built — event-driven comms, CRM orchestration, funnel instrumentation — maps directly to agentic patterns. Multi-step workflows become agent chains. Attribution pipelines become evaluation frameworks. The transition is structural, not conceptual.",
+            "The systems I build share the same primitives: event-driven comms, CRM orchestration, funnel instrumentation, routing, evaluation gates, and confidence-based routing.",
     },
     {
         number: "03",
         title: "What I'm Exploring Now",
         primitive: "○",
         content:
-            "Multi-agent orchestration with evaluation gating. Cost-controlled inference pipelines. Telegram-based agent interfaces. RAG frameworks with hard and soft evals. The goal: agents that can be trusted in production, not just demos.",
+            "Current work includes a webhook-first job search agent with Telegram intake, tailored resume generation, Drive artifact packs, and CI gates; and photo classification infrastructure with worker-local Ollama, ordered fallback, and publish/review/reject routing.",
     },
 ];
 

@@ -13,10 +13,10 @@ const systems = [
     {
         title: "Job Search Agent",
         domain: "AI Product",
-        stack: "Python · FastAPI · OpenRouter · LaTeX · Telegram · Railway",
-        impact: "Multi-agent orchestration with eval-gated quality control",
+        stack: "FastAPI · Telegram · PostgreSQL · Google Drive · Railway",
+        impact: "Telegram webhook pipeline with eval fixtures",
         description:
-            "Paste a job link into Telegram, get back a tailored application pack. Three specialized agents collaborate with quality gates that catch hallucinated claims before anything ships.",
+            "A Telegram webhook pipeline that produces tailored application artifacts, run logs, and Drive-organized outputs.",
         slug: "job-search-agent",
     },
     {
@@ -73,12 +73,20 @@ const systems = [
             "Turned ad-hoc content delivery into a sprint-driven machine. Standardized workflows, feedback loops, and dashboards replaced guesswork with predictability.",
         slug: "content-ops-automation",
     },
+    {
+        title: "Photo Sorting Pipeline",
+        domain: "Platform Builds",
+        stack: "Python · FastAPI · SQLite FTS5 · Ollama",
+        impact: "Confidence-routed classification with local model chain",
+        description:
+            "Photo ingest, dedupe, and search infrastructure with worker-local Ollama classification, model fallback, and confidence-based routing into publish, review, and reject states.",
+        slug: "photo-sorter",
+    },
 ];
 
 export default function WorkPage() {
     return (
         <main className="pt-24 pb-16 section-gap grid-visible min-h-screen">
-            {/* Page Header */}
             <div className="max-w-5xl mx-auto px-6 md:px-12 mb-20">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl geo-underline mb-6">
                     Work
@@ -88,7 +96,6 @@ export default function WorkPage() {
                 </p>
             </div>
 
-            {/* Systems Grid */}
             <div className="max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {systems.map((system, i) => (
                     <Link
@@ -97,7 +104,6 @@ export default function WorkPage() {
                         className={`group brutal-card p-6 md:p-8 flex flex-col ${i % 2 === 0 ? "" : "brutal-card-klein"
                             }`}
                     >
-                        {/* Domain tag */}
                         <span className="inline-block font-mono text-xs uppercase tracking-widest text-klein dark:text-bauhaus mb-4 border-b-2 border-klein dark:border-bauhaus pb-1">
                             {system.domain}
                         </span>
@@ -108,19 +114,16 @@ export default function WorkPage() {
                             {system.description}
                         </p>
 
-                        {/* Stack */}
                         <div className="font-mono text-xs text-muted-foreground mb-3">
                             {system.stack}
                         </div>
 
-                        {/* Impact */}
                         <div className="border-t-2 border-foreground pt-3 mt-auto">
                             <span className="font-display font-bold text-signal text-sm">
                                 {system.impact}
                             </span>
                         </div>
 
-                        {/* CTA */}
                         <div className="mt-4 flex items-center gap-2 font-display font-bold text-sm text-klein dark:text-bauhaus group-hover:gap-3 transition-all duration-150">
                             View case study
                             <ArrowRight className="w-4 h-4" />

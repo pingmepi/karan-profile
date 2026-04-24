@@ -14,8 +14,8 @@ const allProducts = [
         title: "Job Search Agent",
         tagline: "AI that turns job postings into ready-to-send application packs",
         description:
-            "Paste a job link into Telegram, get back a tailored resume, cover letter, and outreach drafts. Multi-agent system with quality gates that catch hallucinated claims before they ship.",
-        stack: "Python · FastAPI · OpenRouter · LaTeX · PostgreSQL · Telegram · Railway",
+            "Telegram webhook pipeline that produces tailored resumes, outreach drafts, structured reports, and Drive-organized artifact packs. Releases are checked against curated eval fixtures.",
+        stack: "FastAPI · Telegram · PostgreSQL · Google Drive · Railway",
         status: "Live",
         caseStudySlug: "job-search-agent",
         tags: ["AI", "Agents", "Eval"],
@@ -53,6 +53,16 @@ const allProducts = [
         caseStudySlug: "merekapade",
         liveUrl: "https://merekapade.com",
         tags: ["AI", "Commerce", "GenAI"],
+    },
+    {
+        title: "Photo Sorter",
+        tagline: "Photo ops with local vision models",
+        description:
+            "Custom photo ingest, dedupe, and search infrastructure with worker-local Ollama classification, ordered model fallback, and confidence-routed review states. Current runtime guidance uses PhotoPrism plus local Ollama on the worker VM.",
+        stack: "Python · FastAPI · SQLite/FTS5 · Ollama",
+        status: "Active",
+        caseStudySlug: "photo-sorter",
+        tags: ["Vision Systems", "Infra", "Search"],
     },
     {
         title: "Quant Trading Platform",
@@ -133,17 +143,15 @@ export default function ProductsPage() {
 
     return (
         <main className="pt-24 pb-16 section-gap min-h-screen">
-            {/* Page Header */}
             <div className="max-w-5xl mx-auto mb-20">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl geo-underline mb-6">
                     Products
                 </h1>
                 <p className="font-body text-lg text-muted-foreground max-w-2xl">
-                    What I&apos;ve built, what&apos;s live, and what&apos;s in progress. Each one solves a real problem for real users.
+                    Current product builds with live links and case studies.
                 </p>
             </div>
 
-            {/* Hero Product — MyThirdPlace */}
             {featured && (
                 <div className="max-w-5xl mx-auto mb-12">
                     <div className="group block bg-klein text-gallery p-8 md:p-12 border-2 border-ink shadow-brutal">
@@ -183,11 +191,13 @@ export default function ProductsPage() {
                 </div>
             )}
 
-            {/* All Products */}
             <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {rest.map((product, i) => (
-                        <div key={product.title} className={`group brutal-card p-6 flex flex-col ${i === 0 ? "brutal-card-klein" : ""}`}>
+                        <div
+                            key={product.title}
+                            className={`group brutal-card p-6 flex flex-col ${i === 0 ? "brutal-card-klein" : ""}`}
+                        >
                             <div className="flex items-center gap-2 mb-3">
                                 <span className="font-mono text-xs uppercase tracking-widest text-klein dark:text-bauhaus">
                                     {product.status}

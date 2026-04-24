@@ -32,22 +32,22 @@ const fadeUp = {
 const whatIDo = [
     {
         title: "Agents & Automation",
-        body: "Multi-agent AI systems, eval-driven CI gating, Telegram bots, 90+ n8n production workflows. LLM orchestration with cost controls and truthfulness guards.",
+        body: "Multi-agent systems, eval-driven CI gating, Telegram bots, and production n8n workflows.",
         accent: "bg-klein",
     },
     {
         title: "Systems & Architecture",
-        body: "Razorpay payment flows with idempotent sessions, Supabase RLS architecture, admin panel RBAC with 5 roles. Full-stack from database to deployment.",
+        body: "Razorpay payment flows, Supabase RLS architecture, and admin-panel RBAC.",
         accent: "bg-signal",
     },
     {
         title: "Growth Infrastructure",
-        body: "Event funnels, UTM attribution, CRM orchestration, scheduling microservices. Marketing ops that compound — not manual broadcasts.",
+        body: "Event funnels, UTM attribution, CRM orchestration, and scheduling microservices.",
         accent: "bg-bauhaus",
     },
     {
         title: "Measurement & Governance",
-        body: "Eval-driven development. CI gates for LLM outputs — truthfulness, cost, latency. GA4/GTM instrumentation. Audit logging and RBAC from day one.",
+        body: "Eval-driven development, GA4/GTM instrumentation, audit logging, and RBAC.",
         accent: "bg-klein",
     },
 ];
@@ -55,7 +55,7 @@ const whatIDo = [
 const featuredWork = [
     {
         name: "Job Search Agent",
-        description: "Multi-agent AI, eval gates, Telegram, LaTeX",
+        description: "Telegram webhook, FastAPI, PostgreSQL, Google Drive",
         status: "Live",
         caseStudyHref: "/work/job-search-agent",
     },
@@ -72,6 +72,13 @@ const featuredWork = [
         status: "Building",
         caseStudyHref: "/work/merekapade",
         liveUrl: "https://merekapade.com",
+    },
+    {
+        name: "Photo Sorter",
+        description:
+            "Photo ingest, Ollama classification, and confidence-routed review states",
+        status: "Active",
+        caseStudyHref: "/work/photo-sorter",
     },
 ];
 
