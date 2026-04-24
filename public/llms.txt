@@ -1,0 +1,66 @@
+# Karan Mandalam
+
+## Identity
+- AI Product Builder & Systems Engineer
+- Based in Bangalore, India
+- BITS Pilani (B.E. Computer Science)
+- Website: https://karan-profile-zeta.vercel.app
+- GitHub: https://github.com/pingmepi
+- LinkedIn: https://linkedin.com/in/mandalam-karan
+
+## Looking For
+- AI Product Management roles (full-time)
+- Contract/freelance: automation, full-stack product builds, AI system design
+
+## What I Do
+- Build multi-agent AI systems with eval-driven CI gating
+- Ship full-stack products from zero to production (Next.js, Supabase, Razorpay)
+- Design growth infrastructure: CRM automation, attribution, scheduling microservices
+- 90+ n8n production workflows for sales, marketing, and operations automation
+
+## Featured Projects
+
+### Job Search Agent
+Multi-agent system converting job postings into complete application packs via Telegram.
+- 222 tests passing with CI gates enforced
+- Planner/Executor/Profile agent architecture
+- Eval framework: compile rate, forbidden claims, edit violations, cost, latency
+- Tech: Python, FastAPI, OpenRouter, LaTeX, PostgreSQL, Telegram Bot API, Railway
+
+### The Third Place
+Live community and events platform with payments and admin panel.
+- 118 commits (consumer), 36 commits (admin), 42 PRs
+- Razorpay payments with idempotent sessions
+- GA4/GTM analytics, Resend emails, short URLs
+- RBAC admin panel with 5 roles
+- Tech: Next.js (SSR), TypeScript, Supabase, Razorpay, Resend, Vercel
+- Live: https://mythirdplace.rapchai.com
+
+### MereKapade
+AI-powered custom apparel design platform.
+- Prompt-to-design commerce with fabric.js canvas
+- OpenAI DALL-E/GPT-4o integration
+- Tech: React, fabric.js, Supabase, OpenAI API
+- Live: https://merekapade.com
+
+## Skills
+- Languages: Python, TypeScript, JavaScript, Dart (Flutter)
+- Frameworks: Next.js, React, FastAPI, Vite
+- AI/ML: OpenRouter, OpenAI API, Multi-Agent Architecture, LLM Eval/CI Gating, Prompt Engineering
+- Data/Infra: Supabase, PostgreSQL, Railway, Vercel, AWS EC2, Docker
+- Payments: Razorpay (idempotent sessions, webhooks), Stripe (API analysis)
+- Martech: n8n (90+ workflows), HubSpot, WebEngage, Netcore, CleverTap, GA4/GTM, WABA, Metabase
+- Integrations: Telegram Bot API, VAPI Voice AI, Resend, Hootsuite, LaTeX
+
+## Career Timeline
+- Capgemini (2018-2020): Associate Consultant — CMS migration automation, Disney reservation system L3 support
+- UpGrad (2020-2022): Product Strategist — 5+ reports, 4.5+/5 product ratings
+- U&I Trust (2019-2022): Volunteer → Center Leader → Fundraising Coach — 40+ volunteers, 10% YoY growth
+- AlmaBetter (2022-2024): Program Manager (COO's Office) — events charter, WebEngage, content ops
+- Miles Education (2024-present): Product (Martech/CRM/Automation) — 90+ n8n workflows, 70% ops savings
+- Independent (2025-present): AI Product Builder & Consulting
+
+## Contact
+- Email: kmandalam@gmail.com
+- Website: https://karan-profile-zeta.vercel.app/contact
+- WhatsApp: Available via website

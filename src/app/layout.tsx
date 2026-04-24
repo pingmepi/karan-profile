@@ -29,11 +29,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Karan Mandalam — Systems Builder",
+    default: "Karan Mandalam — AI Product Builder & Systems Engineer",
     template: "%s | Karan Mandalam",
   },
   description:
-    "I build systems that bring order to chaos. Growth infrastructure, automation, AI workflows, and new product bets.",
+    "AI agents, payment infrastructure, growth automation, and full-stack product builds — shipped to production. Multi-agent architecture, eval-driven CI, Razorpay, 90+ n8n workflows. Bangalore, India.",
   metadataBase: new URL("https://karan-profile-zeta.vercel.app"),
   openGraph: {
     type: "website",

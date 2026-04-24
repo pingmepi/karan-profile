@@ -5,55 +5,73 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
     title: "Work",
     description:
-        "Shipped production systems — marketing orchestration, growth infrastructure, platform builds, and AI workflows.",
+        "Shipped production systems — AI agents, payment infrastructure, growth systems, platform builds, and automation workflows.",
     alternates: { canonical: "/work" },
 };
 
 const systems = [
     {
-        title: "Event-Driven Comms Infrastructure",
-        domain: "Marketing Orchestration",
-        stack: "CRM · WhatsApp · Analytics · Webhooks",
-        impact: "Automated 70% of event communications pipeline",
+        title: "Job Search Agent",
+        domain: "AI Product",
+        stack: "FastAPI · Telegram · PostgreSQL · Google Drive · Railway",
+        impact: "Telegram webhook pipeline with eval fixtures",
         description:
-            "Built event-driven comms infra across CRM, WhatsApp, and analytics platforms. Replaced manual broadcast workflows with trigger-based orchestration.",
+            "A Telegram webhook pipeline that produces tailored application artifacts, run logs, and Drive-organized outputs.",
+        slug: "job-search-agent",
+    },
+    {
+        title: "The Third Place — Community Platform",
+        domain: "Platform Product",
+        stack: "Next.js · Supabase · Razorpay · GA4/GTM · Resend",
+        impact: "3 platforms live, processing real payments",
+        description:
+            "Community and events platform for local communities — discover events, pay for experiences, and manage everything from a single admin panel. Live with real users and real money.",
+        slug: "community-infra",
+    },
+    {
+        title: "Event Funnels & SEO-first Event CMS",
+        domain: "Growth Product",
+        stack: "Strapi · Next.js · n8n · WebEngage · WABA · GA4",
+        impact: "+90% registrations, revenue impact within 4 months",
+        description:
+            "Redesigned event journeys and shipped a self-serve Event CMS. Removed friction from registration, fixed attribution, and enabled 40+ events/month without manual ops.",
         slug: "event-funnels-cms",
     },
     {
-        title: "Growth Event Engine",
-        domain: "Growth Systems",
-        stack: "UTM Framework · Funnel Instrumentation · Attribution",
-        impact: "₹1Cr revenue impact via funnel optimization",
+        title: "Multi-Tenant Scheduling Microservice",
+        domain: "Platform Product",
+        stack: "Next.js · Supabase (Auth/RLS) · n8n · Webhooks · CRM",
+        impact: "70% ops reduction, 1,000+ meetings/month automated",
         description:
-            "Designed the event tracking engine powering growth funnels — UTM normalization, multi-touch attribution, and conversion instrumentation end-to-end.",
-        slug: "martech-revamp-attribution",
-    },
-    {
-        title: "CMS & Scheduling Platform",
-        domain: "Platform Builds",
-        stack: "Strapi · Next.js · State Machines · Cron",
-        impact: "Enabled 40+ events/month at scale",
-        description:
-            "Shipped CMS platforms and scheduling services with workflow state machines. Operator-level tooling for content, events, and automation.",
+            "Self-serve booking system replacing manual scheduling across sales and academic teams. Dynamic slot logic, CRM sync, and automated reminders.",
         slug: "scheduling-at-scale",
     },
     {
-        title: "LLM Orchestration Pipelines",
-        domain: "AI Workflows",
-        stack: "LLM Chains · NLP2SQL · Generative Pipelines",
-        impact: "25% faster reporting via consolidated analytics",
+        title: "Martech Revamp for Attribution Accuracy",
+        domain: "Data Strategy",
+        stack: "GA4 · Netcore · HubSpot · n8n · Postgres · Metabase",
+        impact: "+20% lead quality, single source of truth",
         description:
-            "Built LLM orchestration layers, NLP-to-SQL query interfaces, and generative pipelines for content and data workflows.",
-        slug: "content-ops-automation",
+            "Rebuilt the data path from tracking to dashboards so teams could trust the numbers. Clean attribution, deduplicated CRM, and self-serve reporting.",
+        slug: "martech-revamp-attribution",
     },
     {
-        title: "Job Search Agent",
-        domain: "AI Workflows",
-        stack: "Telegram · FastAPI · PostgreSQL · Google Drive",
-        impact: "Webhook-first intake → tailored artifact packs",
+        title: "Prompt-to-Design Commerce MVP",
+        domain: "Generative AI",
+        stack: "React · Canvas API · Supabase · OpenAI",
+        impact: "MVP in 8 weeks, 100+ testers, 3.4 designs/session",
         description:
-            "Built a multi-agent workflow that turns vetted job posts into tailored resumes, outreach drafts, structured reports, and Drive-organized outputs.",
-        slug: "job-search-agent",
+            "Describe a t-shirt design in words, see it on a real-time canvas instantly. Exploring prompt-to-purchase flows for custom merchandise.",
+        slug: "merekapade",
+    },
+    {
+        title: "Content Ops Automation",
+        domain: "Process Design",
+        stack: "Jira · Zapier · Metabase · Feedback tooling",
+        impact: "90% error reduction, 7-week predictable delivery",
+        description:
+            "Turned ad-hoc content delivery into a sprint-driven machine. Standardized workflows, feedback loops, and dashboards replaced guesswork with predictability.",
+        slug: "content-ops-automation",
     },
     {
         title: "Photo Sorting Pipeline",
@@ -61,7 +79,7 @@ const systems = [
         stack: "Python · FastAPI · SQLite FTS5 · Ollama",
         impact: "Confidence-routed classification with local model chain",
         description:
-            "Built photo ingest, dedup, and search infrastructure with worker-local Ollama classification, model fallback, and confidence-based routing into publish, review, and reject states.",
+            "Photo ingest, dedupe, and search infrastructure with worker-local Ollama classification, model fallback, and confidence-based routing into publish, review, and reject states.",
         slug: "photo-sorter",
     },
 ];
@@ -69,18 +87,16 @@ const systems = [
 export default function WorkPage() {
     return (
         <main className="pt-24 pb-16 section-gap grid-visible min-h-screen">
-            {/* Page Header */}
-            <div className="max-w-5xl mx-auto mb-20">
+            <div className="max-w-5xl mx-auto px-6 md:px-12 mb-20">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl geo-underline mb-6">
                     Work
                 </h1>
                 <p className="font-body text-lg text-muted-foreground max-w-2xl">
-                    Production systems with structured case-study documentation.
+                    Shipped production systems. AI agents first, then full-stack builds, growth infrastructure, and automation.
                 </p>
             </div>
 
-            {/* Systems Grid */}
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {systems.map((system, i) => (
                     <Link
                         key={system.title}
@@ -88,7 +104,6 @@ export default function WorkPage() {
                         className={`group brutal-card p-6 md:p-8 flex flex-col ${i % 2 === 0 ? "" : "brutal-card-klein"
                             }`}
                     >
-                        {/* Domain tag */}
                         <span className="inline-block font-mono text-xs uppercase tracking-widest text-klein dark:text-bauhaus mb-4 border-b-2 border-klein dark:border-bauhaus pb-1">
                             {system.domain}
                         </span>
@@ -99,19 +114,16 @@ export default function WorkPage() {
                             {system.description}
                         </p>
 
-                        {/* Stack */}
                         <div className="font-mono text-xs text-muted-foreground mb-3">
                             {system.stack}
                         </div>
 
-                        {/* Impact */}
                         <div className="border-t-2 border-foreground pt-3 mt-auto">
                             <span className="font-display font-bold text-signal text-sm">
                                 {system.impact}
                             </span>
                         </div>
 
-                        {/* CTA */}
                         <div className="mt-4 flex items-center gap-2 font-display font-bold text-sm text-klein dark:text-bauhaus group-hover:gap-3 transition-all duration-150">
                             View case study
                             <ArrowRight className="w-4 h-4" />

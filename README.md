@@ -29,29 +29,4 @@ npm install
 npm run dev
 ```
 
-## Social/SEO Assets
 
-- Place your OG image at `public/assets/og-image.png` (recommended 1200x630). The site references `/assets/og-image.png` in index.html and the Seo component.
-- Favicon set referenced in index.html and manifest:
-  - `public/assets/favicon-32x32.png`
-  - `public/assets/favicon-16x16.png`
-  - `public/assets/apple-touch-icon.png`
-  - `public/assets/android-chrome-192x192.png`
-  - `public/assets/android-chrome-512x512.png`
-  - `public/assets/manifest.webmanifest`
-
-## Tech Stack
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## Deploy
-Deploy with any static hosting provider that supports Vite builds (e.g., Vercel, Netlify, GitHub Pages). Run:
-
-```sh
-npm run build
-```
-
-The output will be in the `dist` folder.
