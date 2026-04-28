@@ -42,7 +42,7 @@ export default function ContactForm() {
     <div className="min-h-screen pt-20 pb-16">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Let&apos;s build something cool.</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Let’s build something cool.</h1>
           <p className="text-xl text-muted-foreground">
             Ready to collaborate on your next project or just want to chat about
             AI, product strategy, or the best riding routes?
@@ -124,4 +124,3 @@ export default function ContactForm() {
     </div>
   );
 }
-
