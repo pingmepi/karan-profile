@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { essays, getEssayBySlug, getAllEssaySlugs } from "@/data/essays";
+import { decodeHtmlEntities } from "@/lib/utils";
 
 export async function generateStaticParams() {
     return getAllEssaySlugs().map((slug) => ({ slug }));
@@ -17,15 +18,15 @@ export async function generateMetadata({
     const essay = getEssayBySlug(slug);
     if (!essay) return {};
     return {
-        title: essay.title,
-        description: essay.summary,
+        title: decodeHtmlEntities(essay.title),
+        description: decodeHtmlEntities(essay.summary),
         alternates: { canonical: `/writings/${slug}` },
         openGraph: {
-            title: essay.title,
-            description: essay.summary,
+            title: decodeHtmlEntities(essay.title),
+            description: decodeHtmlEntities(essay.summary),
             type: "article",
             publishedTime: essay.date,
-            tags: essay.tags,
+            tags: essay.tags.map((tag) => decodeHtmlEntities(tag)),
         },
     };
 }
@@ -39,6 +40,10 @@ export default async function EssayPage({
     const essay = getEssayBySlug(slug);
 
     if (!essay) notFound();
+    const decodedTitle = decodeHtmlEntities(essay.title);
+    const decodedSummary = decodeHtmlEntities(essay.summary);
+    const decodedContent = decodeHtmlEntities(essay.content);
+    const decodedTags = essay.tags.map((tag) => decodeHtmlEntities(tag));
 
     return (
         <main className="pt-24 pb-16 min-h-screen">
@@ -71,16 +76,16 @@ export default async function EssayPage({
                         </span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl geo-underline mb-6">
-                        {essay.title}
+                        {decodedTitle}
                     </h1>
                     <p className="font-body text-lg text-muted-foreground max-w-2xl">
-                        {essay.summary}
+                        {decodedSummary}
                     </p>
                 </header>
 
                 <div className="max-w-3xl mx-auto px-6 md:px-12">
                     <div className="prose-essay">
-                        {essay.content.split("\n\n").map((para, i) => {
+                        {decodedContent.split("\n\n").map((para, i) => {
                             if (para.startsWith("## ")) {
                                 return (
                                     <h2
@@ -125,7 +130,7 @@ export default async function EssayPage({
                     </div>
 
                     <div className="mt-16 pt-8 border-t-2 border-foreground flex flex-wrap gap-2">
-                        {essay.tags.map((tag) => (
+                        {decodedTags.map((tag) => (
                             <span
                                 key={tag}
                                 className="font-mono text-xs uppercase tracking-widest text-muted-foreground border border-foreground/30 px-3 py-1"
@@ -150,7 +155,7 @@ export default async function EssayPage({
                                     href={`/writings/${nextEssay.slug}`}
                                     className="brutal-btn border-2 border-foreground shadow-brutal hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]"
                                 >
-                                    Next: {nextEssay.title} →
+                                    Next: {decodeHtmlEntities(nextEssay.title)} →
                                 </Link>
                             );
                         })()}

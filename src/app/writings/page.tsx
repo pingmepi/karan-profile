@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { essays } from "@/data/essays";
+import { decodeHtmlEntities } from "@/lib/utils";
 
 export const metadata: Metadata = {
     title: "Writings",
@@ -45,10 +46,10 @@ export default function WritingsPage() {
                                     </span>
                                 </div>
                                 <h2 className="text-2xl md:text-3xl mb-3 group-hover:translate-x-1 transition-transform">
-                                    {essay.title}
+                                    {decodeHtmlEntities(essay.title)}
                                 </h2>
                                 <p className="font-body text-base text-muted-foreground mb-4">
-                                    {essay.summary}
+                                    {decodeHtmlEntities(essay.summary)}
                                 </p>
                                 <div className="flex flex-wrap gap-1.5 mb-4">
                                     {essay.tags.map((tag) => (
@@ -56,7 +57,7 @@ export default function WritingsPage() {
                                             key={tag}
                                             className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground border border-foreground/20 px-2 py-0.5"
                                         >
-                                            {tag}
+                                            {decodeHtmlEntities(tag)}
                                         </span>
                                     ))}
                                 </div>
